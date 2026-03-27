@@ -1,0 +1,30 @@
+{
+  "profile": {
+    "name": "Oluwatomiwa",
+    "handle": "@Lifewithblac",
+    "role": "Backend Dev & Web3 Strategist",
+    "bio": "Building logic at MAPOLY. Scaled @CryptoDungeon. Bridging the gap between Code and Community."
+  },
+  "metrics": [
+    { "label": "Community Growth", "value": "40%+", "desc": "Engagement increase for Web3 projects" },
+    { "label": "Projects Promoted", "value": "12+", "desc": "From NFT drops to P2E gaming" }
+  ],
+  "experience_highlights": [
+    "Led AI-powered NFT integrations with Create With Me AI",
+    "Managed 24/7 global moderation for P2E platforms",
+    "Authored deep-dives on DeFi and Blockchain Gaming"
+  ],
+  "tools": ["PHP", "MySQL", "Discord API", "Node.js", "Figma", "X Analytics"],
+  "projects": [
+    {
+      "title": "Receipt Pro",
+      "tag": "Backend",
+      "desc": "PHP Business Management System"
+    },
+    {
+      "title": "Crypto Simplified",
+      "tag": "Content",
+      "desc": "Educating the next 1M Web3 users"
+    }
+  ]
+}
