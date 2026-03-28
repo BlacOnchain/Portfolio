@@ -286,53 +286,62 @@ li { margin-bottom: 12px; opacity: 0.7; font-size: 0.95rem; }
     opacity: 0.3;
 }
 
-/* 📱 MOBILE FIX: FORCING STACKED CARDS */
+/* 📱 ULTIMATE MOBILE FIX */
 @media (max-width: 850px) {
     .bento-wrapper {
-        padding: 40px 15px;
+        padding: 20px 10px !important;
     }
 
     .grid-container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 20px;
+        display: block !important; 
+        width: 100% !important;
     }
 
     .card {
-        padding: 30px 20px;
-        border-radius: 30px;
+        display: block !important;
         width: 100% !important;
+        margin-bottom: 20px !important;
+        padding: 25px 15px !important;
+        grid-column: auto !important;
+        float: none !important;
     }
 
-    /* SPECIFIC HERO FIX FOR TEXT SQUASHING */
+    /* Target the Hero Box (First Box) specifically */
     .hero-flex {
-        flex-direction: column !important;
+        display: block !important; 
+        width: 100% !important;
         text-align: center !important;
-        gap: 20px !important;
     }
 
-    .hero-right {
-        min-width: unset !important; /* Removes the 320px restriction causing the squeeze */
+    .hero-left, .hero-right {
+        display: block !important;
         width: 100% !important;
-        padding: 20px !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
     }
 
-    .hero-left {
-        width: 100% !important;
-    }
-
-    h1 {
-        font-size: 2.5rem !important; /* Adjusts name size for smaller screens */
-        line-height: 1.1;
-        letter-spacing: -1px !important;
-        word-wrap: break-word; /* Forces long names to wrap instead of pushing out */
-        overflow-wrap: break-word;
+    .pfp-container {
+        margin-bottom: 20px !important;
     }
 
     .pfp-img {
-        width: 150px !important;
-        height: 150px !important;
+        width: 120px !important;
+        height: 120px !important;
+        margin: 0 auto !important;
         border-radius: 30px;
+    }
+
+    h1 {
+        font-size: 2.2rem !important; 
+        line-height: 1.2 !important;
+        letter-spacing: -1px !important;
+        word-break: break-word !important;
+        white-space: normal !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
     }
 
     .project-gallery {
