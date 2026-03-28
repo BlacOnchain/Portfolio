@@ -286,7 +286,47 @@ li { margin-bottom: 12px; opacity: 0.7; font-size: 0.95rem; }
     opacity: 0.3;
 }
 
-@media (max-width: 950px) {
-    .hero-flex { flex-direction: column !important; align-items: center; text-align: center; gap: 30px; }
-    .hero-right { width: 100%; }
+/* 📱 MOBILE FIX: FORCING STACKED CARDS */
+@media (max-width: 850px) {
+    .bento-wrapper {
+        padding: 40px 15px;
+    }
+
+    .grid-container {
+        display: flex !important;
+        flex-direction: column !important; /* Forces vertical stacking */
+        gap: 20px;
+    }
+
+    .card {
+        padding: 30px 20px;
+        border-radius: 30px;
+        width: 100% !important;
+        grid-column: span 4 !important;
+    }
+
+    .hero-flex {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-right {
+        min-width: 100%;
+        padding: 25px;
+    }
+
+    .pfp-img {
+        width: 160px;
+        height: 160px;
+    }
+
+    h1 {
+        font-size: 2.8rem !important; /* Smaller for mobile screens */
+        line-height: 1.1;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
 }
