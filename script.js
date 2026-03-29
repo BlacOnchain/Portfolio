@@ -69,7 +69,7 @@ const data = {
             title: "Receipt Pro",
             desc: "Backend system focusing on SQL data integrity.",
             img: "images/receipt.jpg",
-            link: "assets/Case_Study_Receipt_Pro.pdf",
+            link: "https://github.com/BlacOnchain/receipt-prof",
             placeholder: "https://via.placeholder.com/400x200?text=Receipt+Pro"
         }
     ],
