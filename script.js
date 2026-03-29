@@ -49,14 +49,14 @@ const data = {
             ]
         }
     ],
-    // ADDED: Project data with links to PDFs
+    // UPDATED: Replaced Crypto Blog with BlacRate Pro
     projects: [
         {
-            title: "Crypto Simplified Blog",
-            desc: "Educating users on DeFi and NFTs with simple language.",
-            img: "images/blog.jpg",
-            link: "assets/Case_Study_Crypto_Blog.pdf",
-            placeholder: "https://via.placeholder.com/400x200?text=Crypto+Simplified+Blog"
+            title: "BlacRate Pro",
+            desc: "PWA-enabled Crypto-to-Naira rate & profit calculator for OTC traders.",
+            img: "images/blacrate.jpg", 
+            link: "https://blaconchain.github.io/blacrate-pro/",
+            placeholder: "https://via.placeholder.com/400x200?text=BlacRate+Pro"
         },
         {
             title: "Web3 Game Reviews",
@@ -185,7 +185,9 @@ window.onload = () => {
             <div class="project-gallery">
                 ${data.projects.map(p => `
                     <div class="project-item" onclick="window.open('${p.link}', '_blank')" style="cursor: pointer;">
-                        <div class="project-overlay"><div class="view-btn">View Case Study</div></div>
+                        <div class="project-overlay">
+                            <div class="view-btn">Launch Project</div>
+                        </div>
                         <img src="${p.img}" class="project-img" onerror="this.src='${p.placeholder}'">
                         <h4>${p.title}</h4>
                         <p style="font-size:0.85rem; opacity:0.6;">${p.desc}</p>
