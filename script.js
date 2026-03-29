@@ -49,26 +49,27 @@ const data = {
             ]
         }
     ],
+    // UPDATED: Replaced Crypto Blog with BlacRate Pro
     projects: [
         {
             title: "BlacRate Pro",
             desc: "PWA-enabled Crypto-to-Naira rate & profit calculator for OTC traders.",
             img: "images/blacrate.jpg", 
-            link: "https://github.com/BlacOnchain/blacrate-pro",
+            link: "https://blaconchain.github.io/blacrate-pro/",
             placeholder: "https://via.placeholder.com/400x200?text=BlacRate+Pro"
         },
         {
             title: "Web3 Game Reviews",
             desc: "Analyzing tokenomics and mechanics for blockchain gamers.",
             img: "images/game.jpg",
-            link: "https://github.com/BlacOnchain/Portfolio/blob/main/assets/Case_Study_Web3_Gaming.pdf",
+            link: "assets/Case_Study_Web3_Gaming.pdf",
             placeholder: "https://via.placeholder.com/400x200?text=Web3+Game+Reviews"
         },
         {
             title: "Receipt Pro",
             desc: "Backend system focusing on SQL data integrity.",
             img: "images/receipt.jpg",
-            link: "https://github.com/BlacOnchain/receipt-pro",
+            link: "assets/Case_Study_Receipt_Pro.pdf",
             placeholder: "https://via.placeholder.com/400x200?text=Receipt+Pro"
         }
     ],
