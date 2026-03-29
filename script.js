@@ -6,7 +6,7 @@ const data = {
     github: "https://github.com/BlacOnchain",
     discord: "https://discord.com/users/1131931766299566150",
     cvLink: "assets/Oluwatomiwa_CV.pdf", 
-    about: "I’m Blac, a Backend Developer specializing in PHP and Database Architecture, with a strong background in Web3 Community Strategy and Growth. I bridge the gap between technical logic and community engagement, whether I'm architecting databases or scaling digital ecosystems. Driven by impact, powered by code.",
+    about: "I’m Blac, A Backend Developer specializing in PHP and Database Architecture, with a strong background in Web3 Community Strategy and Growth. I bridge the gap between technical logic and community engagement, whether I'm architecting databases or scaling digital ecosystems. Driven by impact, powered by code.",
     coreStack: [
         { id: "php", name: "PHP & Laravel", level: "90%" },
         { id: "sql", name: "SQL & DB Architecture", level: "92%" },
