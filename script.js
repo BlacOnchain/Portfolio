@@ -1,247 +1,425 @@
-const data = {
-    name: "BLAC",
-    handle: "@Lifewithblac",
-    photo: "images/profile.jpg", 
-    email: "Odubelatomiwa508@gmail.com",
-    github: "https://github.com/BlacOnchain",
-    discord: "https://discord.com/users/1131931766299566150",
-    cvLink: "assets/Oluwatomiwa_CV.pdf", 
-    about: "I’m Blac, A Backend Developer specializing in PHP and Database Architecture, with a strong background in Web3 Community Strategy and Growth. I bridge the gap between technical logic and community engagement, whether I'm architecting databases or scaling digital ecosystems. Driven by impact, powered by code.",
-    coreStack: [
-        { id: "php", name: "PHP & Laravel", level: "90%" },
-        { id: "sql", name: "SQL & DB Architecture", level: "92%" },
-        { id: "web3", name: "Web3 Community Growth", level: "95%" },
-        { id: "content", name: "Content Strategy", level: "80%" }
+/* =============================================
+   BLAC PORTFOLIO — script.js
+   ============================================= */
+
+// ── DATA ──────────────────────────────────────
+const DATA = {
+    typewriterRoles: [
+        'Backend Engineer',
+        'PHP & MySQL Architect',
+        'Web3 Community Strategist',
+        'Database Designer',
+        'Digital Systems Builder',
     ],
-    education: [
+    terminalLines: [
+        { type: 'prompt', text: 'cat profile.json' },
+        { type: 'obj-open', text: '{' },
+        { type: 'pair', key: '  "name"',     val: '"Odubela Oluwatomiwa"',  valType: 'str' },
+        { type: 'pair', key: '  "alias"',    val: '"BLAC"',                 valType: 'str' },
+        { type: 'pair', key: '  "role"',     val: '"Backend Dev & Web3 Strategist"', valType: 'str' },
+        { type: 'pair', key: '  "school"',   val: '"MAPOLY — Computer Science"',     valType: 'str' },
+        { type: 'pair', key: '  "twitter"',  val: '"@Lifewithblac"',        valType: 'str' },
+        { type: 'pair', key: '  "followers"',val: '3500',                   valType: 'num' },
+        { type: 'pair', key: '  "available"',val: 'true',                   valType: 'bool' },
+        { type: 'obj-close', text: '}' },
+    ],
+    projects: [
         {
-            school: "Moshood Abiola Polytechnic (MAPOLY), Abeokuta",
-            degree: "ND in Computer Science — In Progress",
-            desc: "Focusing on core computing principles, database management systems, and backend engineering."
+            title: 'BlacRate Pro',
+            desc: 'PWA-powered crypto-to-Naira calculator built for OTC traders. Real-time rates, profit margins, and offline support — zero fluff, all function.',
+            badge: 'PWA · Backend',
+            badgeClass: 'badge-pwa',
+            icon: '&#9783;',
+            tags: ['PHP', 'JavaScript', 'PWA', 'Crypto API'],
+            link: 'https://blaconchain.github.io/blacrate-pro/',
+            external: true,
         },
         {
-            school: "Federal Science and Technical College",
-            degree: "WAEC & Technical Certificate",
-            desc: "Foundational technology training that sparked my interest in professional programming."
-        }
+            title: 'Receipt Pro',
+            desc: 'Transactional backend system with enforced SQL data integrity. Built with PHP prepared statements, rollback logic, and bulletproof receipt generation.',
+            badge: 'Backend',
+            badgeClass: 'badge-backend',
+            icon: '&#128203;',
+            tags: ['PHP', 'MySQL', 'Transactions', 'SQL'],
+            link: 'https://github.com/BlacOnchain/receipt-pro',
+            external: true,
+        },
+        {
+            title: 'Web3 Game Reviews',
+            desc: 'Deep tokenomics analysis and P2E mechanics breakdowns for blockchain gamers. Research-grade content that drove community growth across Discord and Twitter.',
+            badge: 'Content · Web3',
+            badgeClass: 'badge-web3',
+            icon: '&#9670;',
+            tags: ['Research', 'DeFi', 'P2E', 'Tokenomics'],
+            link: 'assets/Case_Study_Web3_Gaming.pdf',
+            external: true,
+        },
     ],
     experience: [
         {
-            company: "Crypto Dungeon",
-            role: "Web3 Community & Partnerships Contributor",
-            time: "Nov 2024 – Present",
+            company: 'Crypto Dungeon',
+            role: 'Web3 Community & Partnerships Contributor',
+            time: 'Nov 2024 – Present',
             points: [
-                "Led community engagement for Web3 enthusiasts and NFT collectors.",
-                "Negotiated strategic partnerships with Create With Me AI for NFT integrations.",
-                "Conducted deep research on emerging Web3 projects for collaboration.",
-                "Executed Twitter campaigns to boost project visibility and adoption."
-            ]
+                'Architected community engagement systems for NFT collectors and Web3 builders.',
+                'Closed strategic partnership with Create With Me AI for NFT integrations.',
+                'Executed high-conversion Twitter campaigns increasing project visibility.',
+                'Ran due diligence research on Web3 projects before collaboration deals.',
+            ],
         },
         {
-            company: "Independent Web3 Project",
-            role: "Community Moderator & Content Creator",
-            time: "Oct 2023 – Present",
+            company: 'Independent Web3 Projects',
+            role: 'Community Moderator & Content Creator',
+            time: 'Oct 2023 – Present',
             points: [
-                "Managed interactive and informative discussions for gaming communities.",
-                "Created high-quality Twitter threads and blog content.",
-                "Organized AMA sessions and giveaways to attract new members.",
-                "Monitored community trends to provide insights to project leaders."
-            ]
-        }
+                'Maintained 24/7 global moderation across Discord and Telegram for P2E platforms.',
+                'Authored Twitter threads and blog deep-dives on DeFi, NFTs, and blockchain gaming.',
+                'Organised AMA sessions and giveaway campaigns that drove measurable user signups.',
+                'Delivered real-time trend reports to project leadership for strategic pivots.',
+            ],
+        },
     ],
-    // UPDATED: Replaced Crypto Blog with BlacRate Pro
-    projects: [
+    education: [
         {
-            title: "BlacRate Pro",
-            desc: "PWA-enabled Crypto-to-Naira rate & profit calculator for OTC traders.",
-            img: "images/blacrate.jpg", 
-            link: "https://blaconchain.github.io/blacrate-pro/",
-            placeholder: "https://via.placeholder.com/400x200?text=BlacRate+Pro"
+            school: 'Moshood Abiola Polytechnic (MAPOLY)',
+            degree: 'ND Computer Science — In Progress',
+            desc: 'Database management systems, backend engineering, and core computing fundamentals.',
         },
         {
-            title: "Web3 Game Reviews",
-            desc: "Analyzing tokenomics and mechanics for blockchain gamers.",
-            img: "images/game.jpg",
-            link: "assets/Case_Study_Web3_Gaming.pdf",
-            placeholder: "https://via.placeholder.com/400x200?text=Web3+Game+Reviews"
+            school: 'Federal Science & Technical College, Ijebu Imushin',
+            degree: 'WAEC & Technical Certificate',
+            desc: 'Foundational technology training that set the trajectory for a career in engineering.',
         },
-        {
-            title: "Receipt Pro",
-            desc: "Backend system focusing on SQL data integrity.",
-            img: "images/receipt.jpg",
-            link: "https://github.com/BlacOnchain/receipt-pro",
-            placeholder: "https://via.placeholder.com/400x200?text=Receipt+Pro"
-        }
+    ],
+    coreStack: [
+        { name: 'PHP & Laravel',          pct: 90 },
+        { name: 'SQL & Database Design',  pct: 92 },
+        { name: 'Web3 Community Growth',  pct: 95 },
+        { name: 'Content Strategy',       pct: 80 },
+        { name: 'JavaScript / Node.js',   pct: 65 },
     ],
     skills: [
-        { name: "Backend Logic", target: "php" },
-        { name: "Database Design", target: "sql" },
-        { name: "Web3 Ecosystem", target: "web3" },
-        { name: "Community Strategy", target: "web3" },
-        { name: "Content Strategy", target: "content" },
-        { name: "Social Media Marketing", target: "content" },
-        { name: "Data Integrity", target: "sql" },
-        { name: "PHP / MySQL", target: "php" }
+        'PHP', 'MySQL', 'SQL', 'Node.js', 'Laravel', 'Git',
+        'Discord API', 'REST APIs', 'Community Management',
+        'Content Strategy', 'Twitter Campaigns', 'Web3 Ecosystem',
+        'Figma (UI review)', 'X Analytics', 'DeFi Research',
     ],
-    awards: [
-        { title: "Web3 Contributor of the Year", desc: "Recognized for exceptional community-building efforts." },
-        { title: "Best Content Strategy Award", desc: "Acknowledged for innovative content across multiple projects." }
-    ]
 };
 
-window.onload = () => {
-    const grid = document.getElementById('main-grid');
-    
-    grid.innerHTML = `
-        <div class="card span-4 hero-flex">
-            <div class="pfp-container">
-                <img src="${data.photo}" class="pfp-img" onerror="this.src='https://via.placeholder.com/220'">
-            </div>
+// ── CANVAS PARTICLE BACKGROUND ─────────────────
+function initCanvas() {
+    const canvas = document.getElementById('bg-canvas');
+    const ctx    = canvas.getContext('2d');
+    let W, H, particles, animId;
 
-            <div class="hero-left">
-                <div class="status-pill">● Available for IT / Projects</div>
-                <h3>Identity & Vision</h3>
-                <h1>${data.name}</h1>
-                <p style="margin-top:25px; font-size:1.3rem; max-width:650px; margin-bottom: 30px;">${data.about}</p>
-                
-                <a href="${data.cvLink}" target="_blank" class="footer-link email-glow" style="display: inline-flex; width: fit-content; text-decoration: none;">
-                    <i class="fa-solid fa-file-pdf"></i> Download CV / Resume
-                </a>
-            </div>
-            
-            <div class="hero-right">
-                <h2 style="font-size: 1.5rem; letter-spacing: -1px; margin-bottom:20px;">Technical Proficiency</h2>
-                <div style="margin-top:20px;">
-                    ${data.coreStack.map(s => `
-                        <div class="stack-item" id="bar-${s.id}">
-                            <div class="stack-label">
-                                <span>${s.name}</span>
-                                <span>${s.level}</span>
-                            </div>
-                            <div class="bar-bg">
-                                <div class="bar-fill" style="width: ${s.level}"></div>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        </div>
+    const COLORS = ['#00ff88', '#00d4ff', '#00cc6a'];
 
-        <div class="card span-2">
-            <h3>${data.experience[0].time}</h3>
-            <h2>${data.experience[0].company}</h2>
-            <p style="color:var(--accent); font-weight:bold; margin-bottom:10px;">${data.experience[0].role}</p>
-            <ul>${data.experience[0].points.map(p => `<li>${p}</li>`).join('')}</ul>
-        </div>
-
-        <div class="card span-2">
-            <h3>${data.experience[1].time}</h3>
-            <h2>${data.experience[1].company}</h2>
-            <p style="color:var(--accent); font-weight:bold; margin-bottom:10px;">${data.experience[1].role}</p>
-            <ul>${data.experience[1].points.map(p => `<li>${p}</li>`).join('')}</ul>
-        </div>
-
-        <div class="card span-4">
-            <h3>Academic Background</h3>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:40px;">
-                ${data.education.map(e => `
-                    <div>
-                        <h4 style="margin:0; font-size:1.2rem;">${e.school}</h4>
-                        <p style="opacity:0.5; font-size:0.9rem; margin:5px 0;">${e.degree}</p>
-                        <p style="font-size:0.9rem;">${e.desc}</p>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-
-        <div class="card span-2">
-            <h2>Technical Skills</h2>
-            <div class="tag-cloud">
-                ${data.skills.map(s => `
-                    <span class="tag" 
-                          onmouseover="highlight('${s.target}', true)" 
-                          onmouseout="highlight('${s.target}', false)">
-                        ${s.name}
-                    </span>
-                `).join('')}
-            </div>
-            <h3 style="margin-top:30px;">Languages</h3>
-            <p>English (Fluent) • Yoruba (Native)</p>
-        </div>
-
-        <div class="card span-2">
-            <h2>Recognition</h2>
-            ${data.awards.map(a => `
-                <div style="margin-bottom:20px;">
-                    <h4 style="margin:0; color:var(--accent);">${a.title}</h4>
-                    <p style="font-size:0.9rem;">${a.desc}</p>
-                </div>
-            `).join('')}
-        </div>
-
-        <div class="card span-4">
-            <h3>Featured Projects</h3>
-            <h2>Live Systems</h2>
-            <div class="project-gallery">
-                ${data.projects.map(p => `
-                    <div class="project-item" onclick="window.open('${p.link}', '_blank')" style="cursor: pointer;">
-                        <div class="project-overlay">
-                            <div class="view-btn">Launch Project</div>
-                        </div>
-                        <img src="${p.img}" class="project-img" onerror="this.src='${p.placeholder}'">
-                        <h4>${p.title}</h4>
-                        <p style="font-size:0.85rem; opacity:0.6;">${p.desc}</p>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-
-        <div class="card span-4 footer-box">
-            <div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%;">
-                <div>
-                    <h2 style="margin:0; font-size: 2.8rem; letter-spacing: -2px;">${data.handle}</h2>
-                    <div id="footer-clock" style="font-size: 0.9rem; opacity: 0.6; margin-top: 5px; font-weight: 800;"></div>
-                </div>
-
-                <div style="display:flex; gap: 15px; align-items: center; flex-wrap: wrap; justify-content: flex-end;">
-                    <a href="mailto:${data.email}" class="footer-link email-glow">
-                        <i class="fa-solid fa-envelope"></i> Email Me
-                    </a>
-                    <a href="https://x.com/lifewithblac" target="_blank" class="footer-link">
-                        <i class="fa-brands fa-x-twitter"></i> Twitter
-                    </a>
-                    <a href="${data.github}" target="_blank" class="footer-link">
-                        <i class="fa-brands fa-github"></i> GitHub
-                    </a>
-                    <a href="${data.discord}" target="_blank" class="footer-link">
-                        <i class="fa-brands fa-discord"></i> Discord
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-bottom-meta">
-                <span>© 2026 BLAC • ALL RIGHTS RESERVED</span>
-                <span>BACKEND ARCHITECT & WEB3 STRATEGIST</span>
-                <span>MAPOLY '26</span>
-            </div>
-        </div>
-    `;
-    
-    updateClock();
-    setInterval(updateClock, 1000);
-};
-
-function highlight(id, active) {
-    const el = document.getElementById(`bar-${id}`);
-    if (el) {
-        active ? el.classList.add('highlight-bar') : el.classList.remove('highlight-bar');
+    function resize() {
+        W = canvas.width  = window.innerWidth;
+        H = canvas.height = window.innerHeight;
     }
+
+    function makeParticle() {
+        return {
+            x:  Math.random() * W,
+            y:  Math.random() * H,
+            vx: (Math.random() - 0.5) * 0.35,
+            vy: (Math.random() - 0.5) * 0.35,
+            r:  Math.random() * 1.5 + 0.4,
+            c:  COLORS[Math.floor(Math.random() * COLORS.length)],
+            a:  Math.random() * 0.5 + 0.15,
+        };
+    }
+
+    function initParticles() {
+        particles = Array.from({ length: 120 }, makeParticle);
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx   = particles[i].x - particles[j].x;
+                const dy   = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 130) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(0,255,136,${0.06 * (1 - dist / 130)})`;
+                    ctx.lineWidth   = 0.5;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Draw dots
+        particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > W) p.vx *= -1;
+            if (p.y < 0 || p.y > H) p.vy *= -1;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = p.c;
+            ctx.globalAlpha = p.a;
+            ctx.fill();
+            ctx.globalAlpha = 1;
+        });
+
+        animId = requestAnimationFrame(draw);
+    }
+
+    resize();
+    initParticles();
+    draw();
+    window.addEventListener('resize', () => { resize(); });
 }
 
-function updateClock() {
-    const clockElement = document.getElementById('footer-clock');
-    if (clockElement) {
+// ── NAVBAR SCROLL ───────────────────────────────
+function initNavbar() {
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+}
+
+// ── TYPEWRITER ──────────────────────────────────
+function initTypewriter() {
+    const el    = document.getElementById('typewriter');
+    const roles = DATA.typewriterRoles;
+    let ri = 0, ci = 0, deleting = false;
+    const SPEED_TYPE = 80, SPEED_DELETE = 40, PAUSE = 2000;
+
+    function tick() {
+        const role = roles[ri];
+        if (!deleting) {
+            el.textContent = role.slice(0, ci + 1);
+            ci++;
+            if (ci === role.length) {
+                deleting = true;
+                setTimeout(tick, PAUSE);
+                return;
+            }
+        } else {
+            el.textContent = role.slice(0, ci - 1);
+            ci--;
+            if (ci === 0) {
+                deleting = false;
+                ri = (ri + 1) % roles.length;
+            }
+        }
+        setTimeout(tick, deleting ? SPEED_DELETE : SPEED_TYPE);
+    }
+    tick();
+}
+
+// ── TERMINAL TYPE-IN ────────────────────────────
+function initTerminal() {
+    const body  = document.getElementById('term-body');
+    const lines = DATA.terminalLines;
+    let li      = 0;
+
+    function renderLine(line) {
+        const span = document.createElement('span');
+        span.className = 't-line';
+
+        if (line.type === 'prompt') {
+            span.innerHTML = `<span class="t-prompt">❯ </span><span class="t-cmd">${line.text}</span>`;
+        } else if (line.type === 'obj-open' || line.type === 'obj-close') {
+            span.innerHTML = `<span class="t-cmd">${line.text}</span>`;
+        } else if (line.type === 'pair') {
+            let valHtml;
+            if (line.valType === 'str')  valHtml = `<span class="t-str">${line.val}</span>`;
+            else if (line.valType === 'num')  valHtml = `<span class="t-num">${line.val}</span>`;
+            else if (line.valType === 'bool') valHtml = `<span class="t-bool">${line.val}</span>`;
+            else valHtml = `<span class="t-val">${line.val}</span>`;
+            span.innerHTML = `<span class="t-key">${line.key}</span><span class="t-cmd">: </span>${valHtml}<span class="t-cmd">,</span>`;
+        }
+
+        body.appendChild(span);
+    }
+
+    function nextLine() {
+        if (li >= lines.length) return;
+        renderLine(lines[li]);
+        li++;
+        setTimeout(nextLine, li === 1 ? 600 : 120);
+    }
+
+    setTimeout(nextLine, 900);
+}
+
+// ── PROJECTS ────────────────────────────────────
+function buildProjects() {
+    const grid = document.getElementById('projects-grid');
+    DATA.projects.forEach((p, i) => {
+        const card = document.createElement('a');
+        card.href   = p.link;
+        card.target = p.external ? '_blank' : '_self';
+        card.rel    = 'noopener noreferrer';
+        card.className = 'project-card reveal';
+        card.style.transitionDelay = `${i * 0.08}s`;
+        card.innerHTML = `
+            <div class="project-card-top">
+                <div class="project-icon">${p.icon}</div>
+                <span class="project-badge ${p.badgeClass}">${p.badge}</span>
+            </div>
+            <div class="project-title">${p.title}</div>
+            <p class="project-desc">${p.desc}</p>
+            <div class="project-footer">
+                <div class="project-tags">
+                    ${p.tags.map(t => `<span class="p-tag">${t}</span>`).join('')}
+                </div>
+                <div class="project-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// ── EXPERIENCE / TIMELINE ───────────────────────
+function buildExperience() {
+    const tl = document.getElementById('timeline');
+    DATA.experience.forEach((e, i) => {
+        const card = document.createElement('div');
+        card.className = 'timeline-card reveal';
+        card.style.transitionDelay = `${i * 0.1}s`;
+        card.innerHTML = `
+            <div class="tl-time">${e.time}</div>
+            <div class="tl-company">${e.company}</div>
+            <div class="tl-role">${e.role}</div>
+            <ul class="tl-list">
+                ${e.points.map(pt => `<li>${pt}</li>`).join('')}
+            </ul>
+        `;
+        tl.appendChild(card);
+    });
+
+    const eduCards = document.getElementById('edu-cards');
+    DATA.education.forEach((ed, i) => {
+        const card = document.createElement('div');
+        card.className = 'edu-card reveal';
+        card.style.transitionDelay = `${i * 0.1}s`;
+        card.innerHTML = `
+            <div class="edu-school">${ed.school}</div>
+            <div class="edu-degree">${ed.degree}</div>
+            <p class="edu-desc">${ed.desc}</p>
+        `;
+        eduCards.appendChild(card);
+    });
+}
+
+// ── STACK / SKILLS ──────────────────────────────
+function buildStack() {
+    const barsWrap = document.getElementById('stack-bars');
+    DATA.coreStack.forEach((s, i) => {
+        const item = document.createElement('div');
+        item.className = 'stack-bar-item reveal';
+        item.style.transitionDelay = `${i * 0.07}s`;
+        item.innerHTML = `
+            <div class="stack-bar-header">
+                <span>${s.name}</span>
+                <span class="stack-bar-pct">${s.pct}%</span>
+            </div>
+            <div class="bar-track">
+                <div class="bar-fill-anim" data-pct="${s.pct}"></div>
+            </div>
+        `;
+        barsWrap.appendChild(item);
+    });
+
+    const pillsWrap = document.getElementById('stack-pills');
+    DATA.skills.forEach(skill => {
+        const s = document.createElement('span');
+        s.className = 's-pill';
+        s.textContent = skill;
+        pillsWrap.appendChild(s);
+    });
+}
+
+// ── INTERSECTION OBSERVER (reveal + bar animate) ─
+function initReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Animate skill bars when visible
+                const bars = entry.target.querySelectorAll('.bar-fill-anim');
+                bars.forEach(bar => {
+                    setTimeout(() => {
+                        bar.style.width = bar.dataset.pct + '%';
+                    }, 100);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Also watch bar items that are already in DOM
+    const barObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target.querySelector('.bar-fill-anim');
+                if (bar) setTimeout(() => { bar.style.width = bar.dataset.pct + '%'; }, 100);
+                barObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.stack-bar-item').forEach(el => barObserver.observe(el));
+}
+
+// ── LIVE CLOCK ──────────────────────────────────
+function initClock() {
+    const el = document.getElementById('live-clock');
+    function update() {
+        if (!el) return;
         const now = new Date();
-        clockElement.innerText = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', second:'2-digit'});
+        const time = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Lagos' });
+        el.textContent = `WAT ${time}`;
     }
+    update();
+    setInterval(update, 1000);
 }
+
+// ── SMOOTH ACTIVE NAV ───────────────────────────
+function initActiveNav() {
+    const links    = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section[id]');
+
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                links.forEach(l => l.style.color = '');
+                const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                if (active) active.style.color = 'var(--green)';
+            }
+        });
+    }, { threshold: 0.4 });
+
+    sections.forEach(s => io.observe(s));
+}
+
+// ── BOOT ────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+    initCanvas();
+    initNavbar();
+    initTypewriter();
+    initTerminal();
+    buildProjects();
+    buildExperience();
+    buildStack();
+    initClock();
+    initActiveNav();
+
+    // Reveal after DOM is built
+    requestAnimationFrame(() => {
+        initReveal();
+    });
+});
