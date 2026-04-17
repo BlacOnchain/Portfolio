@@ -1,30 +1,46 @@
 {
   "profile": {
-    "name": "Oluwatomiwa",
+    "name": "BLAC",
     "handle": "@Lifewithblac",
-    "role": "Backend Dev & Web3 Strategist",
-    "bio": "Building logic at MAPOLY. Scaled @CryptoDungeon. Bridging the gap between Code and Community."
+    "role": "Backend Developer and Web3 Strategist",
+    "bio": "Building reliable backend systems at MAPOLY while connecting code, product storytelling, and Web3 community growth."
   },
   "metrics": [
-    { "label": "Community Growth", "value": "40%+", "desc": "Engagement increase for Web3 projects" },
-    { "label": "Projects Promoted", "value": "12+", "desc": "From NFT drops to P2E gaming" }
+    {
+      "label": "Community Growth",
+      "value": "40%+",
+      "desc": "Engagement increase delivered for Web3 projects"
+    },
+    {
+      "label": "Projects Promoted",
+      "value": "12+",
+      "desc": "Support spanning NFT drops, campaigns, and gaming communities"
+    }
   ],
   "experience_highlights": [
-    "Led AI-powered NFT integrations with Create With Me AI",
-    "Managed 24/7 global moderation for P2E platforms",
-    "Authored deep-dives on DeFi and Blockchain Gaming"
+    "Led AI-powered NFT integration conversations with partners",
+    "Managed moderation and engagement for global Web3 communities",
+    "Created educational content around DeFi, gaming, and blockchain products"
   ],
-  "tools": ["PHP", "MySQL", "Discord API", "Node.js", "Figma", "X Analytics"],
+  "tools": [
+    "PHP",
+    "Laravel",
+    "MySQL",
+    "Discord API",
+    "Node.js",
+    "Figma",
+    "X Analytics"
+  ],
   "projects": [
+    {
+      "title": "BlacRate Pro",
+      "tag": "Product",
+      "desc": "Crypto-to-naira calculator for OTC traders"
+    },
     {
       "title": "Receipt Pro",
       "tag": "Backend",
-      "desc": "PHP Business Management System"
-    },
-    {
-      "title": "Crypto Simplified",
-      "tag": "Content",
-      "desc": "Educating the next 1M Web3 users"
+      "desc": "Transaction-safe PHP receipt workflow concept"
     }
   ]
 }
