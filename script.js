@@ -1,133 +1,133 @@
 /* =============================================
-   BLAC PORTFOLIO — script.js
+   BLAC PORTFOLIO - script.js
    ============================================= */
 
-// ── DATA ──────────────────────────────────────
 const DATA = {
     typewriterRoles: [
-        'Backend Engineer',
-        'PHP & MySQL Architect',
-        'Web3 Community Strategist',
-        'Database Designer',
-        'Digital Systems Builder',
+        "Backend Engineer",
+        "PHP & MySQL Architect",
+        "Web3 Community Strategist",
+        "Database Designer",
+        "Digital Systems Builder"
     ],
     terminalLines: [
-        { type: 'prompt', text: 'cat profile.json' },
-        { type: 'obj-open', text: '{' },
-        { type: 'pair', key: '  "name"',     val: '"Odubela Oluwatomiwa"',  valType: 'str' },
-        { type: 'pair', key: '  "alias"',    val: '"BLAC"',                 valType: 'str' },
-        { type: 'pair', key: '  "role"',     val: '"Backend Dev & Web3 Strategist"', valType: 'str' },
-        { type: 'pair', key: '  "school"',   val: '"MAPOLY — Computer Science"',     valType: 'str' },
-        { type: 'pair', key: '  "twitter"',  val: '"@Lifewithblac"',        valType: 'str' },
-        { type: 'pair', key: '  "followers"',val: '3500',                   valType: 'num' },
-        { type: 'pair', key: '  "available"',val: 'true',                   valType: 'bool' },
-        { type: 'obj-close', text: '}' },
+        { type: "prompt", text: "cat profile.json" },
+        { type: "obj-open", text: "{" },
+        { type: "pair", key: '  "name"', val: '"Odubela Oluwatomiwa"', valType: "str" },
+        { type: "pair", key: '  "alias"', val: '"BLAC"', valType: "str" },
+        { type: "pair", key: '  "role"', val: '"Backend Dev & Web3 Strategist"', valType: "str" },
+        { type: "pair", key: '  "school"', val: '"MAPOLY - Computer Science"', valType: "str" },
+        { type: "pair", key: '  "twitter"', val: '"@Lifewithblac"', valType: "str" },
+        { type: "pair", key: '  "followers"', val: "3500", valType: "num" },
+        { type: "pair", key: '  "available"', val: "true", valType: "bool" },
+        { type: "obj-close", text: "}" }
     ],
     projects: [
         {
-            title: 'BlacRate Pro',
-            desc: 'PWA-powered crypto-to-Naira calculator built for OTC traders. Real-time rates, profit margins, and offline support — zero fluff, all function.',
-            badge: 'PWA · Backend',
-            badgeClass: 'badge-pwa',
-            icon: '&#9783;',
-            tags: ['PHP', 'JavaScript', 'PWA', 'Crypto API'],
-            link: 'https://blaconchain.github.io/blacrate-pro/',
-            external: true,
+            title: "BlacRate Pro",
+            desc: "PWA-powered crypto-to-Naira calculator built for OTC traders. Real-time rates, profit margins, and offline support - zero fluff, all function.",
+            badge: "PWA | Backend",
+            badgeClass: "badge-pwa",
+            icon: "&#9783;",
+            tags: ["PHP", "JavaScript", "PWA", "Crypto API"],
+            link: "https://blaconchain.github.io/blacrate-pro/",
+            external: true
         },
         {
-            title: 'Receipt Pro',
-            desc: 'Transactional backend system with enforced SQL data integrity. Built with PHP prepared statements, rollback logic, and bulletproof receipt generation.',
-            badge: 'Backend',
-            badgeClass: 'badge-backend',
-            icon: '&#128203;',
-            tags: ['PHP', 'MySQL', 'Transactions', 'SQL'],
-            link: 'https://github.com/BlacOnchain/receipt-pro',
-            external: true,
+            title: "Receipt Pro",
+            desc: "Transactional backend system with enforced SQL data integrity. Built with PHP prepared statements, rollback logic, and bulletproof receipt generation.",
+            badge: "Backend",
+            badgeClass: "badge-backend",
+            icon: "&#128203;",
+            tags: ["PHP", "MySQL", "Transactions", "SQL"],
+            link: "https://github.com/BlacOnchain/receipt-pro",
+            external: true
         },
         {
-            title: 'Web3 Game Reviews',
-            desc: 'Deep tokenomics analysis and P2E mechanics breakdowns for blockchain gamers. Research-grade content that drove community growth across Discord and Twitter.',
-            badge: 'Content · Web3',
-            badgeClass: 'badge-web3',
-            icon: '&#9670;',
-            tags: ['Research', 'DeFi', 'P2E', 'Tokenomics'],
-            link: 'assets/Case_Study_Web3_Gaming.pdf',
-            external: true,
-        },
+            title: "Web3 Game Reviews",
+            desc: "Deep tokenomics analysis and P2E mechanics breakdowns for blockchain gamers. Research-grade content that drove community growth across Discord and Twitter.",
+            badge: "Content | Web3",
+            badgeClass: "badge-web3",
+            icon: "&#9670;",
+            tags: ["Research", "DeFi", "P2E", "Tokenomics"],
+            link: "assets/Case_Study_Web3_Gaming.pdf",
+            external: true
+        }
     ],
     experience: [
         {
-            company: 'Crypto Dungeon',
-            role: 'Web3 Community & Partnerships Contributor',
-            time: 'Nov 2024 – Present',
+            company: "Crypto Dungeon",
+            role: "Web3 Community & Partnerships Contributor",
+            time: "Nov 2024 - Present",
             points: [
-                'Architected community engagement systems for NFT collectors and Web3 builders.',
-                'Closed strategic partnership with Create With Me AI for NFT integrations.',
-                'Executed high-conversion Twitter campaigns increasing project visibility.',
-                'Ran due diligence research on Web3 projects before collaboration deals.',
-            ],
+                "Architected community engagement systems for NFT collectors and Web3 builders.",
+                "Closed strategic partnership with Create With Me AI for NFT integrations.",
+                "Executed high-conversion Twitter campaigns increasing project visibility.",
+                "Ran due diligence research on Web3 projects before collaboration deals."
+            ]
         },
         {
-            company: 'Independent Web3 Projects',
-            role: 'Community Moderator & Content Creator',
-            time: 'Oct 2023 – Present',
+            company: "Independent Web3 Projects",
+            role: "Community Moderator & Content Creator",
+            time: "Oct 2023 - Present",
             points: [
-                'Maintained 24/7 global moderation across Discord and Telegram for P2E platforms.',
-                'Authored Twitter threads and blog deep-dives on DeFi, NFTs, and blockchain gaming.',
-                'Organised AMA sessions and giveaway campaigns that drove measurable user signups.',
-                'Delivered real-time trend reports to project leadership for strategic pivots.',
-            ],
-        },
+                "Maintained 24/7 global moderation across Discord and Telegram for P2E platforms.",
+                "Authored Twitter threads and blog deep-dives on DeFi, NFTs, and blockchain gaming.",
+                "Organised AMA sessions and giveaway campaigns that drove measurable user signups.",
+                "Delivered real-time trend reports to project leadership for strategic pivots."
+            ]
+        }
     ],
     education: [
         {
-            school: 'Moshood Abiola Polytechnic (MAPOLY)',
-            degree: 'ND Computer Science — In Progress',
-            desc: 'Database management systems, backend engineering, and core computing fundamentals.',
+            school: "Moshood Abiola Polytechnic (MAPOLY)",
+            degree: "ND Computer Science - In Progress",
+            desc: "Database management systems, backend engineering, and core computing fundamentals."
         },
         {
-            school: 'Federal Science & Technical College, Ijebu Imushin',
-            degree: 'WAEC & Technical Certificate',
-            desc: 'Foundational technology training that set the trajectory for a career in engineering.',
-        },
+            school: "Federal Science & Technical College, Ijebu Imushin",
+            degree: "WAEC & Technical Certificate",
+            desc: "Foundational technology training that set the trajectory for a career in engineering."
+        }
     ],
     coreStack: [
-        { name: 'PHP & Laravel',          pct: 90 },
-        { name: 'SQL & Database Design',  pct: 92 },
-        { name: 'Web3 Community Growth',  pct: 95 },
-        { name: 'Content Strategy',       pct: 80 },
-        { name: 'JavaScript / Node.js',   pct: 65 },
+        { name: "PHP & Laravel", pct: 90 },
+        { name: "SQL & Database Design", pct: 92 },
+        { name: "Web3 Community Growth", pct: 95 },
+        { name: "Content Strategy", pct: 80 },
+        { name: "JavaScript / Node.js", pct: 65 }
     ],
     skills: [
-        'PHP', 'MySQL', 'SQL', 'Node.js', 'Laravel', 'Git',
-        'Discord API', 'REST APIs', 'Community Management',
-        'Content Strategy', 'Twitter Campaigns', 'Web3 Ecosystem',
-        'Figma (UI review)', 'X Analytics', 'DeFi Research',
-    ],
+        "PHP", "MySQL", "SQL", "Node.js", "Laravel", "Git",
+        "Discord API", "REST APIs", "Community Management",
+        "Content Strategy", "Twitter Campaigns", "Web3 Ecosystem",
+        "Figma (UI review)", "X Analytics", "DeFi Research"
+    ]
 };
 
-// ── CANVAS PARTICLE BACKGROUND ─────────────────
 function initCanvas() {
-    const canvas = document.getElementById('bg-canvas');
-    const ctx    = canvas.getContext('2d');
-    let W, H, particles, animId;
+    const canvas = document.getElementById("bg-canvas");
+    const ctx = canvas.getContext("2d");
+    let width;
+    let height;
+    let particles;
 
-    const COLORS = ['#00ff88', '#00d4ff', '#00cc6a'];
+    const colors = ["#00ff88", "#00d4ff", "#00cc6a"];
 
     function resize() {
-        W = canvas.width  = window.innerWidth;
-        H = canvas.height = window.innerHeight;
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
     }
 
     function makeParticle() {
         return {
-            x:  Math.random() * W,
-            y:  Math.random() * H,
+            x: Math.random() * width,
+            y: Math.random() * height,
             vx: (Math.random() - 0.5) * 0.35,
             vy: (Math.random() - 0.5) * 0.35,
-            r:  Math.random() * 1.5 + 0.4,
-            c:  COLORS[Math.floor(Math.random() * COLORS.length)],
-            a:  Math.random() * 0.5 + 0.15,
+            r: Math.random() * 1.5 + 0.4,
+            c: colors[Math.floor(Math.random() * colors.length)],
+            a: Math.random() * 0.5 + 0.15
         };
     }
 
@@ -136,18 +136,18 @@ function initCanvas() {
     }
 
     function draw() {
-        ctx.clearRect(0, 0, W, H);
+        ctx.clearRect(0, 0, width, height);
 
-        // Draw connections
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx   = particles[i].x - particles[j].x;
-                const dy   = particles[i].y - particles[j].y;
+        for (let i = 0; i < particles.length; i += 1) {
+            for (let j = i + 1; j < particles.length; j += 1) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
+
                 if (dist < 130) {
                     ctx.beginPath();
                     ctx.strokeStyle = `rgba(0,255,136,${0.06 * (1 - dist / 130)})`;
-                    ctx.lineWidth   = 0.5;
+                    ctx.lineWidth = 0.5;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
                     ctx.stroke();
@@ -155,124 +155,142 @@ function initCanvas() {
             }
         }
 
-        // Draw dots
-        particles.forEach(p => {
-            p.x += p.vx;
-            p.y += p.vy;
-            if (p.x < 0 || p.x > W) p.vx *= -1;
-            if (p.y < 0 || p.y > H) p.vy *= -1;
+        particles.forEach((particle) => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+
+            if (particle.x < 0 || particle.x > width) {
+                particle.vx *= -1;
+            }
+
+            if (particle.y < 0 || particle.y > height) {
+                particle.vy *= -1;
+            }
 
             ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = p.c;
-            ctx.globalAlpha = p.a;
+            ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
+            ctx.fillStyle = particle.c;
+            ctx.globalAlpha = particle.a;
             ctx.fill();
             ctx.globalAlpha = 1;
         });
 
-        animId = requestAnimationFrame(draw);
+        window.requestAnimationFrame(draw);
     }
 
     resize();
     initParticles();
     draw();
-    window.addEventListener('resize', () => { resize(); });
+    window.addEventListener("resize", resize);
 }
 
-// ── NAVBAR SCROLL ───────────────────────────────
 function initNavbar() {
-    const nav = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 50);
+    const nav = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.scrollY > 50);
     }, { passive: true });
 }
 
-// ── TYPEWRITER ──────────────────────────────────
 function initTypewriter() {
-    const el    = document.getElementById('typewriter');
+    const element = document.getElementById("typewriter");
     const roles = DATA.typewriterRoles;
-    let ri = 0, ci = 0, deleting = false;
-    const SPEED_TYPE = 80, SPEED_DELETE = 40, PAUSE = 2000;
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
 
     function tick() {
-        const role = roles[ri];
+        const role = roles[roleIndex];
+
         if (!deleting) {
-            el.textContent = role.slice(0, ci + 1);
-            ci++;
-            if (ci === role.length) {
+            element.textContent = role.slice(0, charIndex + 1);
+            charIndex += 1;
+
+            if (charIndex === role.length) {
                 deleting = true;
-                setTimeout(tick, PAUSE);
+                window.setTimeout(tick, 2000);
                 return;
             }
         } else {
-            el.textContent = role.slice(0, ci - 1);
-            ci--;
-            if (ci === 0) {
+            element.textContent = role.slice(0, charIndex - 1);
+            charIndex -= 1;
+
+            if (charIndex === 0) {
                 deleting = false;
-                ri = (ri + 1) % roles.length;
+                roleIndex = (roleIndex + 1) % roles.length;
             }
         }
-        setTimeout(tick, deleting ? SPEED_DELETE : SPEED_TYPE);
+
+        window.setTimeout(tick, deleting ? 40 : 80);
     }
+
     tick();
 }
 
-// ── TERMINAL TYPE-IN ────────────────────────────
 function initTerminal() {
-    const body  = document.getElementById('term-body');
+    const body = document.getElementById("term-body");
     const lines = DATA.terminalLines;
-    let li      = 0;
+    let lineIndex = 0;
 
     function renderLine(line) {
-        const span = document.createElement('span');
-        span.className = 't-line';
+        const span = document.createElement("span");
+        span.className = "t-line";
 
-        if (line.type === 'prompt') {
-            span.innerHTML = `<span class="t-prompt">❯ </span><span class="t-cmd">${line.text}</span>`;
-        } else if (line.type === 'obj-open' || line.type === 'obj-close') {
+        if (line.type === "prompt") {
+            span.innerHTML = `<span class="t-prompt">&gt; </span><span class="t-cmd">${line.text}</span>`;
+        } else if (line.type === "obj-open" || line.type === "obj-close") {
             span.innerHTML = `<span class="t-cmd">${line.text}</span>`;
-        } else if (line.type === 'pair') {
-            let valHtml;
-            if (line.valType === 'str')  valHtml = `<span class="t-str">${line.val}</span>`;
-            else if (line.valType === 'num')  valHtml = `<span class="t-num">${line.val}</span>`;
-            else if (line.valType === 'bool') valHtml = `<span class="t-bool">${line.val}</span>`;
-            else valHtml = `<span class="t-val">${line.val}</span>`;
-            span.innerHTML = `<span class="t-key">${line.key}</span><span class="t-cmd">: </span>${valHtml}<span class="t-cmd">,</span>`;
+        } else if (line.type === "pair") {
+            let valueHtml;
+
+            if (line.valType === "str") {
+                valueHtml = `<span class="t-str">${line.val}</span>`;
+            } else if (line.valType === "num") {
+                valueHtml = `<span class="t-num">${line.val}</span>`;
+            } else if (line.valType === "bool") {
+                valueHtml = `<span class="t-bool">${line.val}</span>`;
+            } else {
+                valueHtml = `<span class="t-val">${line.val}</span>`;
+            }
+
+            span.innerHTML = `<span class="t-key">${line.key}</span><span class="t-cmd">: </span>${valueHtml}<span class="t-cmd">,</span>`;
         }
 
         body.appendChild(span);
     }
 
     function nextLine() {
-        if (li >= lines.length) return;
-        renderLine(lines[li]);
-        li++;
-        setTimeout(nextLine, li === 1 ? 600 : 120);
+        if (lineIndex >= lines.length) {
+            return;
+        }
+
+        renderLine(lines[lineIndex]);
+        lineIndex += 1;
+        window.setTimeout(nextLine, lineIndex === 1 ? 600 : 120);
     }
 
-    setTimeout(nextLine, 900);
+    window.setTimeout(nextLine, 900);
 }
 
-// ── PROJECTS ────────────────────────────────────
 function buildProjects() {
-    const grid = document.getElementById('projects-grid');
-    DATA.projects.forEach((p, i) => {
-        const card = document.createElement('a');
-        card.href   = p.link;
-        card.target = p.external ? '_blank' : '_self';
-        card.rel    = 'noopener noreferrer';
-        card.className = 'project-card reveal';
-        card.style.transitionDelay = `${i * 0.08}s`;
+    const grid = document.getElementById("projects-grid");
+
+    DATA.projects.forEach((project, index) => {
+        const card = document.createElement("a");
+        card.href = project.link;
+        card.target = project.external ? "_blank" : "_self";
+        card.rel = "noopener noreferrer";
+        card.className = "project-card reveal";
+        card.style.transitionDelay = `${index * 0.08}s`;
         card.innerHTML = `
             <div class="project-card-top">
-                <div class="project-icon">${p.icon}</div>
-                <span class="project-badge ${p.badgeClass}">${p.badge}</span>
+                <div class="project-icon">${project.icon}</div>
+                <span class="project-badge ${project.badgeClass}">${project.badge}</span>
             </div>
-            <div class="project-title">${p.title}</div>
-            <p class="project-desc">${p.desc}</p>
+            <div class="project-title">${project.title}</div>
+            <p class="project-desc">${project.desc}</p>
             <div class="project-footer">
                 <div class="project-tags">
-                    ${p.tags.map(t => `<span class="p-tag">${t}</span>`).join('')}
+                    ${project.tags.map((tag) => `<span class="p-tag">${tag}</span>`).join("")}
                 </div>
                 <div class="project-arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </div>
@@ -281,133 +299,152 @@ function buildProjects() {
     });
 }
 
-// ── EXPERIENCE / TIMELINE ───────────────────────
 function buildExperience() {
-    const tl = document.getElementById('timeline');
-    DATA.experience.forEach((e, i) => {
-        const card = document.createElement('div');
-        card.className = 'timeline-card reveal';
-        card.style.transitionDelay = `${i * 0.1}s`;
+    const timeline = document.getElementById("timeline");
+
+    DATA.experience.forEach((entry, index) => {
+        const card = document.createElement("div");
+        card.className = "timeline-card reveal";
+        card.style.transitionDelay = `${index * 0.1}s`;
         card.innerHTML = `
-            <div class="tl-time">${e.time}</div>
-            <div class="tl-company">${e.company}</div>
-            <div class="tl-role">${e.role}</div>
+            <div class="tl-time">${entry.time}</div>
+            <div class="tl-company">${entry.company}</div>
+            <div class="tl-role">${entry.role}</div>
             <ul class="tl-list">
-                ${e.points.map(pt => `<li>${pt}</li>`).join('')}
+                ${entry.points.map((point) => `<li>${point}</li>`).join("")}
             </ul>
         `;
-        tl.appendChild(card);
+        timeline.appendChild(card);
     });
 
-    const eduCards = document.getElementById('edu-cards');
-    DATA.education.forEach((ed, i) => {
-        const card = document.createElement('div');
-        card.className = 'edu-card reveal';
-        card.style.transitionDelay = `${i * 0.1}s`;
+    const eduCards = document.getElementById("edu-cards");
+    DATA.education.forEach((entry, index) => {
+        const card = document.createElement("div");
+        card.className = "edu-card reveal";
+        card.style.transitionDelay = `${index * 0.1}s`;
         card.innerHTML = `
-            <div class="edu-school">${ed.school}</div>
-            <div class="edu-degree">${ed.degree}</div>
-            <p class="edu-desc">${ed.desc}</p>
+            <div class="edu-school">${entry.school}</div>
+            <div class="edu-degree">${entry.degree}</div>
+            <p class="edu-desc">${entry.desc}</p>
         `;
         eduCards.appendChild(card);
     });
 }
 
-// ── STACK / SKILLS ──────────────────────────────
 function buildStack() {
-    const barsWrap = document.getElementById('stack-bars');
-    DATA.coreStack.forEach((s, i) => {
-        const item = document.createElement('div');
-        item.className = 'stack-bar-item reveal';
-        item.style.transitionDelay = `${i * 0.07}s`;
-        item.innerHTML = `
+    const barsWrap = document.getElementById("stack-bars");
+
+    DATA.coreStack.forEach((item, index) => {
+        const barItem = document.createElement("div");
+        barItem.className = "stack-bar-item reveal";
+        barItem.style.transitionDelay = `${index * 0.07}s`;
+        barItem.innerHTML = `
             <div class="stack-bar-header">
-                <span>${s.name}</span>
-                <span class="stack-bar-pct">${s.pct}%</span>
+                <span>${item.name}</span>
+                <span class="stack-bar-pct">${item.pct}%</span>
             </div>
             <div class="bar-track">
-                <div class="bar-fill-anim" data-pct="${s.pct}"></div>
+                <div class="bar-fill-anim" data-pct="${item.pct}"></div>
             </div>
         `;
-        barsWrap.appendChild(item);
+        barsWrap.appendChild(barItem);
     });
 
-    const pillsWrap = document.getElementById('stack-pills');
-    DATA.skills.forEach(skill => {
-        const s = document.createElement('span');
-        s.className = 's-pill';
-        s.textContent = skill;
-        pillsWrap.appendChild(s);
+    const pillsWrap = document.getElementById("stack-pills");
+    DATA.skills.forEach((skill) => {
+        const pill = document.createElement("span");
+        pill.className = "s-pill";
+        pill.textContent = skill;
+        pillsWrap.appendChild(pill);
     });
 }
 
-// ── INTERSECTION OBSERVER (reveal + bar animate) ─
 function initReveal() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Animate skill bars when visible
-                const bars = entry.target.querySelectorAll('.bar-fill-anim');
-                bars.forEach(bar => {
-                    setTimeout(() => {
-                        bar.style.width = bar.dataset.pct + '%';
-                    }, 100);
-                });
-                observer.unobserve(entry.target);
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                return;
             }
+
+            entry.target.classList.add("visible");
+            const bars = entry.target.querySelectorAll(".bar-fill-anim");
+            bars.forEach((bar) => {
+                window.setTimeout(() => {
+                    bar.style.width = `${bar.dataset.pct}%`;
+                }, 100);
+            });
+            revealObserver.unobserve(entry.target);
         });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
-    // Also watch bar items that are already in DOM
     const barObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const bar = entry.target.querySelector('.bar-fill-anim');
-                if (bar) setTimeout(() => { bar.style.width = bar.dataset.pct + '%'; }, 100);
-                barObserver.unobserve(entry.target);
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                return;
             }
+
+            const bar = entry.target.querySelector(".bar-fill-anim");
+            if (bar) {
+                window.setTimeout(() => {
+                    bar.style.width = `${bar.dataset.pct}%`;
+                }, 100);
+            }
+            barObserver.unobserve(entry.target);
         });
     }, { threshold: 0.3 });
 
-    document.querySelectorAll('.stack-bar-item').forEach(el => barObserver.observe(el));
+    document.querySelectorAll(".stack-bar-item").forEach((element) => barObserver.observe(element));
 }
 
-// ── LIVE CLOCK ──────────────────────────────────
 function initClock() {
-    const el = document.getElementById('live-clock');
+    const element = document.getElementById("live-clock");
+
     function update() {
-        if (!el) return;
+        if (!element) {
+            return;
+        }
+
         const now = new Date();
-        const time = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Lagos' });
-        el.textContent = `WAT ${time}`;
+        const time = now.toLocaleTimeString("en-GB", {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            timeZone: "Africa/Lagos"
+        });
+        element.textContent = `WAT ${time}`;
     }
+
     update();
-    setInterval(update, 1000);
+    window.setInterval(update, 1000);
 }
 
-// ── SMOOTH ACTIVE NAV ───────────────────────────
 function initActiveNav() {
-    const links    = document.querySelectorAll('.nav-links a');
-    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll(".nav-links a");
+    const sections = document.querySelectorAll("section[id]");
 
-    const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                links.forEach(l => l.style.color = '');
-                const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-                if (active) active.style.color = 'var(--green)';
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                return;
+            }
+
+            links.forEach((link) => {
+                link.style.color = "";
+            });
+
+            const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+            if (active) {
+                active.style.color = "var(--green)";
             }
         });
     }, { threshold: 0.4 });
 
-    sections.forEach(s => io.observe(s));
+    sections.forEach((section) => observer.observe(section));
 }
 
-// ── BOOT ────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     initCanvas();
     initNavbar();
     initTypewriter();
@@ -418,8 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initClock();
     initActiveNav();
 
-    // Reveal after DOM is built
-    requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
         initReveal();
     });
 });

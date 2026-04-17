@@ -3,21 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLAC — Backend Engineer & Web3 Architect</title>
+    <title>BLAC | Backend Engineer & Web3 Architect</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- Animated background canvas -->
     <canvas id="bg-canvas"></canvas>
-
-    <!-- Scan line overlay -->
     <div class="scanlines"></div>
 
-    <!-- NAV -->
     <nav id="navbar">
         <div class="nav-inner">
             <div class="nav-logo">
@@ -29,19 +24,30 @@
                 <li><a href="#stack"><span class="nav-num">03.</span>stack</a></li>
                 <li><a href="#contact"><span class="nav-num">04.</span>contact</a></li>
             </ul>
-            <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" class="nav-cta">
+            <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" class="nav-cta" rel="noreferrer">
                 <i class="fa-solid fa-arrow-down"></i> Resume
             </a>
         </div>
     </nav>
 
-    <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-inner">
             <div class="hero-left-col">
-                <div class="hero-status">
-                    <span class="status-dot"></span>
-                    <span>Open to IT placement &amp; freelance</span>
+                <div class="hero-top-row">
+                    <figure class="hero-profile-card">
+                        <div class="hero-profile-frame">
+                            <img src="images/profile.jpg" alt="BLAC profile photo" class="hero-profile-img">
+                        </div>
+                        <figcaption class="hero-profile-meta">
+                            <span class="hero-profile-label">BLAC</span>
+                            <span class="hero-profile-sub">Backend Engineer</span>
+                        </figcaption>
+                    </figure>
+
+                    <div class="hero-status">
+                        <span class="status-dot"></span>
+                        <span>Open to IT placement &amp; freelance</span>
+                    </div>
                 </div>
 
                 <div class="glitch-wrap">
@@ -55,9 +61,9 @@
                 </div>
 
                 <p class="hero-bio">
-                    I don't just write code — I architect systems that scale and communities that convert.
+                    I don't just write code - I architect systems that scale and communities that convert.
                     PHP &amp; MySQL backend engineering meets Web3 strategy with measurable impact:
-                    <span class="stat-inline">40%+ community growth</span>, 
+                    <span class="stat-inline">40%+ community growth</span>,
                     <span class="stat-inline">12+ Web3 projects</span> promoted from zero to traction.
                     Based in Nigeria. Building for the world.
                 </p>
@@ -74,9 +80,9 @@
                 </div>
 
                 <div class="hero-socials">
-                    <a href="https://github.com/BlacOnchain" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://x.com/lifewithblac" target="_blank" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://discord.com/users/1131931766299566150" target="_blank" title="Discord"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://github.com/BlacOnchain" target="_blank" title="GitHub" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://x.com/lifewithblac" target="_blank" title="Twitter / X" rel="noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://discord.com/users/1131931766299566150" target="_blank" title="Discord" rel="noreferrer"><i class="fa-brands fa-discord"></i></a>
                     <a href="mailto:Odubelatomiwa508@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
@@ -89,9 +95,7 @@
                         <span class="term-dot td-g"></span>
                         <span class="term-title">blac@portfolio:~$</span>
                     </div>
-                    <div class="term-body" id="term-body">
-                        <!-- filled by JS -->
-                    </div>
+                    <div class="term-body" id="term-body"></div>
                 </div>
 
                 <div class="metrics-row">
@@ -117,68 +121,50 @@
         </div>
     </section>
 
-    <!-- PROJECTS -->
     <section class="section" id="projects">
         <div class="section-inner">
             <div class="section-header">
                 <span class="section-eyebrow">01 / featured work</span>
                 <h2 class="section-title">Systems I've <span class="accent-text">Shipped</span></h2>
-                <p class="section-sub">Not side projects — real tools with real users.</p>
+                <p class="section-sub">Not side projects - real tools with real users.</p>
             </div>
-
-            <div class="projects-grid" id="projects-grid">
-                <!-- filled by JS -->
-            </div>
+            <div class="projects-grid" id="projects-grid"></div>
         </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section class="section section-alt" id="experience">
         <div class="section-inner">
             <div class="section-header">
                 <span class="section-eyebrow">02 / experience</span>
                 <h2 class="section-title">Where I've <span class="accent-text">Operated</span></h2>
             </div>
-
-            <div class="timeline" id="timeline">
-                <!-- filled by JS -->
-            </div>
-
+            <div class="timeline" id="timeline"></div>
             <div class="education-strip">
                 <div class="edu-label">ACADEMIC FOUNDATION</div>
-                <div class="edu-cards" id="edu-cards">
-                    <!-- filled by JS -->
-                </div>
+                <div class="edu-cards" id="edu-cards"></div>
             </div>
         </div>
     </section>
 
-    <!-- STACK -->
     <section class="section" id="stack">
         <div class="section-inner">
             <div class="section-header">
                 <span class="section-eyebrow">03 / technical stack</span>
                 <h2 class="section-title">Tools I <span class="accent-text">Command</span></h2>
             </div>
-
             <div class="stack-layout">
-                <div class="stack-bars" id="stack-bars">
-                    <!-- filled by JS -->
-                </div>
+                <div class="stack-bars" id="stack-bars"></div>
                 <div class="stack-pills-wrap">
-                    <div class="stack-pills" id="stack-pills">
-                        <!-- filled by JS -->
-                    </div>
+                    <div class="stack-pills" id="stack-pills"></div>
                     <div class="lang-note">
                         <i class="fa-solid fa-globe"></i>
-                        English (Fluent) &nbsp;•&nbsp; Yoruba (Native)
+                        English (Fluent) &nbsp;|&nbsp; Yoruba (Native)
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="section section-contact" id="contact">
         <div class="section-inner contact-inner">
             <div class="contact-text">
@@ -186,7 +172,7 @@
                 <h2 class="section-title">Let's <span class="accent-text">Build</span> Something</h2>
                 <p class="contact-body">
                     Whether you need a backend system built right, a Web3 community that actually grows,
-                    or a developer who gets both — I'm one message away.
+                    or a developer who gets both - I'm one message away.
                     No ghost, no delay.
                 </p>
                 <a href="mailto:Odubelatomiwa508@gmail.com" class="contact-email-big">
@@ -195,7 +181,7 @@
                 </a>
             </div>
             <div class="contact-links-col">
-                <a href="https://github.com/BlacOnchain" target="_blank" class="contact-link-card">
+                <a href="https://github.com/BlacOnchain" target="_blank" class="contact-link-card" rel="noreferrer">
                     <i class="fa-brands fa-github"></i>
                     <div>
                         <strong>GitHub</strong>
@@ -203,15 +189,15 @@
                     </div>
                     <i class="fa-solid fa-arrow-right arrow-r"></i>
                 </a>
-                <a href="https://x.com/lifewithblac" target="_blank" class="contact-link-card">
+                <a href="https://x.com/lifewithblac" target="_blank" class="contact-link-card" rel="noreferrer">
                     <i class="fa-brands fa-x-twitter"></i>
                     <div>
                         <strong>Twitter / X</strong>
-                        <span>@Lifewithblac · 3.5k followers</span>
+                        <span>@Lifewithblac | 3.5k followers</span>
                     </div>
                     <i class="fa-solid fa-arrow-right arrow-r"></i>
                 </a>
-                <a href="https://discord.com/users/1131931766299566150" target="_blank" class="contact-link-card">
+                <a href="https://discord.com/users/1131931766299566150" target="_blank" class="contact-link-card" rel="noreferrer">
                     <i class="fa-brands fa-discord"></i>
                     <div>
                         <strong>Discord</strong>
@@ -219,7 +205,7 @@
                     </div>
                     <i class="fa-solid fa-arrow-right arrow-r"></i>
                 </a>
-                <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" class="contact-link-card highlight-card">
+                <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" class="contact-link-card highlight-card" rel="noreferrer">
                     <i class="fa-solid fa-file-lines"></i>
                     <div>
                         <strong>Full Resume / CV</strong>
@@ -231,9 +217,9 @@
         </div>
 
         <footer class="site-footer">
-            <span>© 2026 BLAC — ODUBELA OLUWATOMIWA</span>
+            <span>(c) 2026 BLAC | ODUBELA OLUWATOMIWA</span>
             <span id="live-clock"></span>
-            <span>BACKEND ENGINEER · WEB3 STRATEGIST · MAPOLY '26</span>
+            <span>BACKEND ENGINEER | WEB3 STRATEGIST | MAPOLY '26</span>
         </footer>
     </section>
 
