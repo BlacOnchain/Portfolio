@@ -3,105 +3,272 @@
    ============================================= */
 
 const DATA = {
+    hero: {
+        brand: "BLAC",
+        name: "Odubela Oluwatomiwa",
+        title: "Backend Developer | Digital Strategist",
+        availability: "Open to backend, operations, and digital rollout work",
+        bio: "Backend developer and digital strategist focused on PHP, MySQL, database architecture, and rollout systems that keep products clear, useful, and organised. I bring together backend engineering, workflow discipline, and growth execution across internships, campus campaigns, and Web3 partnerships.",
+        contactBody: "If you need clean backend logic, stronger database structure, rollout support, or organised digital execution, let&apos;s build it properly from day one.",
+        email: "odubelaotomiwa508@gmail.com",
+        phone: "09125808797",
+        cv: "assets/Oluwatomiwa_CV.pdf"
+    },
     typewriterRoles: [
-        "Backend Engineer",
-        "PHP & MySQL Architect",
-        "Web3 Community Strategist",
-        "Database Designer",
-        "Digital Systems Builder"
+        "Backend Developer",
+        "PHP & Laravel Builder",
+        "MySQL Database Architect",
+        "Digital Rollout Strategist",
+        "Web3 Growth Strategist"
+    ],
+    metrics: [
+        {
+            value: "4",
+            label: "CV Roles"
+        },
+        {
+            value: "3",
+            label: "Featured Builds"
+        },
+        {
+            value: "C1",
+            label: "English Level"
+        }
     ],
     terminalLines: [
         { type: "prompt", text: "cat profile.json" },
         { type: "obj-open", text: "{" },
         { type: "pair", key: '  "name"', val: '"Odubela Oluwatomiwa"', valType: "str" },
-        { type: "pair", key: '  "alias"', val: '"BLAC"', valType: "str" },
-        { type: "pair", key: '  "role"', val: '"Backend Dev & Web3 Strategist"', valType: "str" },
-        { type: "pair", key: '  "school"', val: '"MAPOLY - Computer Science"', valType: "str" },
-        { type: "pair", key: '  "twitter"', val: '"@Lifewithblac"', valType: "str" },
-        { type: "pair", key: '  "followers"', val: "3500", valType: "num" },
+        { type: "pair", key: '  "role"', val: '"Backend Developer | Digital Strategist"', valType: "str" },
+        { type: "pair", key: '  "focus"', val: '"PHP, MySQL, rollout systems"', valType: "str" },
+        { type: "pair", key: '  "instagram"', val: '"@lifewith_blac"', valType: "str" },
+        { type: "pair", key: '  "english"', val: '"C1 Advanced"', valType: "str" },
         { type: "pair", key: '  "available"', val: "true", valType: "bool" },
         { type: "obj-close", text: "}" }
+    ],
+    socials: [
+        {
+            label: "GitHub",
+            href: "https://github.com/Blaconchain",
+            icon: "fa-brands fa-github"
+        },
+        {
+            label: "X",
+            href: "https://x.com/Lifewithblac",
+            icon: "fa-brands fa-x-twitter"
+        },
+        {
+            label: "Instagram",
+            href: "https://www.instagram.com/lifewith_blac/",
+            icon: "fa-brands fa-instagram"
+        },
+        {
+            label: "Email",
+            href: "mailto:odubelaotomiwa508@gmail.com",
+            icon: "fa-solid fa-envelope"
+        },
+        {
+            label: "Phone",
+            href: "tel:09125808797",
+            icon: "fa-solid fa-phone"
+        }
     ],
     projects: [
         {
             title: "BlacRate Pro",
-            desc: "PWA-powered crypto-to-Naira calculator built for OTC traders. Real-time rates, profit margins, and offline support - zero fluff, all function.",
-            badge: "PWA | Backend",
+            desc: "A Progressive Web App for OTC traders to calculate crypto-to-naira rates with fast, practical access and offline-first support.",
+            badge: "PWA | Trading Tool",
             badgeClass: "badge-pwa",
-            icon: "&#9783;",
-            tags: ["PHP", "JavaScript", "PWA", "Crypto API"],
-            link: "https://blaconchain.github.io/blacrate-pro/",
+            icon: "BR",
+            tags: ["PWA", "Rates", "Utility"],
+            link: "https://github.com/Blaconchain/blacrate-pro",
             external: true
         },
         {
             title: "Receipt Pro",
-            desc: "Transactional backend system with enforced SQL data integrity. Built with PHP prepared statements, rollback logic, and bulletproof receipt generation.",
-            badge: "Backend",
+            desc: "A backend receipt management concept focused on SQL data integrity, secure transaction logging, and cleaner operational records.",
+            badge: "Backend | SQL",
             badgeClass: "badge-backend",
-            icon: "&#128203;",
-            tags: ["PHP", "MySQL", "Transactions", "SQL"],
-            link: "https://github.com/BlacOnchain/receipt-pro",
+            icon: "RP",
+            tags: ["PHP", "MySQL", "Integrity"],
+            link: "https://github.com/Blaconchain/receipt-pro",
             external: true
         },
         {
-            title: "Web3 Game Reviews",
-            desc: "Deep tokenomics analysis and P2E mechanics breakdowns for blockchain gamers. Research-grade content that drove community growth across Discord and Twitter.",
-            badge: "Content | Web3",
-            badgeClass: "badge-web3",
-            icon: "&#9670;",
-            tags: ["Research", "DeFi", "P2E", "Tokenomics"],
-            link: "assets/Case_Study_Web3_Gaming.pdf",
-            external: true
+            title: "Smart Attendance System",
+            desc: "An academic QR-code attendance system built with PHP and MySQL to automate student logging and remove manual paperwork for lecturers.",
+            badge: "Academic | Automation",
+            badgeClass: "badge-academic",
+            icon: "SA",
+            tags: ["PHP", "QR", "MAPOLY"],
+            cta: "Internal academic project"
         }
     ],
     experience: [
         {
             company: "Crypto Dungeon",
-            role: "Web3 Community & Partnerships Contributor",
-            time: "Nov 2024 - Present",
+            role: "Partnerships Contributor",
+            time: "11/2024 - 11/2025",
             points: [
-                "Architected community engagement systems for NFT collectors and Web3 builders.",
-                "Closed strategic partnership with Create With Me AI for NFT integrations.",
-                "Executed high-conversion Twitter campaigns increasing project visibility.",
-                "Ran due diligence research on Web3 projects before collaboration deals."
+                "Led community engagement and digital moderation for Web3 enthusiasts and NFT collectors.",
+                "Managed partnership conversations and growth strategy support for integrations like Create With Me AI."
             ]
         },
         {
-            company: "Independent Web3 Projects",
-            role: "Community Moderator & Content Creator",
-            time: "Oct 2023 - Present",
+            company: "Cowrywise",
+            role: "Campus Ambassador Lead",
+            time: "11/2025 - Present",
             points: [
-                "Maintained 24/7 global moderation across Discord and Telegram for P2E platforms.",
-                "Authored Twitter threads and blog deep-dives on DeFi, NFTs, and blockchain gaming.",
-                "Organised AMA sessions and giveaway campaigns that drove measurable user signups.",
-                "Delivered real-time trend reports to project leadership for strategic pivots."
+                "Selected to coordinate brand awareness and digital savings adoption across the campus community.",
+                "Managed campaign logistics, promotional materials, and event operations with a structured execution mindset."
+            ]
+        },
+        {
+            company: "Olak Tech",
+            role: "Backend Developer Intern (SIWES)",
+            time: "2025 - 2025",
+            points: [
+                "Collaborated on backend engineering and relational database normalization with PHP and MySQL.",
+                "Handled technical documentation, system logging, and workflow tracking to support project delivery."
+            ]
+        },
+        {
+            company: "oSHAMO",
+            role: "Early Rollout Strategist",
+            time: "11/2024 - 08/2025",
+            points: [
+                "Planned organic digital rollout schedules across social channels to maximise promotional reach.",
+                "Tracked content deliverables and launch timing with an operations-first approach to execution."
             ]
         }
     ],
     education: [
         {
             school: "Moshood Abiola Polytechnic (MAPOLY)",
-            degree: "ND Computer Science - In Progress",
-            desc: "Database management systems, backend engineering, and core computing fundamentals."
-        },
-        {
-            school: "Federal Science & Technical College, Ijebu Imushin",
-            degree: "WAEC & Technical Certificate",
-            desc: "Foundational technology training that set the trajectory for a career in engineering."
+            degree: "ND in Computer Science",
+            meta: "2023 - 2025",
+            desc: "Core coursework includes Database Management Systems, Systems Analysis & Design, Web Development, and Digital Marketing Logic."
         }
     ],
-    coreStack: [
-        { name: "PHP & Laravel", pct: 90 },
-        { name: "SQL & Database Design", pct: 92 },
-        { name: "Web3 Community Growth", pct: 95 },
-        { name: "Content Strategy", pct: 80 },
-        { name: "JavaScript / Node.js", pct: 65 }
+    skillCategories: [
+        {
+            title: "Backend",
+            items: [
+                { name: "PHP", icon: "fa-brands fa-php", pct: 92 },
+                { name: "Laravel", icon: "fa-solid fa-layer-group", pct: 88 },
+                { name: "MySQL", icon: "fa-solid fa-database", pct: 94 },
+                { name: "Database Design", icon: "fa-solid fa-diagram-project", pct: 93 },
+                { name: "API Workflows", icon: "fa-solid fa-plug-circle-check", pct: 84 }
+            ]
+        },
+        {
+            title: "Growth & Rollout",
+            items: [
+                { name: "Digital Rollout", icon: "fa-solid fa-rocket", pct: 88 },
+                { name: "Community Ops", icon: "fa-solid fa-users-gear", pct: 86 },
+                { name: "Content Strategy", icon: "fa-solid fa-pen-ruler", pct: 82 },
+                { name: "Partnerships", icon: "fa-solid fa-handshake-angle", pct: 80 }
+            ]
+        },
+        {
+            title: "Tools, Workflow & Communication",
+            items: [
+                { name: "Git / GitHub", icon: "fa-brands fa-github", pct: 85 },
+                { name: "Project Tracking", icon: "fa-solid fa-list-check", pct: 83 },
+                { name: "Documentation", icon: "fa-solid fa-file-lines", pct: 84 },
+                { name: "PWA Support", icon: "fa-solid fa-mobile-screen-button", pct: 79 },
+                { name: "English C1", icon: "fa-solid fa-language", pct: 91 }
+            ]
+        }
     ],
-    skills: [
-        "PHP", "MySQL", "SQL", "Node.js", "Laravel", "Git",
-        "Discord API", "REST APIs", "Community Management",
-        "Content Strategy", "Twitter Campaigns", "Web3 Ecosystem",
-        "Figma (UI review)", "X Analytics", "DeFi Research"
+    credentials: {
+        certifications: [
+            {
+                title: "Backend Engineering & Database Architecture",
+                meta: "2025"
+            },
+            {
+                title: "C1 Advanced English Certification (EF SET)",
+                meta: "2026"
+            },
+            {
+                title: "Google Digital Marketing & E-commerce Professional Certificate",
+                meta: "Google"
+            },
+            {
+                title: "Social Media Marketing Certification",
+                meta: "HubSpot Academy"
+            },
+            {
+                title: "Google Project Management Professional Certificate",
+                meta: "Google"
+            },
+            {
+                title: "Asana Project Management Certificate",
+                meta: "Asana"
+            }
+        ],
+        awards: [
+            {
+                title: "Best Content Strategy Award",
+                meta: "Moshood Abiola Polytechnic | 2025",
+                desc: "Recognized for innovative rollout plans that improved community retention and organic growth."
+            },
+            {
+                title: "Cowrywise Campus Ambassador",
+                meta: "Cowrywise | 2025",
+                desc: "Selected for a leadership role supporting financial literacy and digital savings adoption at MAPOLY."
+            },
+            {
+                title: "Web3 Contributor of the Year",
+                meta: "Moshood Abiola Polytechnic | 2025",
+                desc: "Recognized for strong technical and community contributions within decentralized ecosystems."
+            }
+        ],
+        volunteer: [
+            {
+                title: "Open Source Contributor",
+                meta: "GitHub",
+                desc: "Maintains and contributes to backend repositories with a focus on PHP and SQL integrity."
+            }
+        ]
+    },
+    contactLinks: [
+        {
+            title: "Phone",
+            value: "09125808797",
+            href: "tel:09125808797",
+            icon: "fa-solid fa-phone"
+        },
+        {
+            title: "GitHub",
+            value: "github.com/Blaconchain",
+            href: "https://github.com/Blaconchain",
+            icon: "fa-brands fa-github",
+            external: true
+        },
+        {
+            title: "X",
+            value: "@Lifewithblac",
+            href: "https://x.com/Lifewithblac",
+            icon: "fa-brands fa-x-twitter",
+            external: true
+        },
+        {
+            title: "Instagram",
+            value: "@lifewith_blac",
+            href: "https://www.instagram.com/lifewith_blac/",
+            icon: "fa-brands fa-instagram",
+            external: true
+        },
+        {
+            title: "Full Resume / CV",
+            value: "Download PDF",
+            href: "assets/Oluwatomiwa_CV.pdf",
+            icon: "fa-solid fa-file-lines",
+            external: true,
+            highlight: true
+        }
     ]
 };
 
@@ -191,6 +358,77 @@ function initNavbar() {
     }, { passive: true });
 }
 
+function setElementText(id, text) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.textContent = text;
+    }
+}
+
+function populateStaticContent() {
+    const { hero } = DATA;
+
+    document.title = `${hero.brand} | Backend Developer & Digital Strategist`;
+    setElementText("hero-profile-label", hero.brand);
+    setElementText("hero-profile-sub", hero.name);
+    setElementText("availability-text", hero.availability);
+    setElementText("hero-bio", hero.bio);
+    setElementText("footer-summary", "BACKEND DEVELOPER | DIGITAL STRATEGIST | SYSTEMS, ROLLOUT, GROWTH");
+
+    const heroName = document.getElementById("hero-name");
+    if (heroName) {
+        heroName.textContent = hero.brand;
+        heroName.setAttribute("data-text", hero.brand);
+    }
+
+    const contactBody = document.getElementById("contact-body");
+    if (contactBody) {
+        contactBody.innerHTML = hero.contactBody;
+    }
+
+    const heroEmailLink = document.getElementById("hero-email-link");
+    if (heroEmailLink) {
+        heroEmailLink.href = `mailto:${hero.email}`;
+    }
+
+    const contactEmailBig = document.getElementById("contact-email-big");
+    if (contactEmailBig) {
+        contactEmailBig.href = `mailto:${hero.email}`;
+        contactEmailBig.innerHTML = `${hero.email}<i class="fa-solid fa-arrow-up-right-from-square"></i>`;
+    }
+
+    document.querySelectorAll("[data-cv-link]").forEach((link) => {
+        link.href = hero.cv;
+    });
+}
+
+function buildHeroSocials() {
+    const socials = document.getElementById("hero-socials");
+    if (!socials) {
+        return;
+    }
+
+    socials.innerHTML = DATA.socials.map((item) => `
+        <a href="${item.href}" ${item.href.startsWith("http") ? 'target="_blank" rel="noreferrer"' : ""} title="${item.label}">
+            <i class="${item.icon}"></i>
+        </a>
+    `).join("");
+}
+
+function buildMetrics() {
+    const metricsRow = document.getElementById("metrics-row");
+    if (!metricsRow) {
+        return;
+    }
+
+    metricsRow.innerHTML = DATA.metrics.map((metric) => `
+        <div class="metric-pill">
+            <span class="metric-val">${metric.value}</span>
+            <span class="metric-label">${metric.label}</span>
+        </div>
+    `).join("");
+}
+
 function initTypewriter() {
     const element = document.getElementById("typewriter");
     const roles = DATA.typewriterRoles;
@@ -207,7 +445,7 @@ function initTypewriter() {
 
             if (charIndex === role.length) {
                 deleting = true;
-                window.setTimeout(tick, 2000);
+                window.setTimeout(tick, 1800);
                 return;
             }
         } else {
@@ -220,7 +458,7 @@ function initTypewriter() {
             }
         }
 
-        window.setTimeout(tick, deleting ? 40 : 80);
+        window.setTimeout(tick, deleting ? 40 : 75);
     }
 
     tick();
@@ -265,7 +503,7 @@ function initTerminal() {
 
         renderLine(lines[lineIndex]);
         lineIndex += 1;
-        window.setTimeout(nextLine, lineIndex === 1 ? 600 : 120);
+        window.setTimeout(nextLine, lineIndex === 1 ? 650 : 140);
     }
 
     window.setTimeout(nextLine, 900);
@@ -273,14 +511,21 @@ function initTerminal() {
 
 function buildProjects() {
     const grid = document.getElementById("projects-grid");
+    if (!grid) {
+        return;
+    }
 
     DATA.projects.forEach((project, index) => {
-        const card = document.createElement("a");
-        card.href = project.link;
-        card.target = project.external ? "_blank" : "_self";
-        card.rel = "noopener noreferrer";
-        card.className = "project-card reveal";
+        const card = document.createElement(project.link ? "a" : "article");
+        card.className = `project-card reveal${project.link ? "" : " static-card"}`;
         card.style.transitionDelay = `${index * 0.08}s`;
+
+        if (project.link) {
+            card.href = project.link;
+            card.target = project.external ? "_blank" : "_self";
+            card.rel = project.external ? "noopener noreferrer" : "";
+        }
+
         card.innerHTML = `
             <div class="project-card-top">
                 <div class="project-icon">${project.icon}</div>
@@ -292,15 +537,19 @@ function buildProjects() {
                 <div class="project-tags">
                     ${project.tags.map((tag) => `<span class="p-tag">${tag}</span>`).join("")}
                 </div>
-                <div class="project-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="project-arrow${project.link ? "" : " project-note"}">${project.link ? '<i class="fa-solid fa-arrow-right"></i>' : project.cta}</div>
             </div>
         `;
+
         grid.appendChild(card);
     });
 }
 
 function buildExperience() {
     const timeline = document.getElementById("timeline");
+    if (!timeline) {
+        return;
+    }
 
     DATA.experience.forEach((entry, index) => {
         const card = document.createElement("div");
@@ -318,48 +567,125 @@ function buildExperience() {
     });
 
     const eduCards = document.getElementById("edu-cards");
-    DATA.education.forEach((entry, index) => {
+    if (!eduCards) {
+        return;
+    }
+
+    DATA.education.forEach((entry) => {
         const card = document.createElement("div");
-        card.className = "edu-card reveal";
-        card.style.transitionDelay = `${index * 0.1}s`;
+        card.className = "edu-card";
         card.innerHTML = `
             <div class="edu-school">${entry.school}</div>
             <div class="edu-degree">${entry.degree}</div>
+            <div class="edu-meta">${entry.meta}</div>
             <p class="edu-desc">${entry.desc}</p>
         `;
         eduCards.appendChild(card);
     });
 }
 
-function buildStack() {
-    const barsWrap = document.getElementById("stack-bars");
+function buildCredentials() {
+    const sections = [
+        { id: "certifications-list", items: DATA.credentials.certifications },
+        { id: "awards-list", items: DATA.credentials.awards },
+        { id: "volunteer-list", items: DATA.credentials.volunteer }
+    ];
 
-    DATA.coreStack.forEach((item, index) => {
-        const barItem = document.createElement("div");
-        barItem.className = "stack-bar-item reveal";
-        barItem.style.transitionDelay = `${index * 0.07}s`;
-        barItem.innerHTML = `
-            <div class="stack-bar-header">
-                <span>${item.name}</span>
-                <span class="stack-bar-pct">${item.pct}%</span>
+    sections.forEach((section) => {
+        const container = document.getElementById(section.id);
+        if (!container) {
+            return;
+        }
+
+        container.innerHTML = section.items.map((item) => `
+            <div class="credential-item">
+                <strong>${item.title}</strong>
+                <span class="credential-meta">${item.meta}</span>
+                ${item.desc ? `<p class="credential-desc">${item.desc}</p>` : ""}
             </div>
-            <div class="bar-track">
-                <div class="bar-fill-anim" data-pct="${item.pct}"></div>
-            </div>
-        `;
-        barsWrap.appendChild(barItem);
+        `).join("");
     });
+}
 
-    const pillsWrap = document.getElementById("stack-pills");
-    DATA.skills.forEach((skill) => {
-        const pill = document.createElement("span");
-        pill.className = "s-pill";
-        pill.textContent = skill;
-        pillsWrap.appendChild(pill);
+function buildStack() {
+    const categoriesWrap = document.getElementById("stack-categories");
+    if (!categoriesWrap) {
+        return;
+    }
+
+    categoriesWrap.innerHTML = DATA.skillCategories.map((category, categoryIndex) => `
+        <section class="stack-category reveal" style="transition-delay: ${categoryIndex * 0.08}s">
+            <h3 class="stack-category-title">${category.title}</h3>
+            <div class="stack-card-grid">
+                ${category.items.map((item, itemIndex) => `
+                    <article class="skill-card reveal" style="transition-delay: ${(categoryIndex * 0.08) + (itemIndex * 0.05)}s; --glow-delay: ${(categoryIndex * 0.35) + (itemIndex * 0.12)}s;">
+                        <div class="skill-card-head">
+                            <i class="${item.icon} skill-card-icon"></i>
+                            <span class="skill-card-name">${item.name}</span>
+                        </div>
+                        <div class="skill-card-meta">
+                            <span>Proficiency</span>
+                            <strong>${item.pct}%</strong>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" data-width="${item.pct}"></div>
+                        </div>
+                    </article>
+                `).join("")}
+            </div>
+        </section>
+    `).join("");
+}
+
+function buildContactLinks() {
+    const contactLinks = document.getElementById("contact-links");
+    if (!contactLinks) {
+        return;
+    }
+
+    DATA.contactLinks.forEach((item) => {
+        const card = document.createElement(item.href ? "a" : "article");
+        card.className = `contact-link-card${item.highlight ? " highlight-card" : ""}${item.href ? "" : " static-card"}`;
+
+        if (item.href) {
+            card.href = item.href;
+            if (item.external && item.href.startsWith("http")) {
+                card.target = "_blank";
+                card.rel = "noreferrer";
+            } else if (item.external) {
+                card.target = "_blank";
+                card.rel = "noreferrer";
+            }
+        }
+
+        card.innerHTML = `
+            <i class="${item.icon}"></i>
+            <div>
+                <strong>${item.title}</strong>
+                <span>${item.value}</span>
+            </div>
+            <i class="fa-solid ${item.href ? "fa-arrow-right" : "fa-circle"} arrow-r"></i>
+        `;
+
+        contactLinks.appendChild(card);
     });
 }
 
 function initReveal() {
+    function animateBars(scope) {
+        const bars = scope.querySelectorAll(".bar-fill-anim, .skill-progress-fill");
+        bars.forEach((bar) => {
+            if (bar.dataset.animated === "true") {
+                return;
+            }
+
+            bar.dataset.animated = "true";
+            window.setTimeout(() => {
+                bar.style.width = `${bar.dataset.width}%`;
+            }, 100);
+        });
+    }
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (!entry.isIntersecting) {
@@ -367,35 +693,12 @@ function initReveal() {
             }
 
             entry.target.classList.add("visible");
-            const bars = entry.target.querySelectorAll(".bar-fill-anim");
-            bars.forEach((bar) => {
-                window.setTimeout(() => {
-                    bar.style.width = `${bar.dataset.pct}%`;
-                }, 100);
-            });
+            animateBars(entry.target);
             revealObserver.unobserve(entry.target);
         });
     }, { threshold: 0.12 });
 
     document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
-
-    const barObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) {
-                return;
-            }
-
-            const bar = entry.target.querySelector(".bar-fill-anim");
-            if (bar) {
-                window.setTimeout(() => {
-                    bar.style.width = `${bar.dataset.pct}%`;
-                }, 100);
-            }
-            barObserver.unobserve(entry.target);
-        });
-    }, { threshold: 0.3 });
-
-    document.querySelectorAll(".stack-bar-item").forEach((element) => barObserver.observe(element));
 }
 
 function initClock() {
@@ -439,19 +742,24 @@ function initActiveNav() {
                 active.style.color = "var(--green)";
             }
         });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.35 });
 
     sections.forEach((section) => observer.observe(section));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    populateStaticContent();
     initCanvas();
     initNavbar();
+    buildHeroSocials();
+    buildMetrics();
     initTypewriter();
     initTerminal();
     buildProjects();
     buildExperience();
+    buildCredentials();
     buildStack();
+    buildContactLinks();
     initClock();
     initActiveNav();
 
@@ -459,3 +767,4 @@ document.addEventListener("DOMContentLoaded", () => {
         initReveal();
     });
 });
+

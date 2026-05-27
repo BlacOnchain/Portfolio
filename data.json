@@ -1,46 +1,376 @@
 {
-  "profile": {
-    "name": "BLAC",
-    "handle": "@Lifewithblac",
-    "role": "Backend Developer and Web3 Strategist",
-    "bio": "Building reliable backend systems at MAPOLY while connecting code, product storytelling, and Web3 community growth."
+  "hero": {
+    "brand": "BLAC",
+    "name": "Odubela Oluwatomiwa",
+    "title": "Backend Developer | Digital Strategist",
+    "availability": "Open to backend, operations, and digital rollout work",
+    "bio": "Backend developer and digital strategist focused on PHP, MySQL, database architecture, and rollout systems that keep products clear, useful, and organised. I bring together backend engineering, workflow discipline, and growth execution across internships, campus campaigns, and Web3 partnerships.",
+    "contactBody": "If you need clean backend logic, stronger database structure, rollout support, or organised digital execution, let's build it properly from day one.",
+    "email": "odubelaotomiwa508@gmail.com",
+    "phone": "09125808797",
+    "cv": "assets/Oluwatomiwa_CV.pdf"
   },
+  "typewriterRoles": [
+    "Backend Developer",
+    "PHP & Laravel Builder",
+    "MySQL Database Architect",
+    "Digital Rollout Strategist",
+    "Web3 Growth Strategist"
+  ],
   "metrics": [
     {
-      "label": "Community Growth",
-      "value": "40%+",
-      "desc": "Engagement increase delivered for Web3 projects"
+      "value": "4",
+      "label": "CV Roles"
     },
     {
-      "label": "Projects Promoted",
-      "value": "12+",
-      "desc": "Support spanning NFT drops, campaigns, and gaming communities"
+      "value": "3",
+      "label": "Featured Builds"
+    },
+    {
+      "value": "C1",
+      "label": "English Level"
     }
   ],
-  "experience_highlights": [
-    "Led AI-powered NFT integration conversations with partners",
-    "Managed moderation and engagement for global Web3 communities",
-    "Created educational content around DeFi, gaming, and blockchain products"
+  "terminalLines": [
+    {
+      "type": "prompt",
+      "text": "cat profile.json"
+    },
+    {
+      "type": "obj-open",
+      "text": "{"
+    },
+    {
+      "type": "pair",
+      "key": "  \"name\"",
+      "val": "\"Odubela Oluwatomiwa\"",
+      "valType": "str"
+    },
+    {
+      "type": "pair",
+      "key": "  \"role\"",
+      "val": "\"Backend Developer | Digital Strategist\"",
+      "valType": "str"
+    },
+    {
+      "type": "pair",
+      "key": "  \"focus\"",
+      "val": "\"PHP, MySQL, rollout systems\"",
+      "valType": "str"
+    },
+    {
+      "type": "pair",
+      "key": "  \"instagram\"",
+      "val": "\"@lifewith_blac\"",
+      "valType": "str"
+    },
+    {
+      "type": "pair",
+      "key": "  \"english\"",
+      "val": "\"C1 Advanced\"",
+      "valType": "str"
+    },
+    {
+      "type": "pair",
+      "key": "  \"available\"",
+      "val": "true",
+      "valType": "bool"
+    },
+    {
+      "type": "obj-close",
+      "text": "}"
+    }
   ],
-  "tools": [
-    "PHP",
-    "Laravel",
-    "MySQL",
-    "Discord API",
-    "Node.js",
-    "Figma",
-    "X Analytics"
+  "socials": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/Blaconchain",
+      "icon": "fa-brands fa-github"
+    },
+    {
+      "label": "X",
+      "href": "https://x.com/Lifewithblac",
+      "icon": "fa-brands fa-x-twitter"
+    },
+    {
+      "label": "Instagram",
+      "href": "https://www.instagram.com/lifewith_blac/",
+      "icon": "fa-brands fa-instagram"
+    },
+    {
+      "label": "Email",
+      "href": "mailto:odubelaotomiwa508@gmail.com",
+      "icon": "fa-solid fa-envelope"
+    },
+    {
+      "label": "Phone",
+      "href": "tel:09125808797",
+      "icon": "fa-solid fa-phone"
+    }
   ],
   "projects": [
     {
       "title": "BlacRate Pro",
-      "tag": "Product",
-      "desc": "Crypto-to-naira calculator for OTC traders"
+      "desc": "A Progressive Web App for OTC traders to calculate crypto-to-naira rates with fast, practical access and offline-first support.",
+      "badge": "PWA | Trading Tool",
+      "badgeClass": "badge-pwa",
+      "icon": "BR",
+      "tags": [
+        "PWA",
+        "Rates",
+        "Utility"
+      ],
+      "link": "https://github.com/Blaconchain/blacrate-pro",
+      "external": true
     },
     {
       "title": "Receipt Pro",
-      "tag": "Backend",
-      "desc": "Transaction-safe PHP receipt workflow concept"
+      "desc": "A backend receipt management concept focused on SQL data integrity, secure transaction logging, and cleaner operational records.",
+      "badge": "Backend | SQL",
+      "badgeClass": "badge-backend",
+      "icon": "RP",
+      "tags": [
+        "PHP",
+        "MySQL",
+        "Integrity"
+      ],
+      "link": "https://github.com/Blaconchain/receipt-pro",
+      "external": true
+    },
+    {
+      "title": "Smart Attendance System",
+      "desc": "An academic QR-code attendance system built with PHP and MySQL to automate student logging and remove manual paperwork for lecturers.",
+      "badge": "Academic | Automation",
+      "badgeClass": "badge-academic",
+      "icon": "SA",
+      "tags": [
+        "PHP",
+        "QR",
+        "MAPOLY"
+      ],
+      "cta": "Internal academic project"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Crypto Dungeon",
+      "role": "Partnerships Contributor",
+      "time": "11/2024 - 11/2025",
+      "points": [
+        "Led community engagement and digital moderation for Web3 enthusiasts and NFT collectors.",
+        "Managed partnership conversations and growth strategy support for integrations like Create With Me AI."
+      ]
+    },
+    {
+      "company": "Cowrywise",
+      "role": "Campus Ambassador Lead",
+      "time": "11/2025 - Present",
+      "points": [
+        "Selected to coordinate brand awareness and digital savings adoption across the campus community.",
+        "Managed campaign logistics, promotional materials, and event operations with a structured execution mindset."
+      ]
+    },
+    {
+      "company": "Olak Tech",
+      "role": "Backend Developer Intern (SIWES)",
+      "time": "2025 - 2025",
+      "points": [
+        "Collaborated on backend engineering and relational database normalization with PHP and MySQL.",
+        "Handled technical documentation, system logging, and workflow tracking to support project delivery."
+      ]
+    },
+    {
+      "company": "oSHAMO",
+      "role": "Early Rollout Strategist",
+      "time": "11/2024 - 08/2025",
+      "points": [
+        "Planned organic digital rollout schedules across social channels to maximise promotional reach.",
+        "Tracked content deliverables and launch timing with an operations-first approach to execution."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Moshood Abiola Polytechnic (MAPOLY)",
+      "degree": "ND in Computer Science",
+      "meta": "2023 - 2025",
+      "desc": "Core coursework includes Database Management Systems, Systems Analysis & Design, Web Development, and Digital Marketing Logic."
+    }
+  ],
+  "skillCategories": [
+    {
+      "title": "Backend",
+      "items": [
+        {
+          "name": "PHP",
+          "icon": "fa-brands fa-php",
+          "pct": 92
+        },
+        {
+          "name": "Laravel",
+          "icon": "fa-solid fa-layer-group",
+          "pct": 88
+        },
+        {
+          "name": "MySQL",
+          "icon": "fa-solid fa-database",
+          "pct": 94
+        },
+        {
+          "name": "Database Design",
+          "icon": "fa-solid fa-diagram-project",
+          "pct": 93
+        },
+        {
+          "name": "API Workflows",
+          "icon": "fa-solid fa-plug-circle-check",
+          "pct": 84
+        }
+      ]
+    },
+    {
+      "title": "Growth & Rollout",
+      "items": [
+        {
+          "name": "Digital Rollout",
+          "icon": "fa-solid fa-rocket",
+          "pct": 88
+        },
+        {
+          "name": "Community Ops",
+          "icon": "fa-solid fa-users-gear",
+          "pct": 86
+        },
+        {
+          "name": "Content Strategy",
+          "icon": "fa-solid fa-pen-ruler",
+          "pct": 82
+        },
+        {
+          "name": "Partnerships",
+          "icon": "fa-solid fa-handshake-angle",
+          "pct": 80
+        }
+      ]
+    },
+    {
+      "title": "Tools, Workflow & Communication",
+      "items": [
+        {
+          "name": "Git / GitHub",
+          "icon": "fa-brands fa-github",
+          "pct": 85
+        },
+        {
+          "name": "Project Tracking",
+          "icon": "fa-solid fa-list-check",
+          "pct": 83
+        },
+        {
+          "name": "Documentation",
+          "icon": "fa-solid fa-file-lines",
+          "pct": 84
+        },
+        {
+          "name": "PWA Support",
+          "icon": "fa-solid fa-mobile-screen-button",
+          "pct": 79
+        },
+        {
+          "name": "English C1",
+          "icon": "fa-solid fa-language",
+          "pct": 91
+        }
+      ]
+    }
+  ],
+  "credentials": {
+    "certifications": [
+      {
+        "title": "Backend Engineering & Database Architecture",
+        "meta": "2025"
+      },
+      {
+        "title": "C1 Advanced English Certification (EF SET)",
+        "meta": "2026"
+      },
+      {
+        "title": "Google Digital Marketing & E-commerce Professional Certificate",
+        "meta": "Google"
+      },
+      {
+        "title": "Social Media Marketing Certification",
+        "meta": "HubSpot Academy"
+      },
+      {
+        "title": "Google Project Management Professional Certificate",
+        "meta": "Google"
+      },
+      {
+        "title": "Asana Project Management Certificate",
+        "meta": "Asana"
+      }
+    ],
+    "awards": [
+      {
+        "title": "Best Content Strategy Award",
+        "meta": "Moshood Abiola Polytechnic | 2025",
+        "desc": "Recognized for innovative rollout plans that improved community retention and organic growth."
+      },
+      {
+        "title": "Cowrywise Campus Ambassador",
+        "meta": "Cowrywise | 2025",
+        "desc": "Selected for a leadership role supporting financial literacy and digital savings adoption at MAPOLY."
+      },
+      {
+        "title": "Web3 Contributor of the Year",
+        "meta": "Moshood Abiola Polytechnic | 2025",
+        "desc": "Recognized for strong technical and community contributions within decentralized ecosystems."
+      }
+    ],
+    "volunteer": [
+      {
+        "title": "Open Source Contributor",
+        "meta": "GitHub",
+        "desc": "Maintains and contributes to backend repositories with a focus on PHP and SQL integrity."
+      }
+    ]
+  },
+  "contactLinks": [
+    {
+      "title": "Phone",
+      "value": "09125808797",
+      "href": "tel:09125808797",
+      "icon": "fa-solid fa-phone"
+    },
+    {
+      "title": "GitHub",
+      "value": "github.com/Blaconchain",
+      "href": "https://github.com/Blaconchain",
+      "icon": "fa-brands fa-github",
+      "external": true
+    },
+    {
+      "title": "X",
+      "value": "@Lifewithblac",
+      "href": "https://x.com/Lifewithblac",
+      "icon": "fa-brands fa-x-twitter",
+      "external": true
+    },
+    {
+      "title": "Instagram",
+      "value": "@lifewith_blac",
+      "href": "https://www.instagram.com/lifewith_blac/",
+      "icon": "fa-brands fa-instagram",
+      "external": true
+    },
+    {
+      "title": "Full Resume / CV",
+      "value": "Download PDF",
+      "href": "assets/Oluwatomiwa_CV.pdf",
+      "icon": "fa-solid fa-file-lines",
+      "external": true,
+      "highlight": true
     }
   ]
 }
