@@ -120,7 +120,7 @@
         "Rates",
         "Utility"
       ],
-      "link": " https://blaconchain.github.io/blacrate-pro/",
+      "link": "https://github.com/Blaconchain/blacrate-pro",
       "external": true
     },
     {
@@ -148,8 +148,7 @@
         "QR",
         "MAPOLY"
       ],
-      "link": "https://smart-attendance-production-996c.up.railway.app/login",
-      "external": true
+      "cta": "Internal academic project"
     }
   ],
   "experience": [
