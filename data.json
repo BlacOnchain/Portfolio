@@ -148,7 +148,8 @@
         "QR",
         "MAPOLY"
       ],
-      "cta": "Internal academic project"
+      "link": "https://smart-attendance-production-996c.up.railway.app/login",
+      "external": true
     }
   ],
   "experience": [
