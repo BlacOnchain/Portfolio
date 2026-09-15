@@ -81,8 +81,9 @@ const DATA = {
             badgeClass: "badge-academic",
             icon: "SA",
             tags: ["PHP", "MySQL", "Attendance"],
-            link: "https://smart-attendance-production-996c.up.railway.app/",
-            external: true
+            impact: "Centralises student check-ins and gives lecturers a cleaner attendance record.",
+            demo: "https://smart-attendance-production-996c.up.railway.app/",
+            source: "https://github.com/BlacOnchain/Smart-Attendance"
         },
         {
             title: "BlacRate Pro",
@@ -91,8 +92,9 @@ const DATA = {
             badgeClass: "badge-pwa",
             icon: "BR",
             tags: ["PWA", "Rates", "Utility"],
-            link: "https://github.com/Blaconchain/blacrate-pro",
-            external: true
+            impact: "Delivers a fast, offline-friendly crypto-to-naira rate workflow for OTC traders.",
+            demo: "https://blaconchain.github.io/blacrate-pro/",
+            source: "https://github.com/BlacOnchain/blacrate-pro"
         },
         {
             title: "Receipt Pro",
@@ -101,8 +103,8 @@ const DATA = {
             badgeClass: "badge-backend",
             icon: "RP",
             tags: ["PHP", "MySQL", "Integrity"],
-            link: "https://github.com/Blaconchain/receipt-pro",
-            external: true
+            impact: "Models dependable transaction records with SQL-focused data integrity.",
+            source: "https://github.com/Blaconchain/receipt-pro"
         }
     ],
     experience: [
@@ -275,6 +277,11 @@ const DATA = {
 
 function initCanvas() {
     const canvas = document.getElementById("bg-canvas");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!canvas || prefersReducedMotion) {
+        if (canvas) canvas.style.display = "none";
+        return;
+    }
     const ctx = canvas.getContext("2d");
     let width;
     let height;
@@ -300,7 +307,7 @@ function initCanvas() {
     }
 
     function initParticles() {
-        particles = Array.from({ length: 120 }, makeParticle);
+        particles = Array.from({ length: window.innerWidth < 768 ? 48 : 96 }, makeParticle);
     }
 
     function draw() {
@@ -517,15 +524,13 @@ function buildProjects() {
     }
 
     DATA.projects.forEach((project, index) => {
-        const card = document.createElement(project.link ? "a" : "article");
-        card.className = `project-card reveal${project.link ? "" : " static-card"}`;
+        const card = document.createElement("article");
+        card.className = "project-card reveal";
         card.style.transitionDelay = `${index * 0.08}s`;
 
-        if (project.link) {
-            card.href = project.link;
-            card.target = project.external ? "_blank" : "_self";
-            card.rel = project.external ? "noopener noreferrer" : "";
-        }
+        const action = (label, href, variant) => href
+            ? `<a class="project-action ${variant}" href="${href}" target="_blank" rel="noopener noreferrer">${label}<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`
+            : `<span class="project-action is-unavailable" aria-disabled="true">${label} unavailable</span>`;
 
         card.innerHTML = `
             <div class="project-card-top">
@@ -534,11 +539,15 @@ function buildProjects() {
             </div>
             <div class="project-title">${project.title}</div>
             <p class="project-desc">${project.desc}</p>
+            <p class="project-impact"><span>Outcome:</span> ${project.impact}</p>
             <div class="project-footer">
                 <div class="project-tags">
                     ${project.tags.map((tag) => `<span class="p-tag">${tag}</span>`).join("")}
                 </div>
-                <div class="project-arrow${project.link ? "" : " project-note"}">${project.link ? '<i class="fa-solid fa-arrow-right"></i>' : project.cta}</div>
+            </div>
+            <div class="project-actions">
+                ${action("Live Demo", project.demo, "project-demo")}
+                ${action("Source Code", project.source, "project-source")}
             </div>
         `;
 
@@ -636,6 +645,26 @@ function buildStack() {
             </div>
         </section>
     `).join("");
+}
+
+function initMobileMenu() {
+    const toggle = document.getElementById("nav-toggle");
+    const links = document.querySelector(".nav-links");
+    if (!toggle || !links) return;
+
+    toggle.addEventListener("click", () => {
+        const isOpen = links.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+        toggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+        toggle.innerHTML = `<i class="fa-solid fa-${isOpen ? "xmark" : "bars"}" aria-hidden="true"></i>`;
+    });
+
+    links.addEventListener("click", () => {
+        links.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation menu");
+        toggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+    });
 }
 
 function buildContactLinks() {
@@ -752,6 +781,7 @@ document.addEventListener("DOMContentLoaded", () => {
     populateStaticContent();
     initCanvas();
     initNavbar();
+    initMobileMenu();
     buildHeroSocials();
     buildMetrics();
     initTypewriter();
