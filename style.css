@@ -878,6 +878,35 @@ nav.scrolled {
 
 .project-card:hover::before { transform: scaleX(1); }
 
+.featured-project {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.08), var(--surface) 43%, rgba(0, 212, 255, 0.06));
+}
+
+.project-screenshots {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin: -0.15rem 0 1.5rem;
+}
+
+.project-screenshots img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    object-fit: cover;
+    object-position: top center;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.26);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.featured-project:hover .project-screenshots img {
+    transform: translateY(-3px);
+    border-color: rgba(0, 212, 255, 0.45);
+}
+
 .project-card.static-card {
     cursor: default;
 }
@@ -1555,6 +1584,7 @@ nav.scrolled {
     .stack-card-grid { grid-template-columns: 1fr; }
     .skill-card { min-height: 164px; }
     .project-actions { grid-template-columns: 1fr; }
+    .project-screenshots { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

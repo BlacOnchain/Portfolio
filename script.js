@@ -48,6 +48,11 @@ const DATA = {
     ],
     socials: [
         {
+            label: "LinkedIn",
+            href: "https://www.linkedin.com/in/lifewithblac/",
+            icon: "fa-brands fa-linkedin-in"
+        },
+        {
             label: "GitHub",
             href: "https://github.com/Blaconchain",
             icon: "fa-brands fa-github"
@@ -83,7 +88,12 @@ const DATA = {
             tags: ["PHP", "MySQL", "Attendance"],
             impact: "Centralises student check-ins and gives lecturers a cleaner attendance record.",
             demo: "https://smart-attendance-production-996c.up.railway.app/",
-            source: "https://github.com/BlacOnchain/Smart-Attendance"
+            source: "https://github.com/BlacOnchain/Smart-Attendance",
+            featured: true,
+            screenshots: [
+                { src: "images/projects/smart-attendance-landing.png", alt: "Smart Attendance landing page" },
+                { src: "images/projects/smart-attendance-portal.png", alt: "Smart Attendance student portal sign-in page" }
+            ]
         },
         {
             title: "BlacRate Pro",
@@ -201,6 +211,13 @@ const DATA = {
         volunteer: []
     },
     contactLinks: [
+        {
+            title: "LinkedIn",
+            value: "linkedin.com/in/lifewithblac",
+            href: "https://www.linkedin.com/in/lifewithblac/",
+            icon: "fa-brands fa-linkedin-in",
+            external: true
+        },
         {
             title: "Phone",
             value: "09125808797",
@@ -489,7 +506,7 @@ function buildProjects() {
 
     DATA.projects.forEach((project, index) => {
         const card = document.createElement("article");
-        card.className = "project-card reveal";
+        card.className = `project-card reveal${project.featured ? " featured-project" : ""}`;
         card.style.transitionDelay = `${index * 0.08}s`;
 
         const action = (label, href, variant) => href
@@ -497,6 +514,11 @@ function buildProjects() {
             : `<span class="project-action is-unavailable" aria-disabled="true">${label} unavailable</span>`;
 
         card.innerHTML = `
+            ${project.screenshots ? `
+                <div class="project-screenshots" aria-label="${project.title} preview screens">
+                    ${project.screenshots.map((screenshot) => `<img src="${screenshot.src}" alt="${screenshot.alt}" loading="lazy">`).join("")}
+                </div>
+            ` : ""}
             <div class="project-card-top">
                 <div class="project-icon">${project.icon}</div>
                 <span class="project-badge ${project.badgeClass}">${project.badge}</span>
