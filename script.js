@@ -187,28 +187,8 @@ const DATA = {
     credentials: {
         certifications: [
             {
-                title: "Backend Engineering & Database Architecture",
-                meta: "2025"
-            },
-            {
                 title: "C1 Advanced English Certification (EF SET)",
                 meta: "2026"
-            },
-            {
-                title: "Google Digital Marketing & E-commerce Professional Certificate",
-                meta: "Google"
-            },
-            {
-                title: "Social Media Marketing Certification",
-                meta: "HubSpot Academy"
-            },
-            {
-                title: "Google Project Management Professional Certificate",
-                meta: "Google"
-            },
-            {
-                title: "Asana Project Management Certificate",
-                meta: "Asana"
             }
         ],
         awards: [
@@ -216,25 +196,9 @@ const DATA = {
                 title: "Best Content Strategy Award",
                 meta: "Moshood Abiola Polytechnic | 2025",
                 desc: "Recognized for innovative rollout plans that improved community retention and organic growth."
-            },
-            {
-                title: "Cowrywise Campus Ambassador",
-                meta: "Cowrywise | 2025",
-                desc: "Selected for a leadership role supporting financial literacy and digital savings adoption at MAPOLY."
-            },
-            {
-                title: "Web3 Contributor of the Year",
-                meta: "Moshood Abiola Polytechnic | 2025",
-                desc: "Recognized for strong technical and community contributions within decentralized ecosystems."
             }
         ],
-        volunteer: [
-            {
-                title: "Open Source Contributor",
-                meta: "GitHub",
-                desc: "Maintains and contributes to backend repositories with a focus on PHP and SQL integrity."
-            }
-        ]
+        volunteer: []
     },
     contactLinks: [
         {
@@ -597,8 +561,7 @@ function buildExperience() {
 function buildCredentials() {
     const sections = [
         { id: "certifications-list", items: DATA.credentials.certifications },
-        { id: "awards-list", items: DATA.credentials.awards },
-        { id: "volunteer-list", items: DATA.credentials.volunteer }
+        { id: "awards-list", items: DATA.credentials.awards }
     ];
 
     sections.forEach((section) => {
