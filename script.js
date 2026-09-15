@@ -75,6 +75,16 @@ const DATA = {
     ],
     projects: [
         {
+            title: "Smart Attendance System",
+            desc: "A student attendance platform built with PHP and MySQL to automate academic check-ins, centralise attendance records, and reduce manual paperwork for lecturers.",
+            badge: "Academic | Automation",
+            badgeClass: "badge-academic",
+            icon: "SA",
+            tags: ["PHP", "MySQL", "Attendance"],
+            link: "https://smart-attendance-production-996c.up.railway.app/",
+            external: true
+        },
+        {
             title: "BlacRate Pro",
             desc: "A Progressive Web App for OTC traders to calculate crypto-to-naira rates with fast, practical access and offline-first support.",
             badge: "PWA | Trading Tool",
@@ -93,15 +103,6 @@ const DATA = {
             tags: ["PHP", "MySQL", "Integrity"],
             link: "https://github.com/Blaconchain/receipt-pro",
             external: true
-        },
-        {
-            title: "Smart Attendance System",
-            desc: "An academic QR-code attendance system built with PHP and MySQL to automate student logging and remove manual paperwork for lecturers.",
-            badge: "Academic | Automation",
-            badgeClass: "badge-academic",
-            icon: "SA",
-            tags: ["PHP", "QR", "MAPOLY"],
-            cta: "Internal academic project"
         }
     ],
     experience: [
