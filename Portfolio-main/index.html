@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLAC | Backend Developer & Digital Strategist</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="scanlines"></div>
+
+    <nav id="navbar">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <span class="logo-bracket">[</span>BLAC<span class="logo-bracket">]</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#projects"><span class="nav-num">01.</span>projects</a></li>
+                <li><a href="#experience"><span class="nav-num">02.</span>experience</a></li>
+                <li><a href="#credentials"><span class="nav-num">03.</span>credentials</a></li>
+                <li><a href="#stack"><span class="nav-num">04.</span>stack</a></li>
+                <li><a href="#contact"><span class="nav-num">05.</span>contact</a></li>
+            </ul>
+            <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" class="nav-cta" rel="noreferrer" data-cv-link>
+                <i class="fa-solid fa-arrow-down"></i> Resume
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-inner">
+            <div class="hero-left-col">
+                <div class="hero-top-row">
+                    <figure class="hero-profile-card">
+                        <div class="hero-profile-frame">
+                            <img src="images/profile.jpg" alt="BLAC profile photo" class="hero-profile-img">
+                        </div>
+                        <figcaption class="hero-profile-meta">
+                            <span class="hero-profile-label" id="hero-profile-label">BLAC</span>
+                            <span class="hero-profile-sub" id="hero-profile-sub">Odubela Oluwatomiwa</span>
+                        </figcaption>
+                    </figure>
+
+                    <div class="hero-status">
+                        <span class="status-dot"></span>
+                        <span id="availability-text">Open to backend, operations, and rollout work</span>
+                    </div>
+                </div>
+
+                <div class="glitch-wrap">
+                    <h1 class="hero-name" id="hero-name" data-text="BLAC">BLAC</h1>
+                </div>
+
+                <div class="hero-role-line">
+                    <span class="role-prefix">~/</span>
+                    <span id="typewriter" class="role-text"></span>
+                    <span class="cursor-blink">_</span>
+                </div>
+
+                <p class="hero-bio" id="hero-bio"></p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary">
+                        <span>View Selected Work</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="mailto:odubelaotomiwa508@gmail.com" class="btn-ghost" id="hero-email-link">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Start a conversation</span>
+                    </a>
+                </div>
+
+                <div class="hero-socials" id="hero-socials"></div>
+            </div>
+
+            <div class="hero-right-col">
+                <div class="terminal-card" id="terminal-hero">
+                    <div class="term-bar">
+                        <span class="term-dot td-r"></span>
+                        <span class="term-dot td-y"></span>
+                        <span class="term-dot td-g"></span>
+                        <span class="term-title">blac@portfolio:~$</span>
+                    </div>
+                    <div class="term-body" id="term-body"></div>
+                </div>
+
+                <div class="metrics-row" id="metrics-row"></div>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-eyebrow">01 / selected projects</span>
+                <h2 class="section-title">Proof In <span class="accent-text">Systems</span></h2>
+                <p class="section-sub">Three CV-backed builds that show how I think about utility, data integrity, and workflow automation.</p>
+            </div>
+            <div class="projects-grid" id="projects-grid"></div>
+        </div>
+    </section>
+
+    <section class="section section-alt" id="experience">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-eyebrow">02 / experience</span>
+                <h2 class="section-title">Work That Blends <span class="accent-text">Code &amp; Coordination</span></h2>
+                <p class="section-sub">Backend delivery, rollout operations, campus campaigns, and Web3 partnership work - all from the updated CV.</p>
+            </div>
+            <div class="timeline" id="timeline"></div>
+            <div class="education-strip reveal">
+                <div class="edu-label">ACADEMIC FOUNDATION</div>
+                <div class="edu-cards" id="edu-cards"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="credentials">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-eyebrow">03 / credentials</span>
+                <h2 class="section-title">Certifications, Awards &amp; <span class="accent-text">Open Source</span></h2>
+                <p class="section-sub">Compact proof points from the CV - enough signal, no resume overload.</p>
+            </div>
+            <div class="credentials-grid">
+                <article class="credential-card reveal">
+                    <div class="credential-label">Certifications</div>
+                    <div class="credential-list" id="certifications-list"></div>
+                </article>
+                <article class="credential-card reveal">
+                    <div class="credential-label">Awards</div>
+                    <div class="credential-list" id="awards-list"></div>
+                </article>
+                <article class="credential-card reveal">
+                    <div class="credential-label">Volunteer / Open Source</div>
+                    <div class="credential-list" id="volunteer-list"></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-stack" id="stack">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-eyebrow">04 / stack</span>
+                <h2 class="section-title">Skills &amp; <span class="accent-text">Technologies</span></h2>
+                <p class="section-sub">A more visual snapshot of the tools, systems, and growth work I use most - with motion, not just lists.</p>
+            </div>
+            <div class="stack-showcase">
+                <div class="stack-categories" id="stack-categories"></div>
+                <div class="lang-note stack-note">
+                    <i class="fa-solid fa-globe"></i>
+                    English (C1 Advanced) &nbsp;|&nbsp; Yoruba (Native)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-contact" id="contact">
+        <div class="section-inner contact-inner">
+            <div class="contact-text">
+                <span class="section-eyebrow">05 / contact</span>
+                <h2 class="section-title">Let&apos;s Build Something <span class="accent-text">Useful</span></h2>
+                <p class="contact-body" id="contact-body"></p>
+                <a href="mailto:odubelaotomiwa508@gmail.com" class="contact-email-big" id="contact-email-big">
+                    odubelaotomiwa508@gmail.com
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            <div class="contact-links-col" id="contact-links"></div>
+        </div>
+
+        <footer class="site-footer">
+            <span>(c) 2026 BLAC | ODUBELA OLUWATOMIWA</span>
+            <span id="live-clock"></span>
+            <span id="footer-summary">BACKEND DEVELOPER | DIGITAL STRATEGIST | SYSTEMS, ROLLOUT, GROWTH</span>
+        </footer>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
+
