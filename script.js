@@ -1,786 +1,183 @@
-/* =============================================
-   BLAC PORTFOLIO - script.js
-   ============================================= */
+/* ==========================================================================
+   BlacPortfolio Dynamic Renderer & Interactivity Script
+   ========================================================================== */
 
-const DATA = {
-    hero: {
-        brand: "BLAC",
-        name: "Odubela Oluwatomiwa",
-        title: "Backend Developer | Digital Strategist",
-        availability: "Open to backend, operations, and digital rollout work",
-        bio: "Backend developer and digital strategist focused on PHP, MySQL, database architecture, and rollout systems that keep products clear, useful, and organised. I bring together backend engineering, workflow discipline, and growth execution across internships, campus campaigns, and Web3 partnerships.",
-        contactBody: "If you need clean backend logic, stronger database structure, rollout support, or organised digital execution, let&apos;s build it properly from day one.",
-        email: "odubelaotomiwa508@gmail.com",
-        phone: "09125808797",
-        cv: "assets/Oluwatomiwa_CV.pdf"
-    },
-    typewriterRoles: [
-        "Backend Developer",
-        "PHP & Laravel Builder",
-        "MySQL Database Architect",
-        "Digital Rollout Strategist",
-        "Web3 Growth Strategist"
-    ],
-    metrics: [
-        {
-            value: "4",
-            label: "CV Roles"
-        },
-        {
-            value: "3",
-            label: "Featured Builds"
-        },
-        {
-            value: "C1",
-            label: "English Level"
-        }
-    ],
-    terminalLines: [
-        { type: "prompt", text: "cat profile.json" },
-        { type: "obj-open", text: "{" },
-        { type: "pair", key: '  "name"', val: '"Odubela Oluwatomiwa"', valType: "str" },
-        { type: "pair", key: '  "role"', val: '"Backend Developer | Digital Strategist"', valType: "str" },
-        { type: "pair", key: '  "focus"', val: '"PHP, MySQL, rollout systems"', valType: "str" },
-        { type: "pair", key: '  "instagram"', val: '"@lifewith_blac"', valType: "str" },
-        { type: "pair", key: '  "english"', val: '"C1 Advanced"', valType: "str" },
-        { type: "pair", key: '  "available"', val: "true", valType: "bool" },
-        { type: "obj-close", text: "}" }
-    ],
-    socials: [
-        {
-            label: "LinkedIn",
-            href: "https://www.linkedin.com/in/lifewithblac/",
-            icon: "fa-brands fa-linkedin-in"
-        },
-        {
-            label: "GitHub",
-            href: "https://github.com/Blaconchain",
-            icon: "fa-brands fa-github"
-        },
-        {
-            label: "X",
-            href: "https://x.com/Lifewithblac",
-            icon: "fa-brands fa-x-twitter"
-        },
-        {
-            label: "Instagram",
-            href: "https://www.instagram.com/lifewith_blac/",
-            icon: "fa-brands fa-instagram"
-        },
-        {
-            label: "Email",
-            href: "mailto:odubelaotomiwa508@gmail.com",
-            icon: "fa-solid fa-envelope"
-        },
-        {
-            label: "Phone",
-            href: "tel:09125808797",
-            icon: "fa-solid fa-phone"
-        }
-    ],
-    projects: [
-        {
-            title: "Smart Attendance System",
-            desc: "A student attendance platform built with PHP and MySQL to automate academic check-ins, centralise attendance records, and reduce manual paperwork for lecturers.",
-            badge: "Academic | Automation",
-            badgeClass: "badge-academic",
-            icon: "SA",
-            tags: ["PHP", "MySQL", "Attendance"],
-            impact: "Centralises student check-ins and gives lecturers a cleaner attendance record.",
-            demo: "https://smart-attendance-production-996c.up.railway.app/",
-            source: "https://github.com/BlacOnchain/Smart-Attendance",
-            featured: true,
-            screenshots: [
-                { src: "images/projects/smart-attendance-landing.png", alt: "Smart Attendance landing page" },
-                { src: "images/projects/smart-attendance-portal.png", alt: "Smart Attendance student portal sign-in page" }
-            ]
-        },
-        {
-            title: "BlacRate Pro",
-            desc: "A Progressive Web App for OTC traders to calculate crypto-to-naira rates with fast, practical access and offline-first support.",
-            badge: "PWA | Trading Tool",
-            badgeClass: "badge-pwa",
-            icon: "BR",
-            tags: ["PWA", "Rates", "Utility"],
-            impact: "Delivers a fast, offline-friendly crypto-to-naira rate workflow for OTC traders.",
-            demo: "https://blaconchain.github.io/blacrate-pro/",
-            source: "https://github.com/BlacOnchain/blacrate-pro"
-        },
-        {
-            title: "Receipt Pro",
-            desc: "A backend receipt management concept focused on SQL data integrity, secure transaction logging, and cleaner operational records.",
-            badge: "Backend | SQL",
-            badgeClass: "badge-backend",
-            icon: "RP",
-            tags: ["PHP", "MySQL", "Integrity"],
-            impact: "Models dependable transaction records with SQL-focused data integrity.",
-            source: "https://github.com/Blaconchain/receipt-pro"
-        }
-    ],
-    experience: [
-        {
-            company: "Crypto Dungeon",
-            role: "Partnerships Contributor",
-            time: "11/2024 - 11/2025",
-            points: [
-                "Led community engagement and digital moderation for Web3 enthusiasts and NFT collectors.",
-                "Managed partnership conversations and growth strategy support for integrations like Create With Me AI."
-            ]
-        },
-        {
-            company: "Cowrywise",
-            role: "Campus Ambassador Lead",
-            time: "11/2025 - Present",
-            points: [
-                "Selected to coordinate brand awareness and digital savings adoption across the campus community.",
-                "Managed campaign logistics, promotional materials, and event operations with a structured execution mindset."
-            ]
-        },
-        {
-            company: "Olak Tech",
-            role: "Backend Developer Intern (SIWES)",
-            time: "2025 - 2025",
-            points: [
-                "Collaborated on backend engineering and relational database normalization with PHP and MySQL.",
-                "Handled technical documentation, system logging, and workflow tracking to support project delivery."
-            ]
-        },
-        {
-            company: "oSHAMO",
-            role: "Early Rollout Strategist",
-            time: "11/2024 - 08/2025",
-            points: [
-                "Planned organic digital rollout schedules across social channels to maximise promotional reach.",
-                "Tracked content deliverables and launch timing with an operations-first approach to execution."
-            ]
-        }
-    ],
-    education: [
-        {
-            school: "Moshood Abiola Polytechnic (MAPOLY)",
-            degree: "ND in Computer Science",
-            meta: "2023 - 2025",
-            desc: "Core coursework includes Database Management Systems, Systems Analysis & Design, Web Development, and Digital Marketing Logic."
-        }
-    ],
-    skillCategories: [
-        {
-            title: "Backend",
-            items: [
-                { name: "PHP", icon: "fa-brands fa-php", pct: 92 },
-                { name: "Laravel", icon: "fa-solid fa-layer-group", pct: 88 },
-                { name: "MySQL", icon: "fa-solid fa-database", pct: 94 },
-                { name: "Database Design", icon: "fa-solid fa-diagram-project", pct: 93 },
-                { name: "API Workflows", icon: "fa-solid fa-plug-circle-check", pct: 84 }
-            ]
-        },
-        {
-            title: "Growth & Rollout",
-            items: [
-                { name: "Digital Rollout", icon: "fa-solid fa-rocket", pct: 88 },
-                { name: "Community Ops", icon: "fa-solid fa-users-gear", pct: 86 },
-                { name: "Content Strategy", icon: "fa-solid fa-pen-ruler", pct: 82 },
-                { name: "Partnerships", icon: "fa-solid fa-handshake-angle", pct: 80 }
-            ]
-        },
-        {
-            title: "Tools, Workflow & Communication",
-            items: [
-                { name: "Git / GitHub", icon: "fa-brands fa-github", pct: 85 },
-                { name: "Project Tracking", icon: "fa-solid fa-list-check", pct: 83 },
-                { name: "Documentation", icon: "fa-solid fa-file-lines", pct: 84 },
-                { name: "PWA Support", icon: "fa-solid fa-mobile-screen-button", pct: 79 },
-                { name: "English C1", icon: "fa-solid fa-language", pct: 91 }
-            ]
-        }
-    ],
-    credentials: {
-        certifications: [
-            {
-                title: "C1 Advanced English Certification (EF SET)",
-                meta: "2026"
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Mobile Navigation Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
             }
-        ],
-        awards: [
-            {
-                title: "Best Content Strategy Award",
-                meta: "Moshood Abiola Polytechnic | 2025",
-                desc: "Recognized for innovative rollout plans that improved community retention and organic growth."
-            }
-        ],
-        volunteer: []
-    },
-    contactLinks: [
-        {
-            title: "LinkedIn",
-            value: "linkedin.com/in/lifewithblac",
-            href: "https://www.linkedin.com/in/lifewithblac/",
-            icon: "fa-brands fa-linkedin-in",
-            external: true
-        },
-        {
-            title: "Phone",
-            value: "09125808797",
-            href: "tel:09125808797",
-            icon: "fa-solid fa-phone"
-        },
-        {
-            title: "GitHub",
-            value: "github.com/Blaconchain",
-            href: "https://github.com/Blaconchain",
-            icon: "fa-brands fa-github",
-            external: true
-        },
-        {
-            title: "X",
-            value: "@Lifewithblac",
-            href: "https://x.com/Lifewithblac",
-            icon: "fa-brands fa-x-twitter",
-            external: true
-        },
-        {
-            title: "Instagram",
-            value: "@lifewith_blac",
-            href: "https://www.instagram.com/lifewith_blac/",
-            icon: "fa-brands fa-instagram",
-            external: true
-        },
-        {
-            title: "Full Resume / CV",
-            value: "Download PDF",
-            href: "assets/Oluwatomiwa_CV.pdf",
-            icon: "fa-solid fa-file-lines",
-            external: true,
-            highlight: true
-        }
-    ]
-};
-
-function initCanvas() {
-    const canvas = document.getElementById("bg-canvas");
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!canvas || prefersReducedMotion) {
-        if (canvas) canvas.style.display = "none";
-        return;
-    }
-    const ctx = canvas.getContext("2d");
-    let width;
-    let height;
-    let particles;
-
-    const colors = ["#00ff88", "#00d4ff", "#00cc6a"];
-
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    }
-
-    function makeParticle() {
-        return {
-            x: Math.random() * width,
-            y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.35,
-            vy: (Math.random() - 0.5) * 0.35,
-            r: Math.random() * 1.5 + 0.4,
-            c: colors[Math.floor(Math.random() * colors.length)],
-            a: Math.random() * 0.5 + 0.15
-        };
-    }
-
-    function initParticles() {
-        particles = Array.from({ length: window.innerWidth < 768 ? 48 : 96 }, makeParticle);
-    }
-
-    function draw() {
-        ctx.clearRect(0, 0, width, height);
-
-        for (let i = 0; i < particles.length; i += 1) {
-            for (let j = i + 1; j < particles.length; j += 1) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-
-                if (dist < 130) {
-                    ctx.beginPath();
-                    ctx.strokeStyle = `rgba(0,255,136,${0.06 * (1 - dist / 130)})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.stroke();
-                }
-            }
-        }
-
-        particles.forEach((particle) => {
-            particle.x += particle.vx;
-            particle.y += particle.vy;
-
-            if (particle.x < 0 || particle.x > width) {
-                particle.vx *= -1;
-            }
-
-            if (particle.y < 0 || particle.y > height) {
-                particle.vy *= -1;
-            }
-
-            ctx.beginPath();
-            ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
-            ctx.fillStyle = particle.c;
-            ctx.globalAlpha = particle.a;
-            ctx.fill();
-            ctx.globalAlpha = 1;
         });
 
-        window.requestAnimationFrame(draw);
+        // Close menu when clicking nav links
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
     }
 
-    resize();
-    initParticles();
-    draw();
-    window.addEventListener("resize", resize);
-}
-
-function initNavbar() {
-    const nav = document.getElementById("navbar");
-    window.addEventListener("scroll", () => {
-        nav.classList.toggle("scrolled", window.scrollY > 50);
-    }, { passive: true });
-}
-
-function setElementText(id, text) {
-    const element = document.getElementById(id);
-    if (element) {
-        element.textContent = text;
-    }
-}
-
-function populateStaticContent() {
-    const { hero } = DATA;
-
-    document.title = `${hero.brand} | Backend Developer & Digital Strategist`;
-    setElementText("hero-profile-label", hero.brand);
-    setElementText("hero-profile-sub", hero.name);
-    setElementText("availability-text", hero.availability);
-    setElementText("hero-bio", hero.bio);
-    setElementText("footer-summary", "BACKEND DEVELOPER | DIGITAL STRATEGIST | SYSTEMS, ROLLOUT, GROWTH");
-
-    const heroName = document.getElementById("hero-name");
-    if (heroName) {
-        heroName.textContent = hero.brand;
-        heroName.setAttribute("data-text", hero.brand);
-    }
-
-    const contactBody = document.getElementById("contact-body");
-    if (contactBody) {
-        contactBody.innerHTML = hero.contactBody;
-    }
-
-    const heroEmailLink = document.getElementById("hero-email-link");
-    if (heroEmailLink) {
-        heroEmailLink.href = `mailto:${hero.email}`;
-    }
-
-    const contactEmailBig = document.getElementById("contact-email-big");
-    if (contactEmailBig) {
-        contactEmailBig.href = `mailto:${hero.email}`;
-        contactEmailBig.innerHTML = `${hero.email}<i class="fa-solid fa-arrow-up-right-from-square"></i>`;
-    }
-
-    document.querySelectorAll("[data-cv-link]").forEach((link) => {
-        link.href = hero.cv;
-    });
-}
-
-function buildHeroSocials() {
-    const socials = document.getElementById("hero-socials");
-    if (!socials) {
-        return;
-    }
-
-    socials.innerHTML = DATA.socials.map((item) => `
-        <a href="${item.href}" ${item.href.startsWith("http") ? 'target="_blank" rel="noreferrer"' : ""} title="${item.label}">
-            <i class="${item.icon}"></i>
-        </a>
-    `).join("");
-}
-
-function buildMetrics() {
-    const metricsRow = document.getElementById("metrics-row");
-    if (!metricsRow) {
-        return;
-    }
-
-    metricsRow.innerHTML = DATA.metrics.map((metric) => `
-        <div class="metric-pill">
-            <span class="metric-val">${metric.value}</span>
-            <span class="metric-label">${metric.label}</span>
-        </div>
-    `).join("");
-}
-
-function initTypewriter() {
-    const element = document.getElementById("typewriter");
-    const roles = DATA.typewriterRoles;
-    let roleIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    function tick() {
-        const role = roles[roleIndex];
-
-        if (!deleting) {
-            element.textContent = role.slice(0, charIndex + 1);
-            charIndex += 1;
-
-            if (charIndex === role.length) {
-                deleting = true;
-                window.setTimeout(tick, 1800);
-                return;
-            }
-        } else {
-            element.textContent = role.slice(0, charIndex - 1);
-            charIndex -= 1;
-
-            if (charIndex === 0) {
-                deleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-            }
+    // 2. Data Definitions for Skills, Projects, and Experience
+    const skillsData = [
+        {
+            category: "Backend Development",
+            icon: "fa-solid fa-server",
+            skills: ["PHP", "Laravel", "Python", "FastAPI", "RESTful APIs", "Node.js"]
+        },
+        {
+            category: "Database & Architecture",
+            icon: "fa-solid fa-database",
+            skills: ["MySQL", "Database Modeling", "Query Optimization", "Data Integrity", "ORM"]
+        },
+        {
+            category: "Web3 & Digital Strategy",
+            icon: "fa-solid fa-cube",
+            skills: ["Web3 Strategy", "Smart Contract Integration", "P2P & OTC Workflows", "Digital Marketing", "Meta Pixel Tracking"]
+        },
+        {
+            category: "DevOps & Tools",
+            icon: "fa-solid fa-toolbox",
+            skills: ["Docker", "Git & GitHub", "VS Code", "PowerShell", "Progressive Web Apps (PWA)"]
         }
-
-        window.setTimeout(tick, deleting ? 40 : 75);
-    }
-
-    tick();
-}
-
-function initTerminal() {
-    const body = document.getElementById("term-body");
-    const lines = DATA.terminalLines;
-    let lineIndex = 0;
-
-    function renderLine(line) {
-        const span = document.createElement("span");
-        span.className = "t-line";
-
-        if (line.type === "prompt") {
-            span.innerHTML = `<span class="t-prompt">&gt; </span><span class="t-cmd">${line.text}</span>`;
-        } else if (line.type === "obj-open" || line.type === "obj-close") {
-            span.innerHTML = `<span class="t-cmd">${line.text}</span>`;
-        } else if (line.type === "pair") {
-            let valueHtml;
-
-            if (line.valType === "str") {
-                valueHtml = `<span class="t-str">${line.val}</span>`;
-            } else if (line.valType === "num") {
-                valueHtml = `<span class="t-num">${line.val}</span>`;
-            } else if (line.valType === "bool") {
-                valueHtml = `<span class="t-bool">${line.val}</span>`;
-            } else {
-                valueHtml = `<span class="t-val">${line.val}</span>`;
-            }
-
-            span.innerHTML = `<span class="t-key">${line.key}</span><span class="t-cmd">: </span>${valueHtml}<span class="t-cmd">,</span>`;
-        }
-
-        body.appendChild(span);
-    }
-
-    function nextLine() {
-        if (lineIndex >= lines.length) {
-            return;
-        }
-
-        renderLine(lines[lineIndex]);
-        lineIndex += 1;
-        window.setTimeout(nextLine, lineIndex === 1 ? 650 : 140);
-    }
-
-    window.setTimeout(nextLine, 900);
-}
-
-function buildProjects() {
-    const grid = document.getElementById("projects-grid");
-    if (!grid) {
-        return;
-    }
-
-    DATA.projects.forEach((project, index) => {
-        const card = document.createElement("article");
-        card.className = `project-card reveal${project.featured ? " featured-project" : ""}`;
-        card.style.transitionDelay = `${index * 0.08}s`;
-
-        const action = (label, href, variant) => href
-            ? `<a class="project-action ${variant}" href="${href}" target="_blank" rel="noopener noreferrer">${label}<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`
-            : `<span class="project-action is-unavailable" aria-disabled="true">${label} unavailable</span>`;
-
-        card.innerHTML = `
-            ${project.screenshots ? `
-                <div class="project-screenshots" aria-label="${project.title} preview screens">
-                    ${project.screenshots.map((screenshot) => `<img src="${screenshot.src}" alt="${screenshot.alt}" loading="lazy">`).join("")}
-                </div>
-            ` : ""}
-            <div class="project-card-top">
-                <div class="project-icon">${project.icon}</div>
-                <span class="project-badge ${project.badgeClass}">${project.badge}</span>
-            </div>
-            <div class="project-title">${project.title}</div>
-            <p class="project-desc">${project.desc}</p>
-            <p class="project-impact"><span>Outcome:</span> ${project.impact}</p>
-            <div class="project-footer">
-                <div class="project-tags">
-                    ${project.tags.map((tag) => `<span class="p-tag">${tag}</span>`).join("")}
-                </div>
-            </div>
-            <div class="project-actions">
-                ${action("Live Demo", project.demo, "project-demo")}
-                ${action("Source Code", project.source, "project-source")}
-            </div>
-        `;
-
-        grid.appendChild(card);
-    });
-}
-
-function buildExperience() {
-    const timeline = document.getElementById("timeline");
-    if (!timeline) {
-        return;
-    }
-
-    DATA.experience.forEach((entry, index) => {
-        const card = document.createElement("div");
-        card.className = "timeline-card reveal";
-        card.style.transitionDelay = `${index * 0.1}s`;
-        card.innerHTML = `
-            <div class="tl-time">${entry.time}</div>
-            <div class="tl-company">${entry.company}</div>
-            <div class="tl-role">${entry.role}</div>
-            <ul class="tl-list">
-                ${entry.points.map((point) => `<li>${point}</li>`).join("")}
-            </ul>
-        `;
-        timeline.appendChild(card);
-    });
-
-    const eduCards = document.getElementById("edu-cards");
-    if (!eduCards) {
-        return;
-    }
-
-    DATA.education.forEach((entry) => {
-        const card = document.createElement("div");
-        card.className = "edu-card";
-        card.innerHTML = `
-            <div class="edu-school">${entry.school}</div>
-            <div class="edu-degree">${entry.degree}</div>
-            <div class="edu-meta">${entry.meta}</div>
-            <p class="edu-desc">${entry.desc}</p>
-        `;
-        eduCards.appendChild(card);
-    });
-}
-
-function buildCredentials() {
-    const sections = [
-        { id: "certifications-list", items: DATA.credentials.certifications },
-        { id: "awards-list", items: DATA.credentials.awards }
     ];
 
-    sections.forEach((section) => {
-        const container = document.getElementById(section.id);
-        if (!container) {
-            return;
+    const projectsData = [
+        {
+            title: "Smart Attendance System",
+            description: "An automated QR-code based attendance tracking system built with Laravel and MySQL to streamline academic and event check-ins for Moshood Abiola Polytechnic.",
+            icon: "fa-solid fa-qrcode",
+            tags: ["Laravel", "MySQL", "QR Technology", "Tailwind CSS"],
+            github: "https://github.com/Blaconchain",
+            live: "#"
+        },
+        {
+            title: "BlacRate Pro PWA",
+            description: "A high-performance Progressive Web App tailored for OTC and P2P traders featuring real-time coin mapping, granular trade history, and offline service worker caching.",
+            icon: "fa-solid fa-chart-line",
+            tags: ["JavaScript", "PWA", "Service Workers", "CSS3"],
+            github: "https://github.com/Blaconchain",
+            live: "#"
+        },
+        {
+            title: "Nebula Token Launcher",
+            description: "A full-stack Web3 token deployment application equipped with React frontend components, Laravel API controllers, and secure database architecture.",
+            icon: "fa-solid fa-rocket",
+            tags: ["React", "Laravel", "MySQL", "Web3"],
+            github: "https://github.com/Blaconchain",
+            live: "#"
+        },
+        {
+            title: "Cyber-Intelligence Dashboard",
+            description: "A glassmorphic full-stack dashboard featuring real-time IP geolocation tracking, threat metric visualization, and high-speed asynchronous FastAPI endpoints.",
+            icon: "fa-solid fa-shield-halved",
+            tags: ["React", "FastAPI", "Python", "Tailwind CSS"],
+            github: "https://github.com/Blaconchain",
+            live: "#"
         }
+    ];
 
-        container.innerHTML = section.items.map((item) => `
-            <div class="credential-item">
-                <strong>${item.title}</strong>
-                <span class="credential-meta">${item.meta}</span>
-                ${item.desc ? `<p class="credential-desc">${item.desc}</p>` : ""}
-            </div>
-        `).join("");
-    });
-}
-
-function buildStack() {
-    const categoriesWrap = document.getElementById("stack-categories");
-    if (!categoriesWrap) {
-        return;
-    }
-
-    categoriesWrap.innerHTML = DATA.skillCategories.map((category, categoryIndex) => `
-        <section class="stack-category reveal" style="transition-delay: ${categoryIndex * 0.08}s">
-            <h3 class="stack-category-title">${category.title}</h3>
-            <div class="stack-card-grid">
-                ${category.items.map((item, itemIndex) => `
-                    <article class="skill-card reveal" style="transition-delay: ${(categoryIndex * 0.08) + (itemIndex * 0.05)}s; --glow-delay: ${(categoryIndex * 0.35) + (itemIndex * 0.12)}s;">
-                        <div class="skill-card-head">
-                            <i class="${item.icon} skill-card-icon"></i>
-                            <span class="skill-card-name">${item.name}</span>
-                        </div>
-                        <div class="skill-card-meta">
-                            <span>Proficiency</span>
-                            <strong>${item.pct}%</strong>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-progress-fill" data-width="${item.pct}"></div>
-                        </div>
-                    </article>
-                `).join("")}
-            </div>
-        </section>
-    `).join("");
-}
-
-function initMobileMenu() {
-    const toggle = document.getElementById("nav-toggle");
-    const links = document.querySelector(".nav-links");
-    if (!toggle || !links) return;
-
-    toggle.addEventListener("click", () => {
-        const isOpen = links.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", String(isOpen));
-        toggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-        toggle.innerHTML = `<i class="fa-solid fa-${isOpen ? "xmark" : "bars"}" aria-hidden="true"></i>`;
-    });
-
-    links.addEventListener("click", () => {
-        links.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open navigation menu");
-        toggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-    });
-}
-
-function buildContactLinks() {
-    const contactLinks = document.getElementById("contact-links");
-    if (!contactLinks) {
-        return;
-    }
-
-    DATA.contactLinks.forEach((item) => {
-        const card = document.createElement(item.href ? "a" : "article");
-        card.className = `contact-link-card${item.highlight ? " highlight-card" : ""}${item.href ? "" : " static-card"}`;
-
-        if (item.href) {
-            card.href = item.href;
-            if (item.external && item.href.startsWith("http")) {
-                card.target = "_blank";
-                card.rel = "noreferrer";
-            } else if (item.external) {
-                card.target = "_blank";
-                card.rel = "noreferrer";
-            }
+    const experienceData = [
+        {
+            date: "September 2026 – Present",
+            role: "Software Engineering Trainee",
+            company: "Cardtonic Upskill Program (Software Engineering C Batch)",
+            description: "Selected for intensive software engineering training focused on advanced backend principles, testing assessments, and scalable system design."
+        },
+        {
+            date: "August 2025 – September 2026",
+            role: "Lead Developer & Systems Creator",
+            company: "Moshood Abiola Polytechnic (MAPOLY)",
+            description: "Designed and implemented automated campus systems including the QR Code Attendance Manager and academic resource portals using Laravel and MySQL."
+        },
+        {
+            date: "June 2026",
+            role: "Campus Ambassador & Tech Promoter",
+            company: "Tixdorm",
+            description: "Promoted event ticketing solutions and integrated Meta Pixel event tracking workflows for student-led digital events."
+        },
+        {
+            date: "April 2025",
+            role: "Backend Engineering Intern",
+            company: "Olak Tech (SIWES Program)",
+            description: "Completed comprehensive backend development training, building database-driven applications and task schedulers with PHP and MySQL."
         }
+    ];
 
-        card.innerHTML = `
-            <i class="${item.icon}"></i>
-            <div>
-                <strong>${item.title}</strong>
-                <span>${item.value}</span>
+    // 3. Render Skills
+    const skillsGrid = document.getElementById('skillsGrid');
+    if (skillsGrid) {
+        skillsGrid.innerHTML = skillsData.map(group => `
+            <div class="skill-category-card">
+                <h3><i class="${group.icon}"></i> ${group.category}</h3>
+                <div class="skill-tags">
+                    ${group.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                </div>
             </div>
-            <i class="fa-solid ${item.href ? "fa-arrow-right" : "fa-circle"} arrow-r"></i>
-        `;
-
-        contactLinks.appendChild(card);
-    });
-}
-
-function initReveal() {
-    function animateBars(scope) {
-        const bars = scope.querySelectorAll(".bar-fill-anim, .skill-progress-fill");
-        bars.forEach((bar) => {
-            if (bar.dataset.animated === "true") {
-                return;
-            }
-
-            bar.dataset.animated = "true";
-            window.setTimeout(() => {
-                bar.style.width = `${bar.dataset.width}%`;
-            }, 100);
-        });
+        `).join('');
     }
 
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) {
-                return;
-            }
+    // 4. Render Projects
+    const projectsGrid = document.getElementById('projectsGrid');
+    if (projectsGrid) {
+        projectsGrid.innerHTML = projectsData.map(project => `
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="${project.icon}"></i>
+                    </div>
+                    <div class="project-links">
+                        <a href="${project.github}" target="_blank" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                        <a href="${project.live}" target="_blank" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    <div class="project-tech">
+                        ${project.tags.map(tag => `<span class="tech-tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
 
-            entry.target.classList.add("visible");
-            animateBars(entry.target);
-            revealObserver.unobserve(entry.target);
-        });
-    }, { threshold: 0.12 });
+    // 5. Render Experience Timeline
+    const timelineContainer = document.getElementById('timelineContainer');
+    if (timelineContainer) {
+        timelineContainer.innerHTML = experienceData.map(item => `
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">${item.date}</span>
+                    <h3>${item.role}</h3>
+                    <div class="timeline-company">${item.company}</div>
+                    <p>${item.description}</p>
+                </div>
+            </div>
+        `).join('');
+    }
 
-    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
-}
-
-function initClock() {
-    const element = document.getElementById("live-clock");
-
-    function update() {
-        if (!element) {
-            return;
+    // 6. Header Scroll Shadow Effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 30) {
+            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.06)';
+        } else {
+            header.style.boxShadow = 'none';
         }
-
-        const now = new Date();
-        const time = now.toLocaleTimeString("en-GB", {
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit",
-            timeZone: "Africa/Lagos"
-        });
-        element.textContent = `WAT ${time}`;
-    }
-
-    update();
-    window.setInterval(update, 1000);
-}
-
-function initActiveNav() {
-    const links = document.querySelectorAll(".nav-links a");
-    const sections = document.querySelectorAll("section[id]");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) {
-                return;
-            }
-
-            links.forEach((link) => {
-                link.style.color = "";
-            });
-
-            const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-            if (active) {
-                active.style.color = "var(--green)";
-            }
-        });
-    }, { threshold: 0.35 });
-
-    sections.forEach((section) => observer.observe(section));
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    populateStaticContent();
-    initCanvas();
-    initNavbar();
-    initMobileMenu();
-    buildHeroSocials();
-    buildMetrics();
-    initTypewriter();
-    initTerminal();
-    buildProjects();
-    buildExperience();
-    buildCredentials();
-    buildStack();
-    buildContactLinks();
-    initClock();
-    initActiveNav();
-
-    window.requestAnimationFrame(() => {
-        initReveal();
     });
 });
-
