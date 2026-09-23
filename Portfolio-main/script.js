@@ -48,6 +48,11 @@ const DATA = {
     ],
     socials: [
         {
+            label: "LinkedIn",
+            href: "https://www.linkedin.com/in/lifewithblac/",
+            icon: "fa-brands fa-linkedin-in"
+        },
+        {
             label: "GitHub",
             href: "https://github.com/Blaconchain",
             icon: "fa-brands fa-github"
@@ -75,14 +80,31 @@ const DATA = {
     ],
     projects: [
         {
+            title: "Smart Attendance System",
+            desc: "A student attendance platform built with PHP and MySQL to automate academic check-ins, centralise attendance records, and reduce manual paperwork for lecturers.",
+            badge: "Academic | Automation",
+            badgeClass: "badge-academic",
+            icon: "SA",
+            tags: ["PHP", "MySQL", "Attendance"],
+            impact: "Centralises student check-ins and gives lecturers a cleaner attendance record.",
+            demo: "https://smart-attendance-production-996c.up.railway.app/",
+            source: "https://github.com/BlacOnchain/Smart-Attendance",
+            featured: true,
+            screenshots: [
+                { src: "images/projects/smart-attendance-landing.png", alt: "Smart Attendance landing page" },
+                { src: "images/projects/smart-attendance-portal.png", alt: "Smart Attendance student portal sign-in page" }
+            ]
+        },
+        {
             title: "BlacRate Pro",
             desc: "A Progressive Web App for OTC traders to calculate crypto-to-naira rates with fast, practical access and offline-first support.",
             badge: "PWA | Trading Tool",
             badgeClass: "badge-pwa",
             icon: "BR",
             tags: ["PWA", "Rates", "Utility"],
-            link: "https://github.com/Blaconchain/blacrate-pro",
-            external: true
+            impact: "Delivers a fast, offline-friendly crypto-to-naira rate workflow for OTC traders.",
+            demo: "https://blaconchain.github.io/blacrate-pro/",
+            source: "https://github.com/BlacOnchain/blacrate-pro"
         },
         {
             title: "Receipt Pro",
@@ -91,17 +113,8 @@ const DATA = {
             badgeClass: "badge-backend",
             icon: "RP",
             tags: ["PHP", "MySQL", "Integrity"],
-            link: "https://github.com/Blaconchain/receipt-pro",
-            external: true
-        },
-        {
-            title: "Smart Attendance System",
-            desc: "An academic QR-code attendance system built with PHP and MySQL to automate student logging and remove manual paperwork for lecturers.",
-            badge: "Academic | Automation",
-            badgeClass: "badge-academic",
-            icon: "SA",
-            tags: ["PHP", "QR", "MAPOLY"],
-            cta: "Internal academic project"
+            impact: "Models dependable transaction records with SQL-focused data integrity.",
+            source: "https://github.com/Blaconchain/receipt-pro"
         }
     ],
     experience: [
@@ -184,28 +197,8 @@ const DATA = {
     credentials: {
         certifications: [
             {
-                title: "Backend Engineering & Database Architecture",
-                meta: "2025"
-            },
-            {
                 title: "C1 Advanced English Certification (EF SET)",
                 meta: "2026"
-            },
-            {
-                title: "Google Digital Marketing & E-commerce Professional Certificate",
-                meta: "Google"
-            },
-            {
-                title: "Social Media Marketing Certification",
-                meta: "HubSpot Academy"
-            },
-            {
-                title: "Google Project Management Professional Certificate",
-                meta: "Google"
-            },
-            {
-                title: "Asana Project Management Certificate",
-                meta: "Asana"
             }
         ],
         awards: [
@@ -213,27 +206,18 @@ const DATA = {
                 title: "Best Content Strategy Award",
                 meta: "Moshood Abiola Polytechnic | 2025",
                 desc: "Recognized for innovative rollout plans that improved community retention and organic growth."
-            },
-            {
-                title: "Cowrywise Campus Ambassador",
-                meta: "Cowrywise | 2025",
-                desc: "Selected for a leadership role supporting financial literacy and digital savings adoption at MAPOLY."
-            },
-            {
-                title: "Web3 Contributor of the Year",
-                meta: "Moshood Abiola Polytechnic | 2025",
-                desc: "Recognized for strong technical and community contributions within decentralized ecosystems."
             }
         ],
-        volunteer: [
-            {
-                title: "Open Source Contributor",
-                meta: "GitHub",
-                desc: "Maintains and contributes to backend repositories with a focus on PHP and SQL integrity."
-            }
-        ]
+        volunteer: []
     },
     contactLinks: [
+        {
+            title: "LinkedIn",
+            value: "linkedin.com/in/lifewithblac",
+            href: "https://www.linkedin.com/in/lifewithblac/",
+            icon: "fa-brands fa-linkedin-in",
+            external: true
+        },
         {
             title: "Phone",
             value: "09125808797",
@@ -274,12 +258,17 @@ const DATA = {
 
 function initCanvas() {
     const canvas = document.getElementById("bg-canvas");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!canvas || prefersReducedMotion) {
+        if (canvas) canvas.style.display = "none";
+        return;
+    }
     const ctx = canvas.getContext("2d");
     let width;
     let height;
     let particles;
 
-    const colors = ["#00ff88", "#00d4ff", "#00cc6a"];
+    const colors = ["#E0562B", "#123F3A", "#B4893A"];
 
     function resize() {
         width = canvas.width = window.innerWidth;
@@ -299,7 +288,7 @@ function initCanvas() {
     }
 
     function initParticles() {
-        particles = Array.from({ length: 120 }, makeParticle);
+        particles = Array.from({ length: window.innerWidth < 768 ? 48 : 96 }, makeParticle);
     }
 
     function draw() {
@@ -313,7 +302,7 @@ function initCanvas() {
 
                 if (dist < 130) {
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(0,255,136,${0.06 * (1 - dist / 130)})`;
+                    ctx.strokeStyle = `rgba(224,86,43,${0.05 * (1 - dist / 130)})`;
                     ctx.lineWidth = 0.5;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
@@ -516,28 +505,35 @@ function buildProjects() {
     }
 
     DATA.projects.forEach((project, index) => {
-        const card = document.createElement(project.link ? "a" : "article");
-        card.className = `project-card reveal${project.link ? "" : " static-card"}`;
+        const card = document.createElement("article");
+        card.className = `project-card reveal${project.featured ? " featured-project" : ""}`;
         card.style.transitionDelay = `${index * 0.08}s`;
 
-        if (project.link) {
-            card.href = project.link;
-            card.target = project.external ? "_blank" : "_self";
-            card.rel = project.external ? "noopener noreferrer" : "";
-        }
+        const action = (label, href, variant) => href
+            ? `<a class="project-action ${variant}" href="${href}" target="_blank" rel="noopener noreferrer">${label}<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>`
+            : `<span class="project-action is-unavailable" aria-disabled="true">${label} unavailable</span>`;
 
         card.innerHTML = `
+            ${project.screenshots ? `
+                <div class="project-screenshots" aria-label="${project.title} preview screens">
+                    ${project.screenshots.map((screenshot) => `<img src="${screenshot.src}" alt="${screenshot.alt}" loading="lazy">`).join("")}
+                </div>
+            ` : ""}
             <div class="project-card-top">
                 <div class="project-icon">${project.icon}</div>
                 <span class="project-badge ${project.badgeClass}">${project.badge}</span>
             </div>
             <div class="project-title">${project.title}</div>
             <p class="project-desc">${project.desc}</p>
+            <p class="project-impact"><span>Outcome:</span> ${project.impact}</p>
             <div class="project-footer">
                 <div class="project-tags">
                     ${project.tags.map((tag) => `<span class="p-tag">${tag}</span>`).join("")}
                 </div>
-                <div class="project-arrow${project.link ? "" : " project-note"}">${project.link ? '<i class="fa-solid fa-arrow-right"></i>' : project.cta}</div>
+            </div>
+            <div class="project-actions">
+                ${action("Live Demo", project.demo, "project-demo")}
+                ${action("Source Code", project.source, "project-source")}
             </div>
         `;
 
@@ -587,8 +583,7 @@ function buildExperience() {
 function buildCredentials() {
     const sections = [
         { id: "certifications-list", items: DATA.credentials.certifications },
-        { id: "awards-list", items: DATA.credentials.awards },
-        { id: "volunteer-list", items: DATA.credentials.volunteer }
+        { id: "awards-list", items: DATA.credentials.awards }
     ];
 
     sections.forEach((section) => {
@@ -635,6 +630,26 @@ function buildStack() {
             </div>
         </section>
     `).join("");
+}
+
+function initMobileMenu() {
+    const toggle = document.getElementById("nav-toggle");
+    const links = document.querySelector(".nav-links");
+    if (!toggle || !links) return;
+
+    toggle.addEventListener("click", () => {
+        const isOpen = links.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+        toggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+        toggle.innerHTML = `<i class="fa-solid fa-${isOpen ? "xmark" : "bars"}" aria-hidden="true"></i>`;
+    });
+
+    links.addEventListener("click", () => {
+        links.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation menu");
+        toggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+    });
 }
 
 function buildContactLinks() {
@@ -723,6 +738,19 @@ function initClock() {
     window.setInterval(update, 1000);
 }
 
+function initCursorGlow() {
+    const glow = document.getElementById("cursor-glow");
+    if (!glow || !window.matchMedia("(hover: hover)").matches) return;
+
+    window.addEventListener("mousemove", (e) => {
+        glow.style.left = `${e.clientX}px`;
+        glow.style.top = `${e.clientY}px`;
+        glow.classList.add("is-active");
+    }, { passive: true });
+
+    document.addEventListener("mouseleave", () => glow.classList.remove("is-active"));
+}
+
 function initActiveNav() {
     const links = document.querySelectorAll(".nav-links a");
     const sections = document.querySelectorAll("section[id]");
@@ -751,6 +779,7 @@ document.addEventListener("DOMContentLoaded", () => {
     populateStaticContent();
     initCanvas();
     initNavbar();
+    initMobileMenu();
     buildHeroSocials();
     buildMetrics();
     initTypewriter();
@@ -762,9 +791,9 @@ document.addEventListener("DOMContentLoaded", () => {
     buildContactLinks();
     initClock();
     initActiveNav();
+    initCursorGlow();
 
     window.requestAnimationFrame(() => {
         initReveal();
     });
 });
-
