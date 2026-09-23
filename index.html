@@ -3,202 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLAC | Backend Developer & Digital Strategist</title>
-    <meta name="description" content="Portfolio of Odubela Oluwatomiwa (BLAC), a backend developer and digital strategist building practical PHP, MySQL, and workflow systems.">
-    <meta name="theme-color" content="#070a0f">
+    <title>BLAC | Backend Developer &amp; Systems Architect</title>
+    <meta name="description" content="Portfolio of Odubela Oluwatomiwa (BLAC) — Backend Developer building robust PHP, MySQL, and workflow automation systems.">
+    <meta name="theme-color" content="#F8F9FA">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="BLAC | Backend Developer & Digital Strategist">
-    <meta property="og:description" content="Practical PHP, MySQL, and workflow systems built for real-world use.">
+    <meta property="og:title" content="BLAC | Backend Developer &amp; Systems Architect">
+    <meta property="og:description" content="Backend engineering, SQL database architecture, and digital rollout execution.">
     <meta property="og:url" content="https://blaconchain.github.io/Portfolio/">
-    <meta property="og:image" content="https://blaconchain.github.io/Portfolio/images/profile.jpg">
+    <meta property="og:image" content="images/profile.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BLAC | Backend Developer & Digital Strategist">
-    <meta name="twitter:description" content="Practical PHP, MySQL, and workflow systems built for real-world use.">
-    <meta name="twitter:image" content="https://blaconchain.github.io/Portfolio/images/profile.jpg">
+    <meta name="twitter:title" content="BLAC | Backend Developer &amp; Systems Architect">
+    <meta name="twitter:description" content="Backend engineering, SQL database architecture, and digital rollout execution.">
+    <meta name="twitter:image" content="images/profile.jpg">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body class="light-theme">
     <canvas id="bg-canvas"></canvas>
     <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
     <nav id="navbar">
         <div class="nav-inner">
-            <div class="nav-logo">
+            <a href="#home" class="nav-logo">
                 <span class="logo-bracket">[</span>BLAC<span class="logo-bracket">]</span>
-            </div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#projects"><span class="nav-num">01.</span>projects</a></li>
-                <li><a href="#experience"><span class="nav-num">02.</span>experience</a></li>
-                <li><a href="#credentials"><span class="nav-num">03.</span>credentials</a></li>
-                <li><a href="#stack"><span class="nav-num">04.</span>stack</a></li>
-                <li><a href="#contact"><span class="nav-num">05.</span>contact</a></li>
-            </ul>
-            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
-                <i class="fa-solid fa-bars" aria-hidden="true"></i>
-            </button>
-            <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" class="nav-cta" rel="noreferrer" data-cv-link>
-                <i class="fa-solid fa-arrow-down"></i> Resume
             </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#stack">stack</a></li>
+                <li><a href="#experience">experience</a></li>
+                <li><a href="#credentials">credentials</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+                <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" class="nav-cta" rel="noreferrer" data-cv-link>
+                    <i class="fa-solid fa-file-arrow-down"></i> Resume
+                </a>
+            </div>
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-inner">
-            <div class="hero-left-col">
-                <div class="hero-top-row">
-                    <figure class="hero-profile-card">
-                        <div class="hero-profile-frame">
-                            <img src="images/profile.jpg" alt="BLAC profile photo" class="hero-profile-img">
+    <main id="main">
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-inner">
+                <div class="hero-left-col">
+                    <div class="hero-top-row">
+                        <figure class="hero-profile-card anim-float">
+                            <div class="hero-profile-frame">
+                                <img src="images/profile.jpg" alt="BLAC - Odubela Oluwatomiwa photo" class="hero-profile-img">
+                            </div>
+                            <figcaption class="hero-profile-meta">
+                                <span class="hero-profile-label" id="hero-profile-label">BLAC</span>
+                                <span class="hero-profile-sub" id="hero-profile-sub">Odubela Oluwatomiwa</span>
+                            </figcaption>
+                        </figure>
+
+                        <div class="hero-status">
+                            <span class="status-dot"></span>
+                            <span id="availability-text">Available for backend &amp; systems engineering</span>
                         </div>
-                        <figcaption class="hero-profile-meta">
-                            <span class="hero-profile-label" id="hero-profile-label">BLAC</span>
-                            <span class="hero-profile-sub" id="hero-profile-sub">Odubela Oluwatomiwa</span>
-                        </figcaption>
-                    </figure>
+                    </div>
 
-                    <div class="hero-status">
-                        <span class="status-dot"></span>
-                        <span id="availability-text">Open to backend, operations, and rollout work</span>
+                    <h1 class="hero-name" id="hero-name">BLAC</h1>
+
+                    <div class="hero-role-line">
+                        <span class="role-prefix">~/</span>
+                        <span id="typewriter" class="role-text"></span>
+                        <span class="cursor-blink">_</span>
+                    </div>
+
+                    <p class="hero-bio" id="hero-bio"></p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary">
+                            <span>Explore Selected Work</span>
+                            <i class="fa-solid fa-arrow-right anim-arrow"></i>
+                        </a>
+                        <a href="#contact" class="btn-ghost">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Start a Conversation</span>
+                        </a>
+                        <button class="btn-ghost btn-icon-only" id="quick-resume-btn" title="Quick Resume Preview">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+
+                    <div class="hero-socials" id="hero-socials"></div>
+                </div>
+
+                <div class="hero-right-col">
+                    <!-- INTERACTIVE TERMINAL CONSOLE (LIGHT EDITORIAL STYLE) -->
+                    <div class="terminal-card" id="terminal-hero">
+                        <div class="term-bar">
+                            <div class="term-dots">
+                                <span class="term-dot td-r"></span>
+                                <span class="term-dot td-y"></span>
+                                <span class="term-dot td-g"></span>
+                            </div>
+                            <span class="term-title">blac@backend-sys:~$</span>
+                            <span class="term-badge">interactive</span>
+                        </div>
+                        <div class="term-quick-cmds">
+                            <button class="term-btn" data-cmd="profile">profile.json</button>
+                            <button class="term-btn" data-cmd="stack">stack.sh</button>
+                            <button class="term-btn" data-cmd="projects">projects.list</button>
+                            <button class="term-btn" data-cmd="clear">clear</button>
+                        </div>
+                        <div class="term-body" id="term-body"></div>
+                        <div class="term-input-line">
+                            <span class="t-prompt">&gt;</span>
+                            <input type="text" id="term-input" placeholder="Type command (e.g. 'help', 'contact', 'skills')..." autocomplete="off" spellcheck="false">
+                        </div>
+                    </div>
+
+                    <div class="metrics-row" id="metrics-row"></div>
+                </div>
+            </div>
+
+            <div class="scroll-hint">
+                <span>SCROLL TO EXPLORE</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section class="section" id="projects">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow">PORTFOLIO BUILDS</span>
+                    <h2 class="section-title">Proof In <span class="accent-text">Production Systems</span></h2>
+                    <p class="section-sub">CV-backed backend architectures, SQL database structures, and workflow automation built for reliability.</p>
+                </div>
+
+                <!-- PROJECT FILTER TABS -->
+                <div class="filter-bar reveal" id="project-filter-bar">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="backend">Backend &amp; SQL</button>
+                    <button class="filter-btn" data-filter="pwa">PWA &amp; Mobile</button>
+                    <button class="filter-btn" data-filter="automation">Automation &amp; QR</button>
+                </div>
+
+                <div class="projects-grid" id="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- TECH STACK & ARCHITECTURE SECTION -->
+        <section class="section section-stack" id="stack">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow">CAPABILITIES &amp; ARCHITECTURE</span>
+                    <h2 class="section-title">Backend <span class="accent-text">Stack Matrix</span></h2>
+                    <p class="section-sub">Functional categorization of core languages, database systems, architecture patterns, and rollout tools — structured by practical execution, not arbitrary percentage bars.</p>
+                </div>
+
+                <!-- STACK DOMAIN FILTER TABS -->
+                <div class="filter-bar filter-bar-soft reveal" id="stack-filter-bar">
+                    <button class="filter-btn active" data-stack-filter="all">All Capabilities</button>
+                    <button class="filter-btn" data-stack-filter="backend">Backend &amp; APIs</button>
+                    <button class="filter-btn" data-stack-filter="database">Database &amp; SQL</button>
+                    <button class="filter-btn" data-stack-filter="pwa">PWA &amp; Architecture</button>
+                    <button class="filter-btn" data-stack-filter="tools">Tools &amp; Rollout</button>
+                </div>
+
+                <div class="stack-showcase">
+                    <div class="stack-grid" id="stack-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE & EDUCATION SECTION -->
+        <section class="section section-alt" id="experience">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow">CAREER TRACK</span>
+                    <h2 class="section-title">Code, Operations &amp; <span class="accent-text">Rollout Leadership</span></h2>
+                    <p class="section-sub">Backend engineering internships, campus coordination, partnership management, and community rollout strategy.</p>
+                </div>
+
+                <div class="timeline" id="timeline"></div>
+
+                <div class="education-strip reveal">
+                    <div class="edu-label">ACADEMIC FOUNDATION</div>
+                    <div class="edu-cards" id="edu-cards"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CREDENTIALS SECTION -->
+        <section class="section" id="credentials">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow">VERIFIED PROOF</span>
+                    <h2 class="section-title">Certifications &amp; <span class="accent-text">Awards</span></h2>
+                    <p class="section-sub">Recognized language proficiency and awarded campaign strategy accomplishments.</p>
+                </div>
+
+                <div class="credentials-grid">
+                    <article class="credential-card reveal hover-lift">
+                        <div class="credential-label"><i class="fa-solid fa-certificate"></i> Certifications</div>
+                        <div class="credential-list" id="certifications-list"></div>
+                    </article>
+                    <article class="credential-card reveal hover-lift">
+                        <div class="credential-label"><i class="fa-solid fa-trophy"></i> Recognitions</div>
+                        <div class="credential-list" id="awards-list"></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="section section-contact" id="contact">
+            <div class="section-inner contact-inner">
+                <div class="contact-text-col reveal">
+                    <span class="section-eyebrow">INITIATE CONTACT</span>
+                    <h2 class="section-title">Let&apos;s Build Something <span class="accent-text">Dependable</span></h2>
+                    <p class="contact-body" id="contact-body"></p>
+
+                    <div class="contact-direct-box hover-lift">
+                        <a href="mailto:odubelaotomiwa508@gmail.com" class="contact-email-big" id="contact-email-big">
+                            odubelaotomiwa508@gmail.com
+                        </a>
+                        <button class="btn-copy" id="copy-email-btn" title="Copy email address">
+                            <i class="fa-solid fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <!-- INTERACTIVE MESSAGE FORM -->
+                    <form class="contact-form hover-lift" id="contact-form">
+                        <h3 class="form-title">Send a Direct Message</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">Your Name</label>
+                                <input type="text" id="form-name" required placeholder="e.g. Sarah Connor">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email Address</label>
+                                <input type="email" id="form-email" required placeholder="sarah@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject">Subject / Project Scope</label>
+                            <input type="text" id="form-subject" required placeholder="Backend Development / Database Design">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Message</label>
+                            <textarea id="form-message" rows="4" required placeholder="Tell me about your project requirements or timeline..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary form-submit-btn">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane anim-arrow"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-links-col reveal" id="contact-links"></div>
+            </div>
+
+            <footer class="site-footer">
+                <span>&copy; 2026 BLAC | ODUBELA OLUWATOMIWA</span>
+                <span id="live-clock">WAT 00:00:00</span>
+                <span id="footer-summary">BACKEND ENGINEER · SQL ARCHITECT · DIGITAL STRATEGIST</span>
+            </footer>
+        </section>
+    </main>
+
+    <!-- PROJECT DEEP DIVE MODAL -->
+    <div class="modal-overlay" id="project-modal" aria-hidden="true">
+        <div class="modal-card">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-content" id="modal-content">
+                <!-- Dynamically injected -->
+            </div>
+        </div>
+    </div>
+
+    <!-- QUICK RESUME MODAL -->
+    <div class="modal-overlay" id="resume-modal" aria-hidden="true">
+        <div class="modal-card modal-card-wide">
+            <button class="modal-close" id="resume-modal-close" aria-label="Close modal">&times;</button>
+            <div class="resume-modal-inner">
+                <div class="resume-modal-header">
+                    <div>
+                        <h2>Odubela Oluwatomiwa (BLAC)</h2>
+                        <p class="text-muted">Backend Developer | Systems Architect | Digital Strategist</p>
+                    </div>
+                    <a href="assets/Oluwatomiwa_CV.pdf" download class="btn-primary btn-sm">
+                        <i class="fa-solid fa-download"></i> Download PDF CV
+                    </a>
+                </div>
+                <div class="resume-modal-body">
+                    <div class="resume-sec">
+                        <h3>Summary</h3>
+                        <p>Backend developer specializing in PHP, MySQL database normalization, and workflow system design. Experienced in campus rollout leadership and Web3 community moderation.</p>
+                    </div>
+                    <div class="resume-sec">
+                        <h3>Key Technical Skills</h3>
+                        <div class="resume-pills">
+                            <span>PHP 8.x</span><span>Laravel</span><span>MySQL</span><span>Database Normalization</span>
+                            <span>REST APIs</span><span>PWA Architecture</span><span>Git &amp; GitHub</span><span>System Logging</span>
+                        </div>
+                    </div>
+                    <div class="resume-sec">
+                        <h3>Education</h3>
+                        <p><strong>Moshood Abiola Polytechnic (MAPOLY)</strong> — National Diploma in Computer Science (2023 - 2025)</p>
+                    </div>
+                    <div class="resume-sec">
+                        <h3>Featured Accomplishments</h3>
+                        <ul>
+                            <li>Built Smart Attendance System with QR check-in capabilities &amp; MySQL backend logging.</li>
+                            <li>Engineered BlacRate Pro PWA for OTC crypto traders with offline calculation capabilities.</li>
+                            <li>Selected as Cowrywise Campus Ambassador Lead for financial literacy rollouts.</li>
+                            <li>Awarded Best Content Strategy Award at MAPOLY (2025).</li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="glitch-wrap">
-                    <h1 class="hero-name" id="hero-name" data-text="BLAC">BLAC</h1>
-                </div>
-
-                <div class="hero-role-line">
-                    <span class="role-prefix">~/</span>
-                    <span id="typewriter" class="role-text"></span>
-                    <span class="cursor-blink">_</span>
-                </div>
-
-                <p class="hero-bio" id="hero-bio"></p>
-
-                <div class="hero-actions">
-                    <a href="#projects" class="btn-primary">
-                        <span>View Selected Work</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="mailto:odubelaotomiwa508@gmail.com" class="btn-ghost" id="hero-email-link">
-                        <i class="fa-solid fa-paper-plane"></i>
-                        <span>Start a conversation</span>
-                    </a>
-                </div>
-
-                <div class="hero-socials" id="hero-socials"></div>
-            </div>
-
-            <div class="hero-right-col">
-                <div class="terminal-card" id="terminal-hero">
-                    <div class="term-bar">
-                        <span class="term-dot td-r"></span>
-                        <span class="term-dot td-y"></span>
-                        <span class="term-dot td-g"></span>
-                        <span class="term-title">blac@portfolio:~$</span>
-                    </div>
-                    <div class="term-body" id="term-body"></div>
-                </div>
-
-                <div class="metrics-row" id="metrics-row"></div>
             </div>
         </div>
+    </div>
 
-        <div class="scroll-hint">
-            <span>scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <section class="section" id="projects">
-        <div class="section-inner">
-            <div class="section-header">
-                <span class="section-eyebrow">01 / selected projects</span>
-                <h2 class="section-title">Proof In <span class="accent-text">Systems</span></h2>
-                <p class="section-sub">Three CV-backed builds that show how I think about utility, data integrity, and workflow automation.</p>
-            </div>
-            <div class="projects-grid" id="projects-grid"></div>
-        </div>
-    </section>
-
-    <section class="section section-alt" id="experience">
-        <div class="section-inner">
-            <div class="section-header">
-                <span class="section-eyebrow">02 / experience</span>
-                <h2 class="section-title">Work That Blends <span class="accent-text">Code &amp; Coordination</span></h2>
-                <p class="section-sub">Backend delivery, rollout operations, campus campaigns, and Web3 partnership work - all from the updated CV.</p>
-            </div>
-            <div class="timeline" id="timeline"></div>
-            <div class="education-strip reveal">
-                <div class="edu-label">ACADEMIC FOUNDATION</div>
-                <div class="edu-cards" id="edu-cards"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="credentials">
-        <div class="section-inner">
-            <div class="section-header">
-                <span class="section-eyebrow">03 / credentials</span>
-                <h2 class="section-title">Selected <span class="accent-text">Credentials</span></h2>
-                <p class="section-sub">Two focused proof points: language proficiency and recognised strategy work.</p>
-            </div>
-            <div class="credentials-grid">
-                <article class="credential-card reveal">
-                    <div class="credential-label">Certifications</div>
-                    <div class="credential-list" id="certifications-list"></div>
-                </article>
-                <article class="credential-card reveal">
-                    <div class="credential-label">Awards</div>
-                    <div class="credential-list" id="awards-list"></div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-stack" id="stack">
-        <div class="section-inner">
-            <div class="section-header">
-                <span class="section-eyebrow">04 / stack</span>
-                <h2 class="section-title">Skills &amp; <span class="accent-text">Technologies</span></h2>
-                <p class="section-sub">A more visual snapshot of the tools, systems, and growth work I use most - with motion, not just lists.</p>
-            </div>
-            <div class="stack-showcase">
-                <div class="stack-categories" id="stack-categories"></div>
-                <div class="lang-note stack-note">
-                    <i class="fa-solid fa-globe"></i>
-                    English (C1 Advanced) &nbsp;|&nbsp; Yoruba (Native)
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-contact" id="contact">
-        <div class="section-inner contact-inner">
-            <div class="contact-text">
-                <span class="section-eyebrow">05 / contact</span>
-                <h2 class="section-title">Let&apos;s Build Something <span class="accent-text">Useful</span></h2>
-                <p class="contact-body" id="contact-body"></p>
-                <a href="mailto:odubelaotomiwa508@gmail.com" class="contact-email-big" id="contact-email-big">
-                    odubelaotomiwa508@gmail.com
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-            </div>
-            <div class="contact-links-col" id="contact-links"></div>
-        </div>
-
-        <footer class="site-footer">
-            <span>(c) 2026 BLAC | ODUBELA OLUWATOMIWA</span>
-            <span id="live-clock"></span>
-            <span id="footer-summary">BACKEND DEVELOPER | DIGITAL STRATEGIST | SYSTEMS, ROLLOUT, GROWTH</span>
-        </footer>
-    </section>
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div class="toast-container" id="toast-container"></div>
 
     <script src="./script.js"></script>
 </body>
 </html>
-
-

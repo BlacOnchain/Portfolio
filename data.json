@@ -110,6 +110,23 @@
   ],
   "projects": [
     {
+      "title": "Àdùké Lagos",
+      "desc": "Contemporary West African luxury gastronomy platform in Victoria Island, Lagos. Built with real-time table QR scanning, live hearth order tracking (#ADK-8819), table reservations, and Google Cloud Firestore persistence.",
+      "badge": "Gastronomy | Firestore & QR",
+      "badgeClass": "badge-backend",
+      "icon": "AD",
+      "tags": [
+        "Full-Stack",
+        "Firestore",
+        "Table QR",
+        "Order System",
+        "Render"
+      ],
+      "link": "https://aduke-75yk.onrender.com/",
+      "source": "https://github.com/BlacOnchain/ADUKE",
+      "external": true
+    },
+    {
       "title": "BlacRate Pro",
       "desc": "A Progressive Web App for OTC traders to calculate crypto-to-naira rates with fast, practical access and offline-first support.",
       "badge": "PWA | Trading Tool",
