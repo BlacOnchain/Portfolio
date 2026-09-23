@@ -705,33 +705,9 @@ function renderProjects(filter = "all") {
                 ${project.tags.map((t) => `<span class="p-tag">${t}</span>`).join("")}
             </div>
 
-            ${project.deepDive ? `
-                <button class="specs-toggle-btn" data-drawer-id="drawer-${project.id}">
-                    <span><i class="fa-solid fa-code-commit"></i> Technical Specs &amp; Problem Scope</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="quick-specs-drawer" id="drawer-${project.id}">
-                    <div class="quick-spec-item">
-                        <strong>Problem Solved</strong>
-                        <p>${project.deepDive.problem}</p>
-                    </div>
-                    <div class="quick-spec-item">
-                        <strong>Architecture Strategy</strong>
-                        <p>${project.deepDive.architecture}</p>
-                    </div>
-                    <div class="quick-spec-item">
-                        <strong>Key Technical Highlights</strong>
-                        <p>${project.deepDive.highlights.join(" · ")}</p>
-                    </div>
-                </div>
-            ` : ""}
-
             <div class="project-actions">
                 ${project.demo ? `<a class="project-action project-demo" href="${project.demo}" target="_blank" rel="noreferrer">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>` : ""}
-                ${project.source ? `<a class="project-action project-source" href="${project.source}" target="_blank" rel="noreferrer">Code <i class="fa-brands fa-github"></i></a>` : ""}
-                <button class="project-action project-detail-btn" data-project-id="${project.id}">
-                    Full Case Study <i class="fa-solid fa-circle-info"></i>
-                </button>
+                ${project.source ? `<a class="project-action project-source" href="${project.source}" target="_blank" rel="noreferrer">GitHub <i class="fa-brands fa-github"></i></a>` : ""}
             </div>
         `;
 
@@ -755,26 +731,6 @@ function renderProjects(filter = "all") {
                 parent.querySelectorAll(".thumb-btn").forEach((b) => b.classList.remove("active"));
                 thumb.classList.add("active");
             }
-        });
-    });
-
-    // Attach Quick Specs Drawer Toggle Listeners
-    document.querySelectorAll(".specs-toggle-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const drawerId = btn.dataset.drawerId;
-            const drawer = document.getElementById(drawerId);
-            if (drawer) {
-                const isOpen = drawer.classList.toggle("open");
-                btn.classList.toggle("active", isOpen);
-            }
-        });
-    });
-
-    // Attach deep dive modal handlers
-    document.querySelectorAll(".project-detail-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const pId = btn.dataset.projectId;
-            openProjectModal(pId);
         });
     });
 }

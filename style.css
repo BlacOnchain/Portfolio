@@ -421,41 +421,17 @@ h1, h2, h3, h4 { font-family: var(--font-display); color: var(--ink); margin: 0;
 .project-tags { display: flex; gap: 6px; flex-wrap: wrap; }
 .p-tag { font-size: 0.72rem; font-family: var(--font-mono); background: var(--surface-2); border: 1px solid var(--line); padding: 3px 10px; border-radius: var(--radius-full); color: var(--ink-soft); font-weight: 600; }
 
-/* QUICK SPECS ACCORDION DRAWER */
-.specs-toggle-btn {
-  display: inline-flex; align-items: center; justify-content: space-between; width: 100%;
-  padding: 8px 14px; background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius-sm);
-  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; color: var(--ink-soft); cursor: pointer;
-  transition: all .2s ease; margin-top: 2px;
-}
-.specs-toggle-btn:hover { background: var(--accent-tint); color: var(--accent); border-color: var(--accent); }
-.specs-toggle-btn i { transition: transform .3s ease; font-size: 0.72rem; }
-.specs-toggle-btn.active i { transform: rotate(180deg); color: var(--accent); }
-
-.quick-specs-drawer {
-  max-height: 0; overflow: hidden; opacity: 0;
-  transition: max-height .35s cubic-bezier(.16, 1, .3, 1), opacity .35s ease, margin .35s ease;
-  margin-top: 0; border-radius: var(--radius-sm); background: var(--bg); border: 1px solid transparent;
-}
-.quick-specs-drawer.open {
-  max-height: 400px; opacity: 1; margin-top: 6px; padding: 14px; border-color: var(--line);
-}
-.quick-spec-item { margin-bottom: 10px; }
-.quick-spec-item:last-child { margin-bottom: 0; }
-.quick-spec-item strong { display: block; font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; margin-bottom: 2px; font-weight: 700; }
-.quick-spec-item p { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.45; }
-
-.project-actions { display: flex; gap: 8px; margin-top: auto; padding-top: 8px; flex-wrap: wrap; }
+.project-actions { display: flex; gap: 10px; margin-top: auto; padding-top: 12px; flex-wrap: wrap; }
 .project-action {
-  font-size: 0.82rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px;
-  border-radius: var(--radius-full); border: 1px solid var(--line); transition: all .2s ease; cursor: pointer;
+  font-size: 0.84rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px;
+  border-radius: var(--radius-full); border: 1px solid var(--line); transition: all .2s cubic-bezier(.16, 1, .3, 1); cursor: pointer;
+  text-decoration: none;
 }
-.project-action i { font-size: 0.72rem; }
-.project-demo { background: var(--accent); color: #FFFFFF; border-color: var(--accent); box-shadow: 0 4px 12px var(--accent-glow); }
-.project-demo:hover { background: #047857; transform: translateY(-2px); }
+.project-action i { font-size: 0.78rem; }
+.project-demo { background: var(--accent); color: #FFFFFF; border-color: var(--accent); box-shadow: 0 4px 14px var(--accent-glow); }
+.project-demo:hover { background: #047857; transform: translateY(-2px); box-shadow: 0 6px 18px var(--accent-glow); }
+.project-source { background: var(--surface-2); color: var(--ink); border-color: var(--line); }
 .project-source:hover { border-color: var(--ink); background: var(--bg-elevated); color: var(--ink); transform: translateY(-2px); }
-.project-detail-btn { background: var(--bg-elevated); color: var(--ink); border-color: var(--line); }
-.project-detail-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
 /* =============== TECH STACK MATRIX =============== */
 .stack-showcase { display: flex; flex-direction: column; gap: 36px; }
