@@ -101,11 +101,11 @@ let DATA = {
             tags: ["PWA", "Service Worker", "Offline-First", "JavaScript", "OTC Utility"],
             impact: "Delivers an instant, offline-friendly exchange rate calculator for active OTC transactions.",
             demo: "https://blaconchain.github.io/blacrate-pro/",
-            source: "https://github.com/BlacOnchain/blacrate-pro",
+            source: "https://github.com/Blaconchain/blacrate-pro",
             featured: false,
             deepDive: {
                 problem: "OTC traders working in regions with spotty mobile data needed a reliable rate calculator that works instantly offline without dropping active customer chats.",
-                architecture: "Built with a custom Service Worker caching strategy (`stale-while-revalidate`) for static app shell assets and local storage synchronization for custom rate margins.",
+                architecture: "Built with a custom Service Worker caching strategy (stale-while-revalidate) for static app shell assets and local storage synchronization for custom rate margins.",
                 highlights: [
                     "Instant client-side calculation engine with adjustable margin percentage multipliers.",
                     "PWA Web App Manifest for seamless home screen installation on iOS and Android.",
@@ -123,11 +123,11 @@ let DATA = {
             icon: "RP",
             tags: ["PHP", "MySQL", "ACID Transactions", "SQL Integrity", "Audit Logs"],
             impact: "Models dependable financial transaction records with SQL audit integrity.",
-            source: "https://github.com/Blaconchain/receipt-pro",
+            source: "https://github.com/BlacOnchain/receipt-pro",
             featured: false,
             deepDive: {
                 problem: "Small commerce businesses struggle with missing transaction records and inconsistent order numbering during manual bookkeeping.",
-                architecture: "Built with PHP and MySQL employing strict database transactions (`BEGIN`, `COMMIT`, `ROLLBACK`) to guarantee that receipts are generated only when database records successfully write.",
+                architecture: "Built with PHP and MySQL employing strict database transactions (BEGIN, COMMIT, ROLLBACK) to guarantee that receipts are generated only when database records successfully write.",
                 highlights: [
                     "Database schema enforcing 3NF normalization and unique receipt serial sequence generation.",
                     "Structured system logging tracking timestamped transaction creation and audit trails.",
@@ -145,11 +145,8 @@ let DATA = {
             icon: "CD",
             tags: ["Web3", "Community", "Moderation", "Rollout Strategy"],
             impact: "Drives community engagement, partner onboarding, and event operations.",
-            source: "https://github.com/Blaconchain",
+            source: "https://github.com/BlacOnchain",
             featured: false,
-            screenshots: [
-                { src: "images/blog.jpg", alt: "Crypto Dungeon Community Hub Interface" }
-            ],
             deepDive: {
                 problem: "Fast-growing Web3 communities needed a centralized hub to track campaign rollouts, moderate engagement, and verify partner activity.",
                 architecture: "Designed structured workflow pipelines and campaign tracking templates to maintain brand consistency and operational oversight.",
@@ -157,32 +154,6 @@ let DATA = {
                     "Coordinated partner integrations with AI tools like Create With Me AI.",
                     "Monitored community moderation workflows and digital event rollouts.",
                     "Built structured engagement logs to measure campaign conversion."
-                ]
-            }
-        },
-        {
-            id: "web3-gaming",
-            category: "pwa",
-            title: "Web3 Arcade Hub",
-            desc: "Interactive browser arcade application built with lightweight JavaScript asset preloading, responsive canvas rendering, and zero-latency score tracking.",
-            badge: "PWA | Arcade App",
-            badgeClass: "badge-pwa",
-            icon: "GA",
-            tags: ["JavaScript", "HTML5 Canvas", "PWA", "Interactive UI"],
-            impact: "Provides instant browser gaming with zero framework bloat.",
-            demo: "https://github.com/Blaconchain",
-            source: "https://github.com/Blaconchain",
-            featured: false,
-            screenshots: [
-                { src: "images/game.jpg", alt: "Web3 Arcade Hub Gaming Interface" }
-            ],
-            deepDive: {
-                problem: "Browser mini-games often suffer from heavy load times and sluggish mobile touch controls.",
-                architecture: "Built using plain JavaScript and HTML5 Canvas API with custom sprite loop timers and touch input handlers.",
-                highlights: [
-                    "Ultra-fast bundle size loading under 100kb.",
-                    "Responsive canvas scaling for desktop monitors and mobile screens.",
-                    "Offline playability enabled via simple asset caching."
                 ]
             }
         }
