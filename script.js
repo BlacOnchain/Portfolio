@@ -3,7 +3,7 @@
    Interactive Whitish / Light Editorial Theme
    ============================================= */
 
-const DATA = {
+let DATA = {
     hero: {
         brand: "BLAC",
         name: "Odubela Oluwatomiwa",
@@ -1069,7 +1069,25 @@ function initReveal() {
 }
 
 /* =============== DOM READY =============== */
-document.addEventListener("DOMContentLoaded", () => {
+async function loadDataAndInit() {
+    try {
+        const response = await fetch("data.json");
+        const json = await response.json();
+        Object.assign(DATA, json);
+
+        const totalProjects = DATA.projects ? DATA.projects.length : 0;
+        if (DATA.metrics) {
+            DATA.metrics.forEach(m => {
+                if (m.label === "Featured Builds") {
+                    m.value = String(totalProjects);
+                    m.target = totalProjects;
+                }
+            });
+        }
+    } catch (err) {
+        console.error("Failed to load data.json:", err);
+    }
+
     populateStaticContent();
     initCanvas();
     initNavbar();
@@ -1092,4 +1110,6 @@ document.addEventListener("DOMContentLoaded", () => {
         initReveal();
         animateMetrics();
     });
-});
+}
+
+document.addEventListener("DOMContentLoaded", loadDataAndInit);

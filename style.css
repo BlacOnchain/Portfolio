@@ -19,20 +19,15 @@
   --line:        #D8E0EC;   /* Crisp Hairline Borders */
   --line-bright: #CBD5E1;
 
-  /* --- Primary & Secondary Accent Colors (10%) --- */
+  /* --- Primary Accent Color (10%) --- */
   --accent:      #059669;   /* Precision Emerald (Primary) */
   --accent-light:#10B981;
   --accent-glow: rgba(5, 150, 105, 0.18);
   --accent-tint: rgba(5, 150, 105, 0.10);
 
-  --secondary:   #4F46E5;   /* Tech Indigo Cobalt (Secondary Accent) */
-  --sec-light:   #6366F1;
-  --sec-glow:    rgba(79, 70, 229, 0.20);
-  --sec-tint:    rgba(79, 70, 229, 0.08);
-
-  --gold:        #D97706;   /* Warm Amber Gold */
+  --gold:        #D97706;   /* Warm Amber Gold (Strictly for Awards/Credentials) */
   --gold-tint:   rgba(217, 119, 6, 0.09);
-  --navy:        #1E293B;   /* Deep Tech Navy */
+  --navy:        #1E293B;   /* Deep Tech Navy (Structural/Dark Surfaces) */
   --navy-tint:   rgba(30, 41, 59, 0.08);
 
   /* --- Typography Families --- */
@@ -697,7 +692,7 @@ h1, h2, h3, h4, p, a, span, button, li, div {
 
   /* Contact & Form */
   .contact-direct-box { width: 100%; flex-direction: row; justify-content: space-between; padding: 10px 14px; }
-  .contact-email-big { font-size: 0.92rem; word-break: break-all; }
+  .contact-email-big { font-size: 0.92rem; word-break: break-all; white-space: normal; }
   .contact-form { padding: 20px 16px; }
   .form-row { grid-template-columns: 1fr; gap: 14px; }
 

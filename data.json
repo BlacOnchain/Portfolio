@@ -2,182 +2,268 @@
   "hero": {
     "brand": "BLAC",
     "name": "Odubela Oluwatomiwa",
-    "title": "Backend Developer | Digital Strategist",
-    "availability": "Open to backend, operations, and digital rollout work",
-    "bio": "Backend developer and digital strategist focused on PHP, MySQL, database architecture, and rollout systems that keep products clear, useful, and organised. I bring together backend engineering, workflow discipline, and growth execution across internships, campus campaigns, and Web3 partnerships.",
-    "contactBody": "If you need clean backend logic, stronger database structure, rollout support, or organised digital execution, let's build it properly from day one.",
+    "title": "Backend Developer & Systems Architect",
+    "availability": "Open for backend engineering, SQL design & rollout strategy",
+    "bio": "Backend developer and digital strategist specializing in PHP 8.x, MySQL relational database architecture, and automated workflow systems. Experienced in building production check-in platforms, PWA calculators, and coordinating high-impact digital campaign rollouts.",
+    "contactBody": "If you need clean modular backend logic, normalized database architecture, or structured rollout operations, let's connect and build it properly from day one.",
     "email": "odubelaotomiwa508@gmail.com",
     "phone": "09125808797",
     "cv": "assets/Oluwatomiwa_CV.pdf"
   },
   "typewriterRoles": [
     "Backend Developer",
-    "PHP & Laravel Builder",
-    "MySQL Database Architect",
+    "PHP & Laravel Architect",
+    "MySQL Database Specialist",
     "Digital Rollout Strategist",
-    "Web3 Growth Strategist"
+    "PWA & Systems Builder"
   ],
   "metrics": [
-    {
-      "value": "4",
-      "label": "CV Roles"
-    },
-    {
-      "value": "3",
-      "label": "Featured Builds"
-    },
-    {
-      "value": "C1",
-      "label": "English Level"
-    }
+    { "value": "4+", "label": "Industry Roles", "target": 4, "suffix": "+" },
+    { "value": "6", "label": "Featured Builds", "target": 6, "suffix": "" },
+    { "value": "C1", "label": "EF Advanced English", "target": null, "raw": "C1" }
   ],
   "terminalLines": [
-    {
-      "type": "prompt",
-      "text": "cat profile.json"
-    },
-    {
-      "type": "obj-open",
-      "text": "{"
-    },
-    {
-      "type": "pair",
-      "key": "  \"name\"",
-      "val": "\"Odubela Oluwatomiwa\"",
-      "valType": "str"
-    },
-    {
-      "type": "pair",
-      "key": "  \"role\"",
-      "val": "\"Backend Developer | Digital Strategist\"",
-      "valType": "str"
-    },
-    {
-      "type": "pair",
-      "key": "  \"focus\"",
-      "val": "\"PHP, MySQL, rollout systems\"",
-      "valType": "str"
-    },
-    {
-      "type": "pair",
-      "key": "  \"instagram\"",
-      "val": "\"@lifewith_blac\"",
-      "valType": "str"
-    },
-    {
-      "type": "pair",
-      "key": "  \"english\"",
-      "val": "\"C1 Advanced\"",
-      "valType": "str"
-    },
-    {
-      "type": "pair",
-      "key": "  \"available\"",
-      "val": "true",
-      "valType": "bool"
-    },
-    {
-      "type": "obj-close",
-      "text": "}"
-    }
+    { "type": "prompt", "text": "cat profile.json" },
+    { "type": "obj-open", "text": "{" },
+    { "type": "pair", "key": "  \"name\"", "val": "\"Odubela Oluwatomiwa\"", "valType": "str" },
+    { "type": "pair", "key": "  \"role\"", "val": "\"Backend Developer & Systems Architect\"", "valType": "str" },
+    { "type": "pair", "key": "  \"focus\"", "val": "\"PHP, MySQL, relational database systems\"", "valType": "str" },
+    { "type": "pair", "key": "  \"instagram\"", "val": "\"@lifewith_blac\"", "valType": "str" },
+    { "type": "pair", "key": "  \"english\"", "val": "\"C1 Advanced\"", "valType": "str" },
+    { "type": "pair", "key": "  \"available\"", "val": "true", "valType": "bool" },
+    { "type": "obj-close", "text": "}" }
   ],
   "socials": [
-    {
-      "label": "GitHub",
-      "href": "https://github.com/Blaconchain",
-      "icon": "fa-brands fa-github"
-    },
-    {
-      "label": "X",
-      "href": "https://x.com/Lifewithblac",
-      "icon": "fa-brands fa-x-twitter"
-    },
-    {
-      "label": "Instagram",
-      "href": "https://www.instagram.com/lifewith_blac/",
-      "icon": "fa-brands fa-instagram"
-    },
-    {
-      "label": "Email",
-      "href": "mailto:odubelaotomiwa508@gmail.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "label": "Phone",
-      "href": "tel:09125808797",
-      "icon": "fa-solid fa-phone"
-    }
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/lifewithblac/", "icon": "fa-brands fa-linkedin-in" },
+    { "label": "GitHub", "href": "https://github.com/Blaconchain", "icon": "fa-brands fa-github" },
+    { "label": "X", "href": "https://x.com/Lifewithblac", "icon": "fa-brands fa-x-twitter" },
+    { "label": "Instagram", "href": "https://www.instagram.com/lifewith_blac/", "icon": "fa-brands fa-instagram" },
+    { "label": "Email", "href": "mailto:odubelaotomiwa508@gmail.com", "icon": "fa-solid fa-envelope" },
+    { "label": "Phone", "href": "tel:09125808797", "icon": "fa-solid fa-phone" }
   ],
   "projects": [
     {
+      "id": "aduke-lagos",
+      "category": "backend",
       "title": "Àdùké Lagos",
-      "desc": "Contemporary West African luxury gastronomy platform in Victoria Island, Lagos. Built with real-time table QR scanning, live hearth order tracking (#ADK-8819), table reservations, and Google Cloud Firestore persistence.",
+      "desc": "Contemporary West African luxury gastronomy platform in Victoria Island, Lagos. Features real-time table QR scanning, live hearth order tracking (#ADK-8819), table reservations, and Google Cloud Firestore persistence.",
       "badge": "Gastronomy | Firestore & QR",
       "badgeClass": "badge-backend",
       "icon": "AD",
-      "tags": [
-        "Full-Stack",
-        "Firestore",
-        "Table QR",
-        "Order System",
-        "Render"
-      ],
-      "link": "https://aduke-75yk.onrender.com/",
+      "tags": ["Full-Stack", "Firestore", "Table QR", "Order System", "Render"],
+      "impact": "Powers seamless table reservations, culinary order workflows, and real-time hearth dining operations.",
+      "demo": "https://aduke-75yk.onrender.com/",
       "source": "https://github.com/BlacOnchain/ADUKE",
-      "external": true
-    },
-    {
-      "title": "BlacRate Pro",
-      "desc": "A Progressive Web App for OTC traders to calculate crypto-to-naira rates with fast, practical access and offline-first support.",
-      "badge": "PWA | Trading Tool",
-      "badgeClass": "badge-pwa",
-      "icon": "BR",
-      "tags": [
-        "PWA",
-        "Rates",
-        "Utility"
+      "featured": true,
+      "screenshots": [
+        { "src": "images/projects/aduke-landing.jpg", "alt": "Àdùké Lagos hearth dining and reservation interface" },
+        { "src": "images/projects/aduke-menu.jpg", "alt": "Àdùké Lagos culinary order system & hearth tracking" }
       ],
-      "link": "https://blaconchain.github.io/blacrate-pro",
-      "external": true
+      "deepDive": {
+        "problem": "High-end woodfire hearth dining experiences demand zero-friction table ordering, instant QR menu dispatch, and real-time order status tracking without staff bottlenecks.",
+        "architecture": "Engineered with Google Cloud Firestore real-time state listeners, table QR session binding, modular menu ordering pipelines, and table reservation workflows deployed on Render.",
+        "highlights": [
+          "Real-time table QR code ordering & live order status updates (#ADK-8819).",
+          "Google Cloud Firestore backend database persistence for reservations, customer orders, and culinary catalog.",
+          "Interactive reservation booking system supporting Dinner Sittings & Lunch Suya Socials in Victoria Island, Lagos."
+        ]
+      }
     },
     {
-      "title": "Receipt Pro",
-      "desc": "A backend receipt management concept focused on SQL data integrity, secure transaction logging, and cleaner operational records.",
-      "badge": "Backend | SQL",
-      "badgeClass": "badge-backend",
-      "icon": "RP",
-      "tags": [
-        "PHP",
-        "MySQL",
-        "Integrity"
-      ],
-      "link": " https://blaconchain.github.io/blacrate-pro/",
-      "external": true
-    },
-    {
+      "id": "smart-attendance",
+      "category": "automation",
       "title": "Smart Attendance System",
-      "desc": "An academic QR-code attendance system built with PHP and MySQL to automate student logging and remove manual paperwork for lecturers.",
+      "desc": "Academic QR-code check-in platform built with PHP 8.x and MySQL to automate student logging, eliminate manual paperwork, and provide lecturers with centralized real-time reports.",
       "badge": "Academic | Automation",
       "badgeClass": "badge-academic",
       "icon": "SA",
-      "tags": [
-        "PHP",
-        "QR",
-        "MAPOLY"
+      "tags": ["PHP 8.x", "MySQL", "QR Generator", "Session Auth", "MAPOLY"],
+      "impact": "Automates student check-ins and normalizes attendance records across lectures.",
+      "demo": "https://smart-attendance-production-996c.up.railway.app/",
+      "source": "https://github.com/BlacOnchain/Smart-Attendance",
+      "featured": true,
+      "screenshots": [
+        { "src": "images/projects/smart-attendance-landing.png", "alt": "Smart Attendance landing page" },
+        { "src": "images/projects/smart-attendance-portal.png", "alt": "Smart Attendance student portal sign-in page" }
       ],
-      "cta": "Internal academic project"
+      "deepDive": {
+        "problem": "Lecturers spent 10-15 minutes manually signing paper logs per class, leading to human error, proxy signing, and misplaced records.",
+        "architecture": "Designed a relational MySQL database with normalized tables for Students, Courses, Lectures, and CheckInLogs. Implemented time-expiring QR tokens generated via PHP middleware to prevent attendance fraud.",
+        "highlights": [
+          "Relational foreign key constraints linking student matric IDs to active course rosters.",
+          "Session security & input sanitization preventing SQL injection and duplicate entries.",
+          "Exportable lecturer reporting dashboard generating automated class attendance summaries."
+        ]
+      }
+    },
+    {
+      "id": "blacrate-pro",
+      "category": "pwa",
+      "title": "BlacRate Pro",
+      "desc": "A Progressive Web App engineered for OTC crypto traders to instantly calculate crypto-to-naira exchange rates with offline-first support and zero network latency.",
+      "badge": "PWA | Trading Tool",
+      "badgeClass": "badge-pwa",
+      "icon": "BR",
+      "tags": ["PWA", "Service Worker", "Offline-First", "JavaScript", "OTC Utility"],
+      "impact": "Delivers an instant, offline-friendly exchange rate calculator for active OTC transactions.",
+      "demo": "https://blaconchain.github.io/blacrate-pro/",
+      "source": "https://github.com/BlacOnchain/blacrate-pro",
+      "featured": false,
+      "deepDive": {
+        "problem": "OTC traders working in regions with spotty mobile data needed a reliable rate calculator that works instantly offline without dropping active customer chats.",
+        "architecture": "Built with a custom Service Worker caching strategy (<code>stale-while-revalidate</code>) for static app shell assets and local storage synchronization for custom rate margins.",
+        "highlights": [
+          "Instant client-side calculation engine with adjustable margin percentage multipliers.",
+          "PWA Web App Manifest for seamless home screen installation on iOS and Android.",
+          "Fast lightweight bundle requiring zero external framework dependencies."
+        ]
+      }
+    },
+    {
+      "id": "receipt-pro",
+      "category": "backend",
+      "title": "Receipt Pro",
+      "desc": "A backend transaction management system focused on relational SQL data integrity, immutable transaction logging, and automated receipt generation.",
+      "badge": "Backend | SQL",
+      "badgeClass": "badge-backend",
+      "icon": "RP",
+      "tags": ["PHP", "MySQL", "ACID Transactions", "SQL Integrity", "Audit Logs"],
+      "impact": "Models dependable financial transaction records with SQL audit integrity.",
+      "source": "https://github.com/BlacOnchain/receipt-pro",
+      "featured": false,
+      "deepDive": {
+        "problem": "Small commerce businesses struggle with missing transaction records and inconsistent order numbering during manual bookkeeping.",
+        "architecture": "Built with PHP and MySQL employing strict database transactions (<code>BEGIN, COMMIT, ROLLBACK</code>) to guarantee that receipts are generated only when database records successfully write.",
+        "highlights": [
+          "Database schema enforcing 3NF normalization and unique receipt serial sequence generation.",
+          "Structured system logging tracking timestamped transaction creation and audit trails.",
+          "Sanitized input validation preventing invalid monetary values and SQL injection."
+        ]
+      }
+    },
+    {
+      "id": "crypto-dungeon",
+      "category": "automation",
+      "title": "Crypto Dungeon Hub",
+      "desc": "Web3 community portal & digital campaign hub designed for partnership management, campaign rollout tracking, and engagement operations.",
+      "badge": "Web3 | Community Portal",
+      "badgeClass": "badge-academic",
+      "icon": "CD",
+      "tags": ["Web3", "Community", "Moderation", "Rollout Strategy"],
+      "impact": "Drives community engagement, partner onboarding, and event operations.",
+      "source": "https://github.com/BlacOnchain",
+      "featured": false,
+      "deepDive": {
+        "problem": "Fast-growing Web3 communities needed a centralized hub to track campaign rollouts, moderate engagement, and verify partner activity.",
+        "architecture": "Designed structured workflow pipelines and campaign tracking templates to maintain brand consistency and operational oversight.",
+        "highlights": [
+          "Coordinated partner integrations with AI tools like Create With Me AI.",
+          "Monitored community moderation workflows and digital event rollouts.",
+          "Built structured engagement logs to measure campaign conversion."
+        ]
+      }
+    },
+    {
+      "id": "web3-gaming",
+      "category": "pwa",
+      "title": "Web3 Arcade Hub",
+      "desc": "Interactive browser arcade application built with lightweight JavaScript asset preloading, responsive canvas rendering, and zero-latency score tracking.",
+      "badge": "PWA | Arcade App",
+      "badgeClass": "badge-pwa",
+      "icon": "GA",
+      "tags": ["JavaScript", "HTML5 Canvas", "PWA", "Interactive UI"],
+      "impact": "Provides instant browser gaming with zero framework bloat.",
+      "demo": "https://github.com/BlacOnchain",
+      "source": "https://github.com/BlacOnchain",
+      "featured": false,
+      "deepDive": {
+        "problem": "Browser mini-games often suffer from heavy load times and sluggish mobile touch controls.",
+        "architecture": "Built using plain JavaScript and HTML5 Canvas API with custom sprite loop timers and touch input handlers.",
+        "highlights": [
+          "Ultra-fast bundle size loading under 100kb.",
+          "Responsive canvas scaling for desktop monitors and mobile screens.",
+          "Offline playability enabled via simple asset caching."
+        ]
+      }
     }
   ],
-  "experience": [
+  "techStack": [
     {
-      "company": "Crypto Dungeon",
-      "role": "Partnerships Contributor",
-      "time": "11/2024 - 11/2025",
+      "name": "PHP 8.x",
+      "icon": "fa-brands fa-php",
+      "category": "backend",
+      "tier": "Production Core",
+      "tierClass": "tier-core",
+      "appNote": "Primary language for server-side logic, session management, QR token generation, and RESTful route handlers.",
+      "linkedBuild": "Smart Attendance System"
+    },
+    {
+      "name": "MySQL",
+      "icon": "fa-solid fa-database",
+      "category": "database",
+      "tier": "Relational Core",
+      "tierClass": "tier-core",
+      "appNote": "Normalized 3NF schemas, foreign key constraints, indexing for fast lookups, and transactional data safety.",
+      "linkedBuild": "Receipt Pro"
+    },
+    {
+      "name": "Google Firestore",
+      "icon": "fa-solid fa-fire",
+      "category": "database",
+      "tier": "Real-Time Cloud",
+      "tierClass": "tier-core",
+      "appNote": "Real-time document storage, table session sync, and live order status tracking.",
+      "linkedBuild": "Àdùké Lagos"
+    },
+    {
+      "name": "PWA & Service Workers",
+      "icon": "fa-solid fa-mobile-screen-button",
+      "category": "pwa",
+      "tier": "Offline Architecture",
+      "tierClass": "tier-advanced",
+      "appNote": "Service worker caching strategies (stale-while-revalidate) and client-side OTC calculation engines.",
+      "linkedBuild": "BlacRate Pro"
+    },
+    {
+      "name": "HTML5 Canvas & JS",
+      "icon": "fa-solid fa-gamepad",
+      "category": "pwa",
+      "tier": "Interactive UI",
+      "tierClass": "tier-advanced",
+      "appNote": "Zero-latency rendering loops, asset preloading, and touch-friendly game controllers.",
+      "linkedBuild": "Web3 Arcade Hub"
+    },
+    {
+      "name": "Git & GitHub",
+      "icon": "fa-brands fa-github",
+      "category": "tools",
+      "tier": "Version Control",
+      "tierClass": "tier-tools",
+      "appNote": "Branch management, release rollouts, and collaborative code review workflows.",
+      "linkedBuild": "All Repositories"
+    }
+  ],
+  "technicalExperience": [
+    {
+      "company": "Olak Tech",
+      "role": "Backend Developer Intern (SIWES)",
+      "time": "2025 - 2025",
       "points": [
-        "Led community engagement and digital moderation for Web3 enthusiasts and NFT collectors.",
-        "Managed partnership conversations and growth strategy support for integrations like Create With Me AI."
+        "Collaborated on backend engineering and relational database normalization with PHP and MySQL.",
+        "Handled technical documentation, system logging, and workflow tracking to support project delivery."
       ]
     },
+    {
+      "company": "Smart Attendance Rollout",
+      "role": "Lead System Architect",
+      "time": "2024 - 2025",
+      "points": [
+        "Engineered time-expiring QR token generation and attendance validation middleware in PHP 8.x.",
+        "Structured MySQL database schema with foreign key constraints to prevent duplicate check-ins."
+      ]
+    }
+  ],
+  "strategyExperience": [
     {
       "company": "Cowrywise",
       "role": "Campus Ambassador Lead",
@@ -188,12 +274,12 @@
       ]
     },
     {
-      "company": "Olak Tech",
-      "role": "Backend Developer Intern (SIWES)",
-      "time": "2025 - 2025",
+      "company": "Crypto Dungeon",
+      "role": "Partnerships Contributor",
+      "time": "11/2024 - 11/2025",
       "points": [
-        "Collaborated on backend engineering and relational database normalization with PHP and MySQL.",
-        "Handled technical documentation, system logging, and workflow tracking to support project delivery."
+        "Led community engagement and digital moderation for Web3 enthusiasts and NFT collectors.",
+        "Managed partnership conversations and growth strategy support for integrations like Create With Me AI."
       ]
     },
     {
@@ -214,98 +300,12 @@
       "desc": "Core coursework includes Database Management Systems, Systems Analysis & Design, Web Development, and Digital Marketing Logic."
     }
   ],
-  "skillCategories": [
-    {
-      "title": "Backend",
-      "items": [
-        {
-          "name": "PHP",
-          "icon": "fa-brands fa-php",
-          "pct": 92
-        },
-        {
-          "name": "Laravel",
-          "icon": "fa-solid fa-layer-group",
-          "pct": 88
-        },
-        {
-          "name": "MySQL",
-          "icon": "fa-solid fa-database",
-          "pct": 94
-        },
-        {
-          "name": "Database Design",
-          "icon": "fa-solid fa-diagram-project",
-          "pct": 93
-        },
-        {
-          "name": "API Workflows",
-          "icon": "fa-solid fa-plug-circle-check",
-          "pct": 84
-        }
-      ]
-    },
-    {
-      "title": "Growth & Rollout",
-      "items": [
-        {
-          "name": "Digital Rollout",
-          "icon": "fa-solid fa-rocket",
-          "pct": 88
-        },
-        {
-          "name": "Community Ops",
-          "icon": "fa-solid fa-users-gear",
-          "pct": 86
-        },
-        {
-          "name": "Content Strategy",
-          "icon": "fa-solid fa-pen-ruler",
-          "pct": 82
-        },
-        {
-          "name": "Partnerships",
-          "icon": "fa-solid fa-handshake-angle",
-          "pct": 80
-        }
-      ]
-    },
-    {
-      "title": "Tools, Workflow & Communication",
-      "items": [
-        {
-          "name": "Git / GitHub",
-          "icon": "fa-brands fa-github",
-          "pct": 85
-        },
-        {
-          "name": "Project Tracking",
-          "icon": "fa-solid fa-list-check",
-          "pct": 83
-        },
-        {
-          "name": "Documentation",
-          "icon": "fa-solid fa-file-lines",
-          "pct": 84
-        },
-        {
-          "name": "PWA Support",
-          "icon": "fa-solid fa-mobile-screen-button",
-          "pct": 79
-        },
-        {
-          "name": "English C1",
-          "icon": "fa-solid fa-language",
-          "pct": 91
-        }
-      ]
-    }
-  ],
   "credentials": {
     "certifications": [
       {
         "title": "C1 Advanced English Certification (EF SET)",
-        "meta": "2026"
+        "meta": "2026",
+        "desc": "Recognized for professional bilingual technical communication and documentation."
       }
     ],
     "awards": [
@@ -314,8 +314,7 @@
         "meta": "Moshood Abiola Polytechnic | 2025",
         "desc": "Recognized for innovative rollout plans that improved community retention and organic growth."
       }
-    ],
-    "volunteer": []
+    ]
   },
   "contactLinks": [
     {
