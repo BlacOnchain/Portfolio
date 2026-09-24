@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLAC | Backend Developer &amp; Systems Architect</title>
     <meta name="description" content="Portfolio of Odubela Oluwatomiwa (BLAC) — Backend Developer building robust PHP, MySQL, and workflow automation systems.">
-    <meta name="theme-color" content="#F8F9FA">
+    <meta name="theme-color" content="#FAFAFC">
     <meta property="og:type" content="website">
     <meta property="og:title" content="BLAC | Backend Developer &amp; Systems Architect">
     <meta property="og:description" content="Backend engineering, SQL database architecture, and digital rollout execution.">
@@ -25,7 +25,7 @@
     <canvas id="bg-canvas"></canvas>
     <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
-    <nav id="navbar">
+    <nav id="navbar" class="px-4 sm:px-6 lg:px-8">
         <div class="nav-inner">
             <a href="#home" class="nav-logo">
                 <span class="logo-bracket">[</span>BLAC<span class="logo-bracket">]</span>
@@ -50,7 +50,7 @@
 
     <main id="main">
         <!-- HERO SECTION -->
-        <section class="hero" id="home">
+        <section class="hero px-4 sm:px-6 lg:px-8" id="home">
             <div class="hero-inner">
                 <div class="hero-left-col">
                     <div class="hero-top-row">
@@ -74,11 +74,11 @@
 
                     <div class="hero-role-line">
                         <span class="role-prefix">~/</span>
-                        <span id="typewriter" class="role-text"></span>
+                        <span id="typewriter" class="role-text">Backend Developer</span>
                         <span class="cursor-blink">_</span>
                     </div>
 
-                    <p class="hero-bio" id="hero-bio"></p>
+                    <p class="hero-bio" id="hero-bio">Backend developer and digital strategist specializing in PHP 8.x, MySQL relational database architecture, and automated workflow systems.</p>
 
                     <div class="hero-actions">
                         <a href="#projects" class="btn-primary">
@@ -98,7 +98,7 @@
                 </div>
 
                 <div class="hero-right-col">
-                    <!-- INTERACTIVE TERMINAL CONSOLE (LIGHT EDITORIAL STYLE) -->
+                    <!-- INTERACTIVE TERMINAL CONSOLE -->
                     <div class="terminal-card" id="terminal-hero">
                         <div class="term-bar">
                             <div class="term-dots">
@@ -115,14 +115,35 @@
                             <button class="term-btn" data-cmd="projects">projects.list</button>
                             <button class="term-btn" data-cmd="clear">clear</button>
                         </div>
-                        <div class="term-body" id="term-body"></div>
+                        <div class="term-body" id="term-body">
+                            <span class="t-line"><span class="t-prompt">&gt;</span> <span class="t-cmd">blac --version</span></span>
+                            <span class="t-line"><span class="t-str">BLAC Systems Console v2.6.0 [PHP 8.x / MySQL / PWA]</span></span>
+                            <span class="t-line"><span class="t-info">Type "help" or click quick command buttons above.</span></span>
+                            <span class="t-line"><span class="t-prompt">&gt;</span> <span class="t-cmd">cat profile.json</span></span>
+                            <span class="t-line"><span class="t-key">  "name":</span> <span class="t-str">"Odubela Oluwatomiwa"</span></span>
+                            <span class="t-line"><span class="t-key">  "role":</span> <span class="t-str">"Backend Developer & Systems Architect"</span></span>
+                            <span class="t-line"><span class="t-key">  "available":</span> <span class="t-bool">true</span></span>
+                        </div>
                         <div class="term-input-line">
                             <span class="t-prompt">&gt;</span>
                             <input type="text" id="term-input" placeholder="Type command (e.g. 'help', 'contact', 'skills')..." autocomplete="off" spellcheck="false">
                         </div>
                     </div>
 
-                    <div class="metrics-row" id="metrics-row"></div>
+                    <div class="metrics-row" id="metrics-row">
+                        <div class="metric-pill">
+                            <span class="metric-val">4+</span>
+                            <span class="metric-label">Industry Roles</span>
+                        </div>
+                        <div class="metric-pill">
+                            <span class="metric-val">6</span>
+                            <span class="metric-label">Featured Builds</span>
+                        </div>
+                        <div class="metric-pill">
+                            <span class="metric-val">C1</span>
+                            <span class="metric-label">EF Advanced English</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -133,7 +154,7 @@
         </section>
 
         <!-- PROJECTS SECTION -->
-        <section class="section" id="projects">
+        <section class="section px-4 sm:px-6 lg:px-8" id="projects">
             <div class="section-inner">
                 <div class="section-header reveal">
                     <span class="section-eyebrow">PORTFOLIO BUILDS</span>
@@ -149,123 +170,154 @@
                     <button class="filter-btn" data-filter="automation">Automation &amp; QR</button>
                 </div>
 
-                <div class="projects-grid" id="projects-grid"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" id="projects-grid"></div>
             </div>
         </section>
 
         <!-- TECH STACK & ARCHITECTURE SECTION -->
-        <section class="section section-stack" id="stack">
+        <section class="section section-stack px-4 sm:px-6 lg:px-8" id="stack">
             <div class="section-inner">
                 <div class="section-header reveal">
                     <span class="section-eyebrow">CAPABILITIES &amp; ARCHITECTURE</span>
-                    <h2 class="section-title">Backend <span class="accent-text">Stack Matrix</span></h2>
-                    <p class="section-sub">Functional categorization of core languages, database systems, architecture patterns, and rollout tools — structured by practical execution, not arbitrary percentage bars.</p>
+                    <h2 class="section-title">Backend &amp; Database <span class="accent-text">Matrix</span></h2>
+                    <p class="section-sub">Core tools, relational databases, and architectural frameworks powering production apps.</p>
                 </div>
 
-                <!-- STACK DOMAIN FILTER TABS -->
                 <div class="filter-bar filter-bar-soft reveal" id="stack-filter-bar">
-                    <button class="filter-btn active" data-stack-filter="all">All Capabilities</button>
-                    <button class="filter-btn" data-stack-filter="backend">Backend &amp; APIs</button>
-                    <button class="filter-btn" data-stack-filter="database">Database &amp; SQL</button>
-                    <button class="filter-btn" data-stack-filter="pwa">PWA &amp; Architecture</button>
-                    <button class="filter-btn" data-stack-filter="tools">Tools &amp; Rollout</button>
+                    <button class="filter-btn active" data-stack-filter="all">All Tech</button>
+                    <button class="filter-btn" data-stack-filter="backend">Backend Core</button>
+                    <button class="filter-btn" data-stack-filter="database">Databases &amp; SQL</button>
+                    <button class="filter-btn" data-stack-filter="pwa">PWA &amp; Web</button>
+                    <button class="filter-btn" data-stack-filter="tools">Dev Tools</button>
                 </div>
 
                 <div class="stack-showcase">
-                    <div class="stack-grid" id="stack-grid"></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="stack-grid"></div>
+
+                    <!-- ARCHITECTURE SPOTLIGHT -->
+                    <div class="architecture-spotlight reveal">
+                        <div class="arch-head">
+                            <i class="fa-solid fa-server arch-icon"></i>
+                            <div>
+                                <h3 class="arch-title">Backend Architecture &amp; Database Normalization Standards</h3>
+                                <p class="arch-sub">Rigorous engineering principles applied across academic platforms and production builds.</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="arch-pillar">
+                                <span class="pillar-num">01 / SCHEMA</span>
+                                <h4>3NF Relational Normalization</h4>
+                                <p>Designing normalized MySQL schemas with foreign key constraints, indexing, and transactional ACID boundaries to prevent anomalies.</p>
+                            </div>
+                            <div class="arch-pillar">
+                                <span class="pillar-num">02 / SECURITY</span>
+                                <h4>Token Validation &amp; Sanitization</h4>
+                                <p>Time-expiring QR verification middleware in PHP 8.x and strict input sanitization to block spoofing and SQL injection.</p>
+                            </div>
+                            <div class="arch-pillar">
+                                <span class="pillar-num">03 / OFFLINE</span>
+                                <h4>PWA Cache Architecture</h4>
+                                <p>Service worker stale-while-revalidate strategies delivering instant asset delivery and offline reliability for OTC web tools.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- EXPERIENCE & EDUCATION SECTION -->
-        <section class="section section-alt" id="experience">
+        <!-- EXPERIENCE SECTION -->
+        <section class="section px-4 sm:px-6 lg:px-8" id="experience">
             <div class="section-inner">
                 <div class="section-header reveal">
-                    <span class="section-eyebrow">CAREER TRACK</span>
-                    <h2 class="section-title">Code, Operations &amp; <span class="accent-text">Rollout Leadership</span></h2>
-                    <p class="section-sub">Backend engineering internships, campus coordination, partnership management, and community rollout strategy.</p>
+                    <span class="section-eyebrow">CAREER &amp; LEADERSHIP</span>
+                    <h2 class="section-title">Technical Experience &amp; <span class="accent-text">Strategy</span></h2>
+                    <p class="section-sub">Backend engineering internships, systems architecture, and digital campaign leadership.</p>
                 </div>
 
-                <div class="timeline" id="timeline"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="reveal">
+                        <h3 class="track-label" style="font-size:1.15rem; font-weight:700; margin-bottom:20px; display:flex; align-items:center; gap:8px;">
+                            <i class="fa-solid fa-code" style="color:var(--accent);"></i> Technical &amp; Backend Engineering
+                        </h3>
+                        <div class="timeline" id="timeline"></div>
+                    </div>
+
+                    <div class="reveal">
+                        <h3 class="track-label" style="font-size:1.15rem; font-weight:700; margin-bottom:20px; display:flex; align-items:center; gap:8px;">
+                            <i class="fa-solid fa-bullhorn" style="color:var(--accent);"></i> Growth &amp; Strategy Leadership
+                        </h3>
+                        <div class="timeline" id="strategy-timeline"></div>
+                    </div>
+                </div>
 
                 <div class="education-strip reveal">
                     <div class="edu-header">
                         <span class="section-eyebrow">EDUCATION</span>
-                        <h3 class="track-label">Academic Foundation</h3>
+                        <h3 class="track-label" style="font-size:1.15rem; font-weight:700; margin-bottom:14px;">Academic Foundation</h3>
                     </div>
-                    <div class="edu-cards" id="edu-cards"></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6" id="edu-cards"></div>
                 </div>
             </div>
         </section>
 
         <!-- CREDENTIALS SECTION -->
-        <section class="section" id="credentials">
+        <section class="section section-alt px-4 sm:px-6 lg:px-8" id="credentials">
             <div class="section-inner">
                 <div class="section-header reveal">
-                    <span class="section-eyebrow">VERIFIED PROOF</span>
+                    <span class="section-eyebrow">VERIFIED CREDENTIALS</span>
                     <h2 class="section-title">Certifications &amp; <span class="accent-text">Awards</span></h2>
-                    <p class="section-sub">Recognized language proficiency and awarded campaign strategy accomplishments.</p>
+                    <p class="section-sub">Recognized milestones in professional communication and content strategy execution.</p>
                 </div>
 
-                <div class="credentials-grid">
-                    <article class="credential-card reveal hover-lift">
-                        <div class="credential-label"><i class="fa-solid fa-certificate"></i> Certifications</div>
-                        <div class="credential-list" id="certifications-list"></div>
-                    </article>
-                    <article class="credential-card reveal hover-lift">
-                        <div class="credential-label"><i class="fa-solid fa-trophy"></i> Recognitions</div>
-                        <div class="credential-list" id="awards-list"></div>
-                    </article>
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal" id="credentials-grid"></div>
             </div>
         </section>
 
         <!-- CONTACT SECTION -->
-        <section class="section section-contact" id="contact">
-            <div class="section-inner contact-inner">
-                <div class="contact-text-col reveal">
-                    <span class="section-eyebrow">INITIATE CONTACT</span>
-                    <h2 class="section-title">Let&apos;s Build Something <span class="accent-text">Dependable</span></h2>
-                    <p class="contact-body" id="contact-body"></p>
-
-                    <div class="contact-direct-box hover-lift">
-                        <a href="mailto:odubelaotomiwa508@gmail.com" class="contact-email-big" id="contact-email-big">
-                            odubelaotomiwa508@gmail.com
-                        </a>
-                        <button class="btn-copy" id="copy-email-btn" title="Copy email address">
-                            <i class="fa-solid fa-copy"></i>
-                        </button>
-                    </div>
-
-                    <!-- INTERACTIVE MESSAGE FORM -->
-                    <form class="contact-form hover-lift" id="contact-form">
-                        <h3 class="form-title">Send a Direct Message</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="form-name">Your Name</label>
-                                <input type="text" id="form-name" required placeholder="e.g. Sarah Connor">
-                            </div>
-                            <div class="form-group">
-                                <label for="form-email">Email Address</label>
-                                <input type="email" id="form-email" required placeholder="sarah@example.com">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="form-subject">Subject / Project Scope</label>
-                            <input type="text" id="form-subject" required placeholder="Backend Development / Database Design">
-                        </div>
-                        <div class="form-group">
-                            <label for="form-message">Message</label>
-                            <textarea id="form-message" rows="4" required placeholder="Tell me about your project requirements or timeline..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary form-submit-btn">
-                            <span>Send Message</span>
-                            <i class="fa-solid fa-paper-plane anim-arrow"></i>
-                        </button>
-                    </form>
+        <section class="section section-contact px-4 sm:px-6 lg:px-8" id="contact">
+            <div class="section-inner">
+                <div class="section-header reveal">
+                    <span class="section-eyebrow">GET IN TOUCH</span>
+                    <h2 class="section-title">Let's Build Something <span class="accent-text">Reliable</span></h2>
+                    <p class="contact-body" id="contact-body">If you need clean modular backend logic, normalized database architecture, or structured rollout operations, let's connect and build it properly from day one.</p>
                 </div>
 
-                <div class="contact-links-col reveal" id="contact-links"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 reveal">
+                    <div>
+                        <div class="contact-direct-box">
+                            <span class="contact-email-big" id="contact-email-big">odubelaotomiwa508@gmail.com</span>
+                            <button class="btn-copy" id="copy-email-btn" title="Copy Email">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+
+                        <div class="contact-links-col" id="contact-links-col"></div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3 class="form-title">Send a Direct Message</h3>
+                        <form id="direct-message-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sender-name">Your Name</label>
+                                    <input type="text" id="sender-name" required placeholder="e.g. Sarah Jenkins">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sender-email">Email Address</label>
+                                    <input type="email" id="sender-email" required placeholder="sarah@company.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sender-msg">Project Scope / Message</label>
+                                <textarea id="sender-msg" rows="4" required placeholder="Tell me about your backend requirements or database architecture..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary form-submit-btn">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
 
             <footer class="site-footer">
@@ -280,61 +332,49 @@
         </section>
     </main>
 
-    <!-- PROJECT DEEP DIVE MODAL -->
+    <!-- PROJECT DETAIL MODAL -->
     <div class="modal-overlay" id="project-modal" aria-hidden="true">
-        <div class="modal-card">
-            <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
-            <div class="modal-content" id="modal-content">
-                <!-- Dynamically injected -->
-            </div>
+        <div class="modal-card modal-card-wide" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div id="modal-content-body"></div>
         </div>
     </div>
 
-    <!-- QUICK RESUME MODAL -->
+    <!-- QUICK RESUME PREVIEW MODAL -->
     <div class="modal-overlay" id="resume-modal" aria-hidden="true">
-        <div class="modal-card modal-card-wide">
-            <button class="modal-close" id="resume-modal-close" aria-label="Close modal">&times;</button>
-            <div class="resume-modal-inner">
-                <div class="resume-modal-header">
-                    <div>
-                        <h2>Odubela Oluwatomiwa (BLAC)</h2>
-                        <p class="text-muted">Backend Developer | Systems Architect | Digital Strategist</p>
-                    </div>
-                    <a href="assets/Oluwatomiwa_CV.pdf" download class="btn-primary btn-sm">
-                        <i class="fa-solid fa-download"></i> Download PDF CV
-                    </a>
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+            <button class="modal-close" id="resume-close-btn" aria-label="Close resume modal">&times;</button>
+            <div class="resume-modal-header">
+                <div>
+                    <h2 id="resume-modal-title">Odubela Oluwatomiwa (BLAC)</h2>
+                    <p class="text-muted">Backend Developer &amp; Systems Architect CV Summary</p>
                 </div>
-                <div class="resume-modal-body">
-                    <div class="resume-sec">
-                        <h3>Summary</h3>
-                        <p>Backend developer specializing in PHP, MySQL database normalization, and workflow system design. Experienced in campus rollout leadership and Web3 community moderation.</p>
-                    </div>
-                    <div class="resume-sec">
-                        <h3>Key Technical Skills</h3>
-                        <div class="resume-pills">
-                            <span>PHP 8.x</span><span>Laravel</span><span>MySQL</span><span>Database Normalization</span>
-                            <span>REST APIs</span><span>PWA Architecture</span><span>Git &amp; GitHub</span><span>System Logging</span>
-                        </div>
-                    </div>
-                    <div class="resume-sec">
-                        <h3>Education</h3>
-                        <p><strong>Moshood Abiola Polytechnic (MAPOLY)</strong> — National Diploma in Computer Science (2023 - 2025)</p>
-                    </div>
-                    <div class="resume-sec">
-                        <h3>Featured Accomplishments</h3>
-                        <ul>
-                            <li>Built Smart Attendance System with QR check-in capabilities &amp; MySQL backend logging.</li>
-                            <li>Engineered BlacRate Pro PWA for OTC crypto traders with offline calculation capabilities.</li>
-                            <li>Selected as Cowrywise Campus Ambassador Lead for financial literacy rollouts.</li>
-                            <li>Awarded Best Content Strategy Award at MAPOLY (2025).</li>
-                        </ul>
-                    </div>
+                <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" class="btn-primary btn-sm" rel="noreferrer" data-cv-link>
+                    <i class="fa-solid fa-file-pdf"></i> Download PDF
+                </a>
+            </div>
+            <div class="resume-sec">
+                <h3>Core Professional Summary</h3>
+                <p>Backend engineer specializing in PHP 8.x, MySQL 3NF database architecture, and automated workflow systems. Proven track record deploying academic attendance platforms, luxury restaurant booking systems, and PWA calculation tools.</p>
+            </div>
+            <div class="resume-sec">
+                <h3>Technical Proficiencies</h3>
+                <div class="resume-pills">
+                    <span>PHP 8.x</span><span>MySQL</span><span>Google Cloud Firestore</span><span>PWA &amp; Service Workers</span><span>HTML5 Canvas</span><span>Git &amp; GitHub</span><span>REST APIs</span><span>Database Normalization</span>
                 </div>
+            </div>
+            <div class="resume-sec">
+                <h3>Key Production Builds</h3>
+                <ul>
+                    <li><strong>Àdùké Lagos:</strong> Luxury gastronomy platform with real-time table QR scanning and Firestore persistence.</li>
+                    <li><strong>Smart Attendance System:</strong> PHP &amp; MySQL academic check-in platform with time-expiring QR tokens.</li>
+                    <li><strong>BlacRate Pro:</strong> PWA exchange rate calculator with offline-first stale-while-revalidate caching.</li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <!-- TOAST NOTIFICATION CONTAINER -->
+    <!-- TOAST NOTIFICATIONS CONTAINER -->
     <div class="toast-container" id="toast-container"></div>
 
     <script src="./script.js"></script>

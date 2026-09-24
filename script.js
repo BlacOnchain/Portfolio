@@ -1069,23 +1069,15 @@ function initReveal() {
 }
 
 /* =============== DOM READY =============== */
-async function loadDataAndInit() {
-    try {
-        const response = await fetch("data.json");
-        const json = await response.json();
-        Object.assign(DATA, json);
-
-        const totalProjects = DATA.projects ? DATA.projects.length : 0;
-        if (DATA.metrics) {
-            DATA.metrics.forEach(m => {
-                if (m.label === "Featured Builds") {
-                    m.value = String(totalProjects);
-                    m.target = totalProjects;
-                }
-            });
-        }
-    } catch (err) {
-        console.error("Failed to load data.json:", err);
+function loadDataAndInit() {
+    const totalProjects = DATA.projects ? DATA.projects.length : 0;
+    if (DATA.metrics) {
+        DATA.metrics.forEach(m => {
+            if (m.label === "Featured Builds") {
+                m.value = String(totalProjects);
+                m.target = totalProjects;
+            }
+        });
     }
 
     populateStaticContent();
