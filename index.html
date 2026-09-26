@@ -175,13 +175,13 @@
 
                 <!-- PROJECT FILTER TABS -->
                 <div class="filter-bar reveal" id="project-filter-bar">
-                    <button class="filter-btn active" data-filter="all">All Builds (6)</button>
+                    <button class="filter-btn active" data-filter="all">All Builds (5)</button>
                     <button class="filter-btn" data-filter="backend">Backend &amp; Relational SQL</button>
                     <button class="filter-btn" data-filter="pwa">PWA &amp; Client Systems</button>
-                    <button class="filter-btn" data-filter="automation">Automation &amp; Strategy</button>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" id="projects-grid"></div>
+                <!-- PROJECTS GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" id="projects-grid"></div>
             </div>
         </section>
 
@@ -233,13 +233,13 @@ ExportTrigger -> renderPrintDom() -> 'ATS_Optimized_A4.pdf';</code></pre>
         <!-- TECH STACK MATRIX -->
         <section class="section section-stack px-4 sm:px-6 lg:px-8" id="stack">
             <div class="section-inner">
-                <div class="section-header reveal">
+                <div class="section-header section-header-left reveal">
                     <span class="section-eyebrow"><i class="fa-solid fa-microchip"></i> TOOLKIT</span>
                     <h2 class="section-title">Technologies &amp; <span class="accent-text">Stack Matrix</span></h2>
                     <p class="section-sub">Tools, databases, and engineering principles I rely on daily to ship reliable software.</p>
                 </div>
 
-                <div class="filter-bar filter-bar-soft reveal" id="stack-filter-bar">
+                <div class="filter-bar filter-bar-soft filter-bar-left reveal" id="stack-filter-bar">
                     <button class="filter-btn active" data-stack-filter="all">All Stack (8)</button>
                     <button class="filter-btn" data-stack-filter="backend">Backend Core</button>
                     <button class="filter-btn" data-stack-filter="database">Databases &amp; SQL</button>
@@ -247,29 +247,29 @@ ExportTrigger -> renderPrintDom() -> 'ATS_Optimized_A4.pdf';</code></pre>
                     <button class="filter-btn" data-stack-filter="tools">DevOps &amp; Ops</button>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="stack-grid"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5" id="stack-grid"></div>
             </div>
         </section>
 
         <!-- EXPERIENCE SECTION -->
         <section class="section px-4 sm:px-6 lg:px-8" id="experience">
             <div class="section-inner">
-                <div class="section-header reveal">
+                <div class="section-header section-header-left reveal">
                     <span class="section-eyebrow"><i class="fa-solid fa-briefcase"></i> BACKGROUND</span>
                     <h2 class="section-title">Work Experience &amp; <span class="accent-text">Leadership</span></h2>
                     <p class="section-sub">Hands-on backend developer internships, campus ambassador leadership, and rollout execution.</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="reveal">
-                        <h3 class="track-label" style="font-size:1.1rem; font-weight:700; margin-bottom:18px; display:flex; align-items:center; gap:8px;">
+                        <h3 class="track-label" style="font-size:1.08rem; font-weight:700; margin-bottom:18px; display:flex; align-items:center; gap:8px;">
                             <i class="fa-solid fa-code" style="color:var(--accent);"></i> Backend &amp; Software Engineering
                         </h3>
                         <div class="timeline" id="timeline"></div>
                     </div>
 
                     <div class="reveal">
-                        <h3 class="track-label" style="font-size:1.1rem; font-weight:700; margin-bottom:18px; display:flex; align-items:center; gap:8px;">
+                        <h3 class="track-label" style="font-size:1.08rem; font-weight:700; margin-bottom:18px; display:flex; align-items:center; gap:8px;">
                             <i class="fa-solid fa-bullhorn" style="color:var(--accent);"></i> Product Growth &amp; Strategy Leadership
                         </h3>
                         <div class="timeline" id="strategy-timeline"></div>
@@ -279,9 +279,9 @@ ExportTrigger -> renderPrintDom() -> 'ATS_Optimized_A4.pdf';</code></pre>
                 <div class="education-strip reveal">
                     <div class="edu-header">
                         <span class="section-eyebrow"><i class="fa-solid fa-graduation-cap"></i> ACADEMICS</span>
-                        <h3 class="track-label" style="font-size:1.1rem; font-weight:700; margin-bottom:12px;">Education</h3>
+                        <h3 class="track-label" style="font-size:1.08rem; font-weight:700; margin-bottom:12px;">Education</h3>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5" id="edu-cards"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="edu-cards"></div>
                 </div>
             </div>
         </section>
@@ -289,7 +289,7 @@ ExportTrigger -> renderPrintDom() -> 'ATS_Optimized_A4.pdf';</code></pre>
         <!-- CREDENTIALS SECTION -->
         <section class="section section-alt px-4 sm:px-6 lg:px-8" id="credentials">
             <div class="section-inner">
-                <div class="section-header reveal">
+                <div class="section-header section-header-left reveal">
                     <span class="section-eyebrow"><i class="fa-solid fa-award"></i> RECOGNITION</span>
                     <h2 class="section-title">Certifications &amp; <span class="accent-text">Awards</span></h2>
                     <p class="section-sub">Verified certifications and awards in communication and project strategy.</p>
@@ -308,82 +308,156 @@ ExportTrigger -> renderPrintDom() -> 'ATS_Optimized_A4.pdf';</code></pre>
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
+        <!-- TWO-SEGMENT CONTACT & DIRECT INQUIRY SECTION -->
         <section class="section section-contact px-4 sm:px-6 lg:px-8" id="contact">
             <div class="section-inner">
-                <div class="section-header reveal">
-                    <span class="section-eyebrow"><i class="fa-regular fa-envelope"></i> GET IN TOUCH</span>
-                    <h2 class="section-title">Let's Discuss Your <span class="accent-text">Next Build</span></h2>
-                    <p class="contact-body" id="contact-body">
-                        Whether you need a reliable backend API, a structured MySQL database, or an offline-capable web application, I'm always open to discussing new engineering projects and collaborations.
+                <div class="section-header section-header-left reveal">
+                    <span class="section-eyebrow"><i class="fa-solid fa-address-book"></i> GET IN TOUCH</span>
+                    <h2 class="section-title">Verified Channels &amp; <span class="accent-text">Direct Inquiry</span></h2>
+                    <p class="section-sub" id="contact-body">
+                        Direct communication channels for engineering roles, backend API consultations, and collaborative systems development.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 reveal">
-                    <div>
-                        <div class="contact-direct-box">
-                            <a href="mailto:odubelaotomiwa508@gmail.com" class="contact-email-big" id="contact-email-big">odubelaotomiwa508@gmail.com</a>
-                            <button class="btn-copy" id="copy-email-btn" type="button" title="Copy email address" aria-label="Copy email address">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal">
+                    <!-- SEGMENT 1: VERIFIED PROFILES & DIRECT CHANNELS (LEFT COLUMN) -->
+                    <div class="lg:col-span-5 contact-segment-left">
+                        <div class="segment-box">
+                            <div class="segment-head">
+                                <span class="segment-badge font-mono"><i class="fa-solid fa-bolt"></i> CHANNELS</span>
+                                <h3 class="segment-title">Direct Reach &amp; Profiles</h3>
+                            </div>
 
-                        <div class="contact-links-col" id="contact-links-col"></div>
+                            <div class="contact-direct-box">
+                                <div class="contact-direct-info">
+                                    <span class="contact-direct-label font-mono"><i class="fa-regular fa-envelope"></i> Primary Email</span>
+                                    <a href="mailto:odubelaotomiwa508@gmail.com" class="contact-email-big font-mono" id="contact-email-big">odubelaotomiwa508@gmail.com</a>
+                                </div>
+                                <button class="btn-copy font-mono" id="copy-email-btn" type="button" title="Copy email address" aria-label="Copy email address">
+                                    <i class="fa-regular fa-copy"></i>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5" id="contact-links-col"></div>
+
+                            <div class="availability-banner">
+                                <span class="status-dot status-dot-pulse"></span>
+                                <div class="avail-text">
+                                    <strong>Available for Backend &amp; Systems Roles</strong>
+                                    <span class="font-mono" style="font-size:0.72rem;">PHP/Laravel &middot; MySQL 3NF &middot; Lagos (WAT) / Remote</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="contact-form">
-                        <h3 class="form-title">Send a Direct Message</h3>
-                        <form id="direct-message-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="sender-name">Your Name</label>
-                                    <input type="text" id="sender-name" name="sender-name" required placeholder="e.g. Sarah Adebayo">
-                                </div>
-                                <div class="form-group">
-                                    <label for="sender-email">Your Email</label>
-                                    <input type="email" id="sender-email" name="sender-email" required placeholder="e.g. sarah@company.com">
+                    <!-- SEGMENT 2: DIRECT MESSAGE FORM (RIGHT COLUMN) -->
+                    <div class="lg:col-span-7 contact-segment-right">
+                        <div class="contact-form">
+                            <div class="segment-head">
+                                <span class="segment-badge font-mono"><i class="fa-regular fa-paper-plane"></i> INQUIRY</span>
+                                <h3 class="segment-title">Send a Direct Message</h3>
+                            </div>
+
+                            <div class="form-topics">
+                                <span class="topics-label font-mono"><i class="fa-solid fa-sliders"></i> Quick Topic:</span>
+                                <div class="topic-chips" id="topic-chips">
+                                    <button type="button" class="topic-chip active font-mono" data-topic="Backend Engineering">Backend &amp; API</button>
+                                    <button type="button" class="topic-chip font-mono" data-topic="Database Architecture">Database &amp; SQL</button>
+                                    <button type="button" class="topic-chip font-mono" data-topic="PWA & Client System">PWA Web App</button>
+                                    <button type="button" class="topic-chip font-mono" data-topic="Job Opportunity / Role">Full-Time / Contract</button>
+                                    <button type="button" class="topic-chip font-mono" data-topic="General Inquiry">General Chat</button>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="sender-msg">Your Message</label>
-                                <textarea id="sender-msg" name="sender-msg" rows="4" required placeholder="Tell me about what you're building, backend requirements, or role..."></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary form-submit-btn">
-                                <span>Send Message</span>
-                                <i class="fa-regular fa-paper-plane"></i>
-                            </button>
-                        </form>
+
+                            <form id="direct-message-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="sender-name">Your Name</label>
+                                        <input type="text" id="sender-name" name="sender-name" required placeholder="e.g. Sarah Adebayo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sender-email">Your Email</label>
+                                        <input type="email" id="sender-email" name="sender-email" required placeholder="e.g. sarah@company.com">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sender-subject">Subject</label>
+                                    <input type="text" id="sender-subject" name="sender-subject" value="Backend Engineering Inquiry" placeholder="Subject...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sender-msg">Your Message</label>
+                                    <textarea id="sender-msg" name="sender-msg" rows="4" required placeholder="Tell me about what you're building, backend requirements, timeline, or role..."></textarea>
+                                </div>
+                                <button type="submit" class="btn-primary form-submit-btn font-mono">
+                                    <span>Send Direct Message</span>
+                                    <i class="fa-regular fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <footer class="site-footer">
-                <div class="footer-row">
-                    <span>&copy; 2026 BLAC &middot; Odubela Oluwatomiwa</span>
-                    <span id="live-clock">Lagos (WAT) 00:00:00</span>
-                </div>
-                <div class="footer-nav">
-                    <a href="#home">Home</a> &middot;
-                    <a href="#projects">Projects</a> &middot;
-                    <a href="#architecture">Architecture</a> &middot;
-                    <a href="#stack">Stack</a> &middot;
-                    <a href="#experience">Experience</a> &middot;
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-row footer-subrow">
-                    <span>Backend Developer &middot; Relational SQL Architect &middot; Lagos, Nigeria</span>
-                </div>
-            </footer>
         </section>
     </main>
 
-    <!-- PROJECT DETAIL MODAL -->
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-row">
+                <div class="footer-brand">
+                    <span class="logo-bracket">[</span>BLAC<span class="logo-bracket">]</span>
+                    <span>Odubela Oluwatomiwa</span>
+                </div>
+                <div class="footer-time font-mono" id="live-clock">Lagos (WAT) 00:00:00</div>
+            </div>
+            <div class="footer-nav font-mono">
+                <a href="#home">Home</a> &middot;
+                <a href="#projects">Projects</a> &middot;
+                <a href="#architecture">Architecture</a> &middot;
+                <a href="#stack">Stack</a> &middot;
+                <a href="#experience">Experience</a> &middot;
+                <a href="#credentials">Credentials</a> &middot;
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-row footer-subrow font-mono">
+                <span>&copy; 2026 BLAC &middot; Backend Systems &middot; Relational Database Architect &middot; Lagos, Nigeria</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PROJECT DETAIL MODAL / BOTTOM SHEET -->
     <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
-        <div class="modal-card modal-card-wide">
+        <div class="modal-card modal-card-wide" id="modal-card-element">
+            <div class="modal-sheet-handle" aria-hidden="true"></div>
             <button class="modal-close" id="modal-close-btn" type="button" aria-label="Close project modal">&times;</button>
             <div id="modal-content-body"></div>
         </div>
     </div>
+
+    <!-- MOBILE BOTTOM NAVIGATION (Ergonomic Thumb-Zone Anchor) -->
+    <nav class="mobile-tab-bar" id="mobile-tab-bar" aria-label="Mobile Bottom Navigation">
+        <a href="#home" class="mobile-tab-item active" data-tab="home" aria-label="Home">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="#projects" class="mobile-tab-item" data-tab="projects" aria-label="Projects">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Work</span>
+        </a>
+        <a href="#architecture" class="mobile-tab-item" data-tab="architecture" aria-label="Architecture">
+            <i class="fa-solid fa-server"></i>
+            <span>Arch</span>
+        </a>
+        <a href="#stack" class="mobile-tab-item" data-tab="stack" aria-label="Stack">
+            <i class="fa-solid fa-microchip"></i>
+            <span>Stack</span>
+        </a>
+        <a href="#contact" class="mobile-tab-item" data-tab="contact" aria-label="Contact">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
 
     <!-- TOAST NOTIFICATIONS CONTAINER -->
     <div class="toast-container" id="toast-container" aria-live="polite"></div>

@@ -104,10 +104,10 @@ const DATA = {
             title: "AuraCV Studio",
             stackIcon: "fa-solid fa-file-invoice",
             desc: "Executive ATS-ready resume engineering studio and client-side PDF workspace. Enables job seekers to build, customize, and export recruiter-friendly resumes in real-time with dual-pane live preview and zero account requirements.",
-            badge: "PWA | ATS Engine",
+            badge: "PWA & ATS Engine",
             badgeClass: "badge-cyan",
             icon: "AC",
-            tags: ["PWA", "JavaScript", "PDF Engine", "ATS Compliance", "LocalStorage"],
+            tags: ["PWA", "JavaScript", "Client-Side PDF Engine", "ATS Compliance", "LocalStorage", "Dynamic CSS Tokens"],
             impact: "Generates ATS-optimized, recruiter-parsed PDF resumes entirely client-side with 100% privacy and zero server latency.",
             demo: "https://blaconchain.github.io/Aura-CV/",
             source: "https://github.com/Blaconchain/Aura-CV",
@@ -140,6 +140,7 @@ const DATA = {
             demo: "https://blaconchain.github.io/blacrate-pro/",
             source: "https://github.com/Blaconchain/blacrate-pro",
             featured: false,
+            screenshots: [],
             deepDive: {
                 problem: "OTC traders operating in areas with unstable cellular connectivity frequently lost rate calculations during active customer chats, causing pricing errors.",
                 architecture: "Employs a custom Service Worker stale-while-revalidate caching strategy for shell assets and localStorage for persistent margin presets.",
@@ -163,6 +164,7 @@ const DATA = {
             impact: "Guarantees zero invoice duplication and enforces strict database consistency across commercial transactions.",
             source: "https://github.com/BlacOnchain/receipt-pro",
             featured: false,
+            screenshots: [],
             deepDive: {
                 problem: "Small commerce workflows face data inconsistencies when transaction receipts are generated before records are safely committed to the database.",
                 architecture: "Implemented strict database transactions (BEGIN, COMMIT, ROLLBACK) in PHP and MySQL to guarantee ACID transactional safety.",
@@ -170,29 +172,6 @@ const DATA = {
                     "Normalized 3NF schema preventing duplicate invoice sequence collision.",
                     "Structured system logging recording timestamped transaction states.",
                     "Input sanitization preventing invalid monetary precision and SQL injection."
-                ]
-            }
-        },
-        {
-            id: "crypto-dungeon",
-            category: "automation",
-            title: "Crypto Dungeon Hub",
-            stackIcon: "fa-solid fa-diagram-project",
-            desc: "Web3 campaign operations hub and partnership tracking framework designed for community rollout management and developer tool integrations.",
-            badge: "Campaign Operations",
-            badgeClass: "badge-amber",
-            icon: "CD",
-            tags: ["Web3", "Community Operations", "Partnerships", "Campaign Strategy"],
-            impact: "Coordinated partner tool onboarding and scaled structured rollout campaigns across digital creator communities.",
-            source: "https://github.com/Blaconchain",
-            featured: false,
-            deepDive: {
-                problem: "Fast-moving digital communities struggled with scattered event schedules and uncoordinated partnership deliverables.",
-                architecture: "Built structured campaign templates and milestone verification pipelines to coordinate integrations with tools like Create With Me AI.",
-                highlights: [
-                    "Coordinated partner integrations with developer AI utilities.",
-                    "Structured moderation workflows for event campaigns.",
-                    "Organized conversion tracking metrics across rollout milestones."
                 ]
             }
         }
@@ -496,18 +475,22 @@ function initCanvas() {
     }, { passive: true });
 }
 
-/* =============== NAVBAR & MOBILE MENU =============== */
+/* =============== NAVBAR & MOBILE MENU & SCROLL-SPY =============== */
 function initNavbar() {
     const nav = document.getElementById("navbar");
     const toggle = document.getElementById("nav-toggle");
     const links = document.getElementById("nav-links");
+    const mobileTabs = document.querySelectorAll(".mobile-tab-item");
 
+    // Scroll styling
     window.addEventListener("scroll", () => {
         if (nav) {
             nav.classList.toggle("scrolled", window.scrollY > 25);
         }
+        updateActiveSection();
     }, { passive: true });
 
+    // Mobile slide-out drawer
     if (toggle && links) {
         toggle.addEventListener("click", () => {
             const isOpen = links.classList.toggle("is-open");
@@ -530,6 +513,47 @@ function initNavbar() {
                 toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
             }
         });
+    }
+
+    // Scroll-Spy for both desktop links and mobile tab bar
+    const sections = ["home", "projects", "architecture", "stack", "experience", "credentials", "contact"];
+    function updateActiveSection() {
+        const scrollPos = window.scrollY + 160;
+        let currentId = "home";
+
+        for (const secId of sections) {
+            const el = document.getElementById(secId);
+            if (el) {
+                const top = el.offsetTop;
+                const height = el.offsetHeight;
+                if (scrollPos >= top && scrollPos < top + height) {
+                    currentId = secId;
+                    break;
+                }
+            }
+        }
+
+        // Update mobile bottom tab bar
+        mobileTabs.forEach(tab => {
+            const tabTarget = tab.dataset.tab;
+            if (tabTarget === currentId) {
+                tab.classList.add("active");
+            } else {
+                tab.classList.remove("active");
+            }
+        });
+
+        // Update desktop links
+        if (links) {
+            links.querySelectorAll("a").forEach(a => {
+                const href = a.getAttribute("href");
+                if (href === `#${currentId}`) {
+                    a.style.color = "var(--accent)";
+                } else {
+                    a.style.color = "";
+                }
+            });
+        }
     }
 }
 
@@ -708,6 +732,18 @@ function initTerminal() {
     }
 }
 
+function getTagClass(tag) {
+    const t = tag.toLowerCase();
+    if (t.includes("php")) return "tag-php";
+    if (t.includes("mysql") || t.includes("sql") || t.includes("3nf") || t.includes("acid")) return "tag-mysql";
+    if (t.includes("pwa") || t.includes("service worker") || t.includes("offline")) return "tag-pwa";
+    if (t.includes("js") || t.includes("javascript")) return "tag-js";
+    if (t.includes("laravel")) return "tag-laravel";
+    if (t.includes("firestore") || t.includes("firebase")) return "tag-firestore";
+    if (t.includes("pdf") || t.includes("ats")) return "tag-pdf";
+    return "tag-default";
+}
+
 /* =============== PROJECTS GRID & FILTERING =============== */
 function renderProjects(filter = "all") {
     const grid = document.getElementById("projects-grid");
@@ -718,7 +754,7 @@ function renderProjects(filter = "all") {
 
     list.forEach((project, idx) => {
         const card = document.createElement("article");
-        card.className = `project-card${project.featured ? " featured-project" : ""}`;
+        card.className = "project-card reveal";
         card.style.animationDelay = `${idx * 0.05}s`;
 
         const primaryImg = project.screenshots && project.screenshots.length > 0 ? project.screenshots[0] : null;
@@ -726,10 +762,10 @@ function renderProjects(filter = "all") {
 
         card.innerHTML = `
             ${primaryImg ? `
-                <div class="project-media-showcase">
-                    <img src="${primaryImg.src}" alt="${primaryImg.alt}" class="media-preview-img" id="preview-img-${project.id}" loading="lazy">
+                <div class="project-img-frame">
+                    <img src="${primaryImg.src}" alt="${primaryImg.alt}" class="project-img" id="preview-img-${project.id}" loading="lazy">
                     ${hasMultiple ? `
-                        <div class="media-gallery-thumbs">
+                        <div class="project-gallery-nav">
                             ${project.screenshots.map((s, sIdx) => `
                                 <button class="thumb-btn ${sIdx === 0 ? "active" : ""}" data-project="${project.id}" data-src="${s.src}" data-alt="${s.alt}" title="View ${s.alt}" aria-label="View ${s.alt}">
                                     <img src="${s.src}" alt="Thumb ${sIdx + 1}">
@@ -740,21 +776,24 @@ function renderProjects(filter = "all") {
                 </div>
             ` : ""}
 
-            <h3 class="project-title">
-                <i class="${project.stackIcon || "fa-solid fa-code"} project-title-icon" aria-hidden="true"></i>
-                <span>${project.title}</span>
-            </h3>
+            <div class="project-header-row">
+                <h3 class="project-title">
+                    <i class="${project.stackIcon || "fa-solid fa-code"} project-title-icon" aria-hidden="true"></i>
+                    <span>${project.title}</span>
+                </h3>
+                <span class="project-category-badge font-mono">${project.badge}</span>
+            </div>
 
             <div class="project-tags">
-                ${project.tags.map((t) => `<span class="p-tag">${t}</span>`).join("")}
+                ${project.tags.map((t) => `<span class="p-tag font-mono">${t}</span>`).join("")}
             </div>
 
             <p class="project-desc">${project.desc}</p>
 
             <div class="project-actions">
-                ${project.demo ? `<a class="project-action project-demo" href="${project.demo}" target="_blank" rel="noreferrer">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>` : ""}
-                ${project.source ? `<a class="project-action project-source" href="${project.source}" target="_blank" rel="noreferrer">GitHub <i class="fa-brands fa-github"></i></a>` : ""}
-                <button class="project-action project-details-btn" data-project-id="${project.id}" type="button">
+                ${project.demo ? `<a class="project-action project-demo font-mono" href="${project.demo}" target="_blank" rel="noreferrer">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>` : ""}
+                ${project.source ? `<a class="project-action project-source font-mono" href="${project.source}" target="_blank" rel="noreferrer">GitHub <i class="fa-brands fa-github"></i></a>` : ""}
+                <button class="project-action project-details-btn font-mono" data-project-id="${project.id}" type="button">
                     <span>Architecture Deep Dive</span> <i class="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
@@ -774,7 +813,7 @@ function renderProjects(filter = "all") {
                 mainImg.src = src;
                 if (alt) mainImg.alt = alt;
             }
-            const parent = thumb.closest(".media-gallery-thumbs");
+            const parent = thumb.closest(".project-gallery-nav");
             if (parent) {
                 parent.querySelectorAll(".thumb-btn").forEach((b) => b.classList.remove("active"));
                 thumb.classList.add("active");
@@ -812,21 +851,26 @@ function renderStack(filter = "all") {
     const list = filter === "all" ? DATA.techStack : DATA.techStack.filter((s) => s.category === filter);
 
     list.forEach((item) => {
-        const card = document.createElement("article");
-        card.className = "stack-card hover-lift";
+        const chip = document.createElement("div");
+        chip.className = "stack-chip hover-lift";
 
-        card.innerHTML = `
-            <div class="stack-card-head">
-                <div class="stack-card-icon-wrap">
-                    <i class="${item.icon} stack-card-icon"></i>
-                    <span class="stack-card-name">${item.name}</span>
-                </div>
-                <span class="stack-tier-badge ${item.tierClass}">${item.tier}</span>
+        chip.innerHTML = `
+            <div class="stack-chip-icon-box">
+                <i class="${item.icon}"></i>
             </div>
-            <p class="stack-card-app">${item.appNote}</p>
-            <span class="stack-card-link"><i class="fa-solid fa-code-commit"></i> ${item.linkedBuild}</span>
+            <div class="stack-chip-content">
+                <div class="stack-chip-title-row">
+                    <span class="stack-chip-title">${item.name}</span>
+                    <span class="stack-tier-badge font-mono ${item.tierClass}">${item.tier}</span>
+                </div>
+                <p class="stack-chip-desc">${item.appNote}</p>
+                <div class="stack-chip-meta font-mono">
+                    <i class="fa-solid fa-code-commit"></i>
+                    <span>${item.linkedBuild}</span>
+                </div>
+            </div>
         `;
-        grid.appendChild(card);
+        grid.appendChild(chip);
     });
 }
 
@@ -895,6 +939,7 @@ function openProjectModal(projectId) {
 
 function initModals() {
     const projectModal = document.getElementById("project-modal");
+    const modalCard = document.getElementById("modal-card-element");
     const closeBtn = document.getElementById("modal-close-btn");
 
     function closeModal() {
@@ -915,6 +960,41 @@ function initModals() {
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeModal();
     });
+
+    // Touch gesture dismiss for bottom sheet on mobile
+    if (modalCard) {
+        let startY = 0;
+        let currentY = 0;
+        let isDragging = false;
+
+        modalCard.addEventListener("touchstart", (e) => {
+            if (modalCard.scrollTop === 0) {
+                startY = e.touches[0].clientY;
+                isDragging = true;
+            }
+        }, { passive: true });
+
+        modalCard.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+            currentY = e.touches[0].clientY;
+            const diff = currentY - startY;
+            if (diff > 0 && modalCard.scrollTop === 0) {
+                modalCard.style.transform = `translateY(${Math.min(diff, 200)}px)`;
+            }
+        }, { passive: true });
+
+        modalCard.addEventListener("touchend", () => {
+            if (!isDragging) return;
+            isDragging = false;
+            const diff = currentY - startY;
+            if (diff > 90) {
+                modalCard.style.transform = "";
+                closeModal();
+            } else {
+                modalCard.style.transform = "";
+            }
+        }, { passive: true });
+    }
 }
 
 /* =============== TIMELINE & CREDENTIALS =============== */
@@ -1005,7 +1085,15 @@ function buildContactLinks() {
 
     DATA.contactLinks.forEach((item) => {
         const card = document.createElement("a");
-        card.className = `contact-link-card hover-lift${item.highlight ? " highlight-card" : ""}`;
+        const t = item.title.toLowerCase();
+        const netClass = t.includes("linkedin") ? "net-linkedin"
+            : t.includes("github") ? "net-github"
+            : t.includes("x") || t.includes("twitter") ? "net-twitter"
+            : t.includes("instagram") ? "net-instagram"
+            : t.includes("phone") || t.includes("whatsapp") ? "net-whatsapp"
+            : "net-cv";
+
+        card.className = `contact-link-card hover-lift ${netClass}${item.highlight ? " highlight-card" : ""}`;
         card.href = item.href;
         if (item.external && item.href.startsWith("http")) {
             card.target = "_blank";
@@ -1013,8 +1101,10 @@ function buildContactLinks() {
         }
 
         card.innerHTML = `
-            <i class="${item.icon}"></i>
-            <div>
+            <div class="contact-icon-frame">
+                <i class="${item.icon}"></i>
+            </div>
+            <div class="contact-card-text">
                 <strong>${item.title}</strong>
                 <span>${item.value}</span>
             </div>
@@ -1030,9 +1120,30 @@ function initContactActions() {
         copyBtn.addEventListener("click", () => {
             navigator.clipboard.writeText(DATA.hero.email).then(() => {
                 showToast("Email address copied to clipboard!", "fa-copy");
+                const span = copyBtn.querySelector("span");
+                if (span) {
+                    span.textContent = "Copied!";
+                    setTimeout(() => { span.textContent = "Copy"; }, 2000);
+                }
             }).catch(() => {
                 showToast("Email: " + DATA.hero.email, "fa-envelope");
             });
+        });
+    }
+
+    const topicChips = document.getElementById("topic-chips");
+    const subjectInput = document.getElementById("sender-subject");
+    if (topicChips && subjectInput) {
+        topicChips.addEventListener("click", (e) => {
+            const btn = e.target.closest(".topic-chip");
+            if (btn) {
+                topicChips.querySelectorAll(".topic-chip").forEach(c => c.classList.remove("active"));
+                btn.classList.add("active");
+                const topic = btn.dataset.topic;
+                if (topic) {
+                    subjectInput.value = `${topic} Inquiry`;
+                }
+            }
         });
     }
 
@@ -1042,6 +1153,7 @@ function initContactActions() {
             e.preventDefault();
             const name = document.getElementById("sender-name").value.trim();
             const email = document.getElementById("sender-email").value.trim();
+            const subject = subjectInput ? subjectInput.value.trim() : "Portfolio Engineering Inquiry";
             const msg = document.getElementById("sender-msg").value.trim();
 
             if (!name || !email || !msg) {
@@ -1051,7 +1163,7 @@ function initContactActions() {
 
             showToast(`Thank you, ${name}! Your message is prepared.`, "fa-paper-plane");
             
-            const mailtoUrl = `mailto:${DATA.hero.email}?subject=${encodeURIComponent("Portfolio Inquiry from " + name)}&body=${encodeURIComponent(msg + "\n\nFrom: " + name + " (" + email + ")")}`;
+            const mailtoUrl = `mailto:${DATA.hero.email}?subject=${encodeURIComponent(subject + " — from " + name)}&body=${encodeURIComponent(msg + "\n\nFrom: " + name + " (" + email + ")")}`;
             
             setTimeout(() => {
                 window.location.href = mailtoUrl;
