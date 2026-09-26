@@ -1,92 +1,128 @@
 /* =============================================
    BLAC PORTFOLIO — script.js
-   Interactive Whitish / Light Editorial Theme
+   Odubela Oluwatomiwa (BLAC)
+   Backend Systems Engineer & Frontend Developer
+   Lagos, Nigeria
    ============================================= */
 
-let DATA = {
+const DATA = {
     hero: {
         brand: "BLAC",
         name: "Odubela Oluwatomiwa",
-        title: "Backend Developer & Systems Architect",
-        availability: "Open for backend engineering, SQL design & rollout strategy",
-        bio: "Backend developer and digital strategist specializing in PHP 8.x, MySQL relational database architecture, and automated workflow systems. Experienced in building production check-in platforms, PWA calculators, and coordinating high-impact digital campaign rollouts.",
-        contactBody: "If you need clean modular backend logic, normalized database architecture, or structured rollout operations, let's connect and build it properly from day one.",
+        title: "Backend Developer & Systems Builder",
+        availability: "Available for Backend, Full-Stack & Systems Roles",
+        bio: "Backend developer and systems builder based in Lagos. I architect normalized MySQL databases, construct reliable PHP 8.x/Laravel backends, and build high-performance client-side PWAs with clean, zero-friction user interfaces.",
+        contactBody: "Looking for an engineer who writes clean relational schemas, builds resilient APIs, and crafts fast, offline-capable web tools? Let's connect and build something solid.",
         email: "odubelaotomiwa508@gmail.com",
-        phone: "09125808797",
-        cv: "assets/Oluwatomiwa_CV.pdf"
+        phone: "+234 912 580 8797",
+        rawPhone: "09125808797",
+        cv: "assets/Oluwatomiwa_CV.pdf",
+        location: "Lagos, Nigeria",
+        github: "https://github.com/Blaconchain"
     },
     typewriterRoles: [
         "Backend Developer",
         "PHP & Laravel Architect",
         "MySQL Database Specialist",
-        "Digital Rollout Strategist",
-        "PWA & Systems Builder"
+        "PWA & Frontend Systems Builder",
+        "Digital Rollout Strategist"
     ],
     metrics: [
+        { value: "6", label: "Production Builds", target: 6, suffix: "" },
         { value: "4+", label: "Industry Roles", target: 4, suffix: "+" },
-        { value: "4", label: "Featured Builds", target: 4, suffix: "" },
-        { value: "C1", label: "EF Advanced English", target: null, raw: "C1" }
+        { value: "C1", label: "EF Advanced English", target: null, raw: "C1" },
+        { value: "100%", label: "ACID & Schema Integrity", target: null, raw: "100%" }
     ],
     socials: [
         { label: "LinkedIn", href: "https://www.linkedin.com/in/lifewithblac/", icon: "fa-brands fa-linkedin-in" },
         { label: "GitHub", href: "https://github.com/Blaconchain", icon: "fa-brands fa-github" },
-        { label: "X", href: "https://x.com/Lifewithblac", icon: "fa-brands fa-x-twitter" },
+        { label: "X / Twitter", href: "https://x.com/Lifewithblac", icon: "fa-brands fa-x-twitter" },
         { label: "Instagram", href: "https://www.instagram.com/lifewith_blac/", icon: "fa-brands fa-instagram" },
-        { label: "Email", href: "mailto:odubelaotomiwa508@gmail.com", icon: "fa-solid fa-envelope" },
+        { label: "Email", href: "mailto:odubelaotomiwa508@gmail.com", icon: "fa-regular fa-envelope" },
         { label: "Phone", href: "tel:09125808797", icon: "fa-solid fa-phone" }
     ],
     projects: [
         {
-            id: "aduke-lagos",
-            category: "backend",
-            title: "Àdùké Lagos",
-            desc: "Contemporary West African luxury gastronomy platform in Victoria Island, Lagos. Features real-time table QR scanning, live hearth order tracking (#ADK-8819), table reservations, and Google Cloud Firestore persistence.",
-            badge: "Gastronomy | Firestore & QR",
-            badgeClass: "badge-backend",
-            icon: "AD",
-            tags: ["Full-Stack", "Firestore", "Table QR", "Order System", "Render"],
-            impact: "Powers seamless table reservations, culinary order workflows, and real-time hearth dining operations.",
-            demo: "https://aduke-75yk.onrender.com/",
-            source: "https://github.com/BlacOnchain/ADUKE",
-            featured: true,
-            screenshots: [
-                { src: "images/projects/aduke-landing.jpg", alt: "Àdùké Lagos hearth dining and reservation interface" },
-                { src: "images/projects/aduke-menu.jpg", alt: "Àdùké Lagos culinary order system & hearth tracking" }
-            ],
-            deepDive: {
-                problem: "High-end woodfire hearth dining experiences demand zero-friction table ordering, instant QR menu dispatch, and real-time order status tracking without staff bottlenecks.",
-                architecture: "Engineered with Google Cloud Firestore real-time state listeners, table QR session binding, modular menu ordering pipelines, and table reservation workflows deployed on Render.",
-                highlights: [
-                    "Real-time table QR code ordering & live order status updates (#ADK-8819).",
-                    "Google Cloud Firestore backend database persistence for reservations, customer orders, and culinary catalog.",
-                    "Interactive reservation booking system supporting Dinner Sittings & Lunch Suya Socials in Victoria Island, Lagos."
-                ]
-            }
-        },
-        {
             id: "smart-attendance",
-            category: "automation",
+            category: "backend",
             title: "Smart Attendance System",
-            desc: "Academic QR-code check-in platform built with PHP 8.x and MySQL to automate student logging, eliminate manual paperwork, and provide lecturers with centralized real-time reports.",
-            badge: "Academic | Automation",
-            badgeClass: "badge-academic",
+            stackIcon: "fa-brands fa-php",
+            desc: "Academic QR-code verification and check-in platform engineered with PHP 8.x and MySQL. Eliminates manual classroom paperwork, stops proxy attendance with time-expiring cryptographic tokens, and generates instant lecturer audit reports.",
+            badge: "PHP 8.x & MySQL",
+            badgeClass: "badge-blue",
             icon: "SA",
-            tags: ["PHP 8.x", "MySQL", "QR Generator", "Session Auth", "MAPOLY"],
-            impact: "Automates student check-ins and normalizes attendance records across lectures.",
+            tags: ["PHP 8.x", "MySQL 3NF", "Dynamic QR", "Session Security", "MAPOLY"],
+            impact: "Automated student lecture sign-ins, cutting lecture start delays from 15 mins to under 60 seconds with tamper-proof token validation.",
             demo: "https://smart-attendance-production-996c.up.railway.app/",
             source: "https://github.com/BlacOnchain/Smart-Attendance",
             featured: true,
             screenshots: [
-                { src: "images/projects/smart-attendance-landing.png", alt: "Smart Attendance landing page" },
-                { src: "images/projects/smart-attendance-portal.png", alt: "Smart Attendance student portal sign-in page" }
+                { src: "images/projects/smart-attendance-landing.png", alt: "Smart Attendance platform landing page" },
+                { src: "images/projects/smart-attendance-portal.png", alt: "Smart Attendance lecturer and student check-in portal" }
             ],
             deepDive: {
-                problem: "Lecturers spent 10-15 minutes manually signing paper logs per class, leading to human error, proxy signing, and misplaced records.",
-                architecture: "Designed a relational MySQL database with normalized tables for Students, Courses, Lectures, and CheckInLogs. Implemented time-expiring QR tokens generated via PHP middleware to prevent attendance fraud.",
+                problem: "Lecturers at higher institutions spent 10 to 15 minutes manually passing paper attendance sheets per lecture. This led to pervasive proxy signing, lost attendance sheets, and hours wasted tallying semester examination eligibility.",
+                architecture: "Engineered a normalized 3NF MySQL relational database schema linking Students, Courses, LectureSessions, and VerifiedLogs with strict foreign key constraints. Developed custom PHP middleware generating time-expiring, single-use QR verification hashes to eliminate attendance spoofing.",
                 highlights: [
-                    "Relational foreign key constraints linking student matric IDs to active course rosters.",
-                    "Session security & input sanitization preventing SQL injection and duplicate entries.",
-                    "Exportable lecturer reporting dashboard generating automated class attendance summaries."
+                    "Dynamic, time-expiring QR token generation refresh engine.",
+                    "Relational 3NF MySQL database with foreign keys and index optimization for instant query responses.",
+                    "Automated semester attendance percentage calculation and exportable lecturer audit summaries."
+                ]
+            }
+        },
+        {
+            id: "aduke-lagos",
+            category: "backend",
+            title: "Àdùké Lagos",
+            stackIcon: "fa-solid fa-fire-flame-curved",
+            desc: "Contemporary West African luxury gastronomy platform engineered for hearth dining in Victoria Island, Lagos. Features real-time table QR session dispatch, live woodfire order status tracking (#ADK-8819), table reservations, and Google Cloud Firestore persistence.",
+            badge: "Full-Stack | Firestore",
+            badgeClass: "badge-indigo",
+            icon: "AD",
+            tags: ["Full-Stack", "Firestore", "Table QR", "Order Pipeline", "Render"],
+            impact: "Powers friction-free woodfire hearth dining operations, live culinary tracking, and digital table reservations in Victoria Island.",
+            demo: "https://aduke-75yk.onrender.com/",
+            source: "https://github.com/BlacOnchain/ADUKE",
+            featured: true,
+            screenshots: [
+                { src: "images/projects/aduke-landing.jpg", alt: "Àdùké Lagos woodfire dining reservation and hearth interface" },
+                { src: "images/projects/aduke-menu.jpg", alt: "Àdùké Lagos live culinary order pipeline and tracking" }
+            ],
+            deepDive: {
+                problem: "High-volume luxury restaurants face severe dining room bottlenecks when guests wait on floor staff for paper menus, order placement, and kitchen updates during peak dinner seatings.",
+                architecture: "Built with reactive real-time Google Cloud Firestore listeners, table-specific QR code session binding, and a structured order dispatch state machine. Deployed with automated CI/CD pipelines on Render.",
+                highlights: [
+                    "Live table-to-kitchen QR order stream with instant hearth tracking (#ADK-8819).",
+                    "Google Cloud Firestore document persistence for reservations, catalog items, and order states.",
+                    "Interactive booking system supporting VIP Dinner Sittings and Lunch Suya Socials."
+                ]
+            }
+        },
+        {
+            id: "aura-cv",
+            category: "pwa",
+            title: "AuraCV Studio",
+            stackIcon: "fa-solid fa-file-invoice",
+            desc: "Executive ATS-ready resume engineering studio and client-side PDF workspace. Enables job seekers to build, customize, and export recruiter-friendly resumes in real-time with dual-pane live preview and zero account requirements.",
+            badge: "PWA | ATS Engine",
+            badgeClass: "badge-cyan",
+            icon: "AC",
+            tags: ["PWA", "JavaScript", "PDF Engine", "ATS Compliance", "LocalStorage"],
+            impact: "Generates ATS-optimized, recruiter-parsed PDF resumes entirely client-side with 100% privacy and zero server latency.",
+            demo: "https://blaconchain.github.io/Aura-CV/",
+            source: "https://github.com/Blaconchain/Aura-CV",
+            featured: true,
+            screenshots: [
+                { src: "images/projects/auracv-landing.jpg", alt: "AuraCV Studio executive landing page" },
+                { src: "images/projects/auracv-editor.jpg", alt: "AuraCV Studio dual-pane live editor and template selector" }
+            ],
+            deepDive: {
+                problem: "Traditional online resume builders enforce predatory subscription paywalls, demand mandatory account registration, or produce heavily nested multi-column PDF layouts that choke Applicant Tracking System (ATS) parsers.",
+                architecture: "Engineered as an offline-capable client-side Progressive Web App (PWA) using pure vanilla JavaScript. Features a reactive state architecture syncing form inputs to dynamic CSS typography tokens and client-side DOM-to-PDF rendering pipelines without external API calls.",
+                highlights: [
+                    "Dual-pane live editor with instantaneous template swapping (Aura Moderna, Compact, Nordic, Split).",
+                    "1-click print-ready A4 PDF export adhering strictly to single-column ATS parser standards.",
+                    "Zero cloud storage overhead — all user career history auto-saves safely into browser localStorage."
                 ]
             }
         },
@@ -94,22 +130,23 @@ let DATA = {
             id: "blacrate-pro",
             category: "pwa",
             title: "BlacRate Pro",
-            desc: "A Progressive Web App engineered for OTC crypto traders to instantly calculate crypto-to-naira exchange rates with offline-first support and zero network latency.",
-            badge: "PWA | Trading Tool",
-            badgeClass: "badge-pwa",
+            stackIcon: "fa-solid fa-money-bill-transfer",
+            desc: "Offline-first Progressive Web App built for OTC crypto and currency traders to instantly calculate crypto-to-naira exchange rates with custom spread multipliers and zero network latency.",
+            badge: "PWA | Financial Utility",
+            badgeClass: "badge-slate",
             icon: "BR",
-            tags: ["PWA", "Service Worker", "Offline-First", "JavaScript", "OTC Utility"],
-            impact: "Delivers an instant, offline-friendly exchange rate calculator for active OTC transactions.",
+            tags: ["PWA", "Service Worker", "Offline-First", "JavaScript", "Trading Utility"],
+            impact: "Equips active OTC traders with a dependable, sub-millisecond offline calculator during critical trade negotiations.",
             demo: "https://blaconchain.github.io/blacrate-pro/",
             source: "https://github.com/Blaconchain/blacrate-pro",
             featured: false,
             deepDive: {
-                problem: "OTC traders working in regions with spotty mobile data needed a reliable rate calculator that works instantly offline without dropping active customer chats.",
-                architecture: "Built with a custom Service Worker caching strategy (stale-while-revalidate) for static app shell assets and local storage synchronization for custom rate margins.",
+                problem: "OTC traders operating in areas with unstable cellular connectivity frequently lost rate calculations during active customer chats, causing pricing errors.",
+                architecture: "Employs a custom Service Worker stale-while-revalidate caching strategy for shell assets and localStorage for persistent margin presets.",
                 highlights: [
-                    "Instant client-side calculation engine with adjustable margin percentage multipliers.",
-                    "PWA Web App Manifest for seamless home screen installation on iOS and Android.",
-                    "Fast lightweight bundle requiring zero external framework dependencies."
+                    "Instant client-side arithmetic engine with custom margin percentage toggles.",
+                    "Web App Manifest for native-like home screen installation on iOS and Android.",
+                    "Zero external framework dependencies for instantaneous load times."
                 ]
             }
         },
@@ -117,21 +154,22 @@ let DATA = {
             id: "receipt-pro",
             category: "backend",
             title: "Receipt Pro",
-            desc: "A backend transaction management system focused on relational SQL data integrity, immutable transaction logging, and automated receipt generation.",
-            badge: "Backend | SQL",
-            badgeClass: "badge-backend",
+            stackIcon: "fa-solid fa-receipt",
+            desc: "Backend transaction accounting engine built with PHP and MySQL, enforcing relational data integrity, immutable audit logs, and atomic database transaction guarantees.",
+            badge: "PHP & ACID SQL",
+            badgeClass: "badge-blue",
             icon: "RP",
             tags: ["PHP", "MySQL", "ACID Transactions", "SQL Integrity", "Audit Logs"],
-            impact: "Models dependable financial transaction records with SQL audit integrity.",
+            impact: "Guarantees zero invoice duplication and enforces strict database consistency across commercial transactions.",
             source: "https://github.com/BlacOnchain/receipt-pro",
             featured: false,
             deepDive: {
-                problem: "Small commerce businesses struggle with missing transaction records and inconsistent order numbering during manual bookkeeping.",
-                architecture: "Built with PHP and MySQL employing strict database transactions (BEGIN, COMMIT, ROLLBACK) to guarantee that receipts are generated only when database records successfully write.",
+                problem: "Small commerce workflows face data inconsistencies when transaction receipts are generated before records are safely committed to the database.",
+                architecture: "Implemented strict database transactions (BEGIN, COMMIT, ROLLBACK) in PHP and MySQL to guarantee ACID transactional safety.",
                 highlights: [
-                    "Database schema enforcing 3NF normalization and unique receipt serial sequence generation.",
-                    "Structured system logging tracking timestamped transaction creation and audit trails.",
-                    "Sanitized input validation preventing invalid monetary values and SQL injection."
+                    "Normalized 3NF schema preventing duplicate invoice sequence collision.",
+                    "Structured system logging recording timestamped transaction states.",
+                    "Input sanitization preventing invalid monetary precision and SQL injection."
                 ]
             }
         },
@@ -139,150 +177,180 @@ let DATA = {
             id: "crypto-dungeon",
             category: "automation",
             title: "Crypto Dungeon Hub",
-            desc: "Web3 community portal & digital campaign hub designed for partnership management, campaign rollout tracking, and engagement operations.",
-            badge: "Web3 | Community Portal",
-            badgeClass: "badge-academic",
+            stackIcon: "fa-solid fa-diagram-project",
+            desc: "Web3 campaign operations hub and partnership tracking framework designed for community rollout management and developer tool integrations.",
+            badge: "Campaign Operations",
+            badgeClass: "badge-amber",
             icon: "CD",
-            tags: ["Web3", "Community", "Moderation", "Rollout Strategy"],
-            impact: "Drives community engagement, partner onboarding, and event operations.",
-            source: "https://github.com/BlacOnchain",
+            tags: ["Web3", "Community Operations", "Partnerships", "Campaign Strategy"],
+            impact: "Coordinated partner tool onboarding and scaled structured rollout campaigns across digital creator communities.",
+            source: "https://github.com/Blaconchain",
             featured: false,
             deepDive: {
-                problem: "Fast-growing Web3 communities needed a centralized hub to track campaign rollouts, moderate engagement, and verify partner activity.",
-                architecture: "Designed structured workflow pipelines and campaign tracking templates to maintain brand consistency and operational oversight.",
+                problem: "Fast-moving digital communities struggled with scattered event schedules and uncoordinated partnership deliverables.",
+                architecture: "Built structured campaign templates and milestone verification pipelines to coordinate integrations with tools like Create With Me AI.",
                 highlights: [
-                    "Coordinated partner integrations with AI tools like Create With Me AI.",
-                    "Monitored community moderation workflows and digital event rollouts.",
-                    "Built structured engagement logs to measure campaign conversion."
+                    "Coordinated partner integrations with developer AI utilities.",
+                    "Structured moderation workflows for event campaigns.",
+                    "Organized conversion tracking metrics across rollout milestones."
                 ]
             }
         }
     ],
     techStack: [
         {
-            name: "PHP 8.x",
+            name: "PHP 8.x Core",
             icon: "fa-brands fa-php",
             category: "backend",
-            tier: "Production Core",
+            tier: "Primary Backend",
             tierClass: "tier-core",
-            appNote: "Primary language for server-side logic, session management, QR token generation, and RESTful route handlers.",
+            appNote: "Server-side logic, session management, secure QR token issuance, and RESTful routing.",
+            linkedBuild: "Smart Attendance & Receipt Pro"
+        },
+        {
+            name: "MySQL & Relational Architecture",
+            icon: "fa-solid fa-database",
+            category: "database",
+            tier: "Database Design",
+            tierClass: "tier-db",
+            appNote: "3NF normalization, foreign key relations, B-tree indexes, and ACID transaction boundaries.",
             linkedBuild: "Smart Attendance System"
         },
         {
-            name: "Laravel Framework",
+            name: "Laravel MVC Framework",
             icon: "fa-solid fa-layer-group",
             category: "backend",
-            tier: "Production Core",
+            tier: "Web Framework",
             tierClass: "tier-core",
-            appNote: "Architecting structured MVC backend applications, Eloquent ORM queries, database migrations, and middleware pipelines.",
+            appNote: "Structuring MVC backends, Eloquent ORM relationships, database migrations, and request middleware.",
             linkedBuild: "Backend Engineering"
         },
         {
-            name: "MySQL & Relational Databases",
-            icon: "fa-solid fa-database",
-            category: "database",
-            tier: "Architecture Level",
-            tierClass: "tier-db",
-            appNote: "Designing 3NF normalized tables, foreign key constraints, indexing for speed, and transactional audit trails.",
-            linkedBuild: "Receipt Pro & Attendance"
-        },
-        {
-            name: "Database Normalization & SQL",
-            icon: "fa-solid fa-diagram-project",
-            category: "database",
-            tier: "Architecture Level",
-            tierClass: "tier-db",
-            appNote: "Optimizing database schemas at Olak Tech internship to eliminate data redundancy and prevent concurrency anomalies.",
-            linkedBuild: "Olak Tech SIWES"
-        },
-        {
-            name: "PWA & Offline-First Tech",
+            name: "PWA & Offline Web Architecture",
             icon: "fa-solid fa-mobile-screen-button",
             category: "pwa",
-            tier: "Advanced",
+            tier: "Client Systems",
             tierClass: "tier-pwa",
-            appNote: "Implementing Service Worker caching strategies, web app manifests, and offline data persistence for mobile users.",
-            linkedBuild: "BlacRate Pro"
+            appNote: "Service Worker cache strategies, web manifests, and client-side state engines with local storage.",
+            linkedBuild: "AuraCV Studio & BlacRate"
         },
         {
-            name: "REST APIs & Middleware",
-            icon: "fa-solid fa-plug-circle-check",
-            category: "backend",
-            tier: "Production Core",
-            tierClass: "tier-core",
-            appNote: "Structuring JSON API endpoints, request validation, authentication headers, and standardized error messaging.",
-            linkedBuild: "API System Integration"
+            name: "JavaScript & DOM Architecture",
+            icon: "fa-brands fa-js",
+            category: "pwa",
+            tier: "Frontend Core",
+            tierClass: "tier-pwa",
+            appNote: "Event-driven reactive UI, dynamic CSS tokens, client-side PDF rendering, and async API integrations.",
+            linkedBuild: "AuraCV Studio & Àdùké Lagos"
         },
         {
-            name: "Git & GitHub Version Control",
+            name: "Google Cloud Firestore",
+            icon: "fa-solid fa-fire-flame-curved",
+            category: "database",
+            tier: "Real-time DB",
+            tierClass: "tier-db",
+            appNote: "NoSQL document collections, real-time snapshot listeners, and live table ordering synchronization.",
+            linkedBuild: "Àdùké Lagos"
+        },
+        {
+            name: "Git, GitHub & Cloud CI/CD",
             icon: "fa-brands fa-github",
             category: "tools",
-            tier: "Daily Driver",
+            tier: "DevOps & Versioning",
             tierClass: "tier-tool",
-            appNote: "Managing code repositories, branching workflows, pull request reviews, and continuous Railway deployments.",
+            appNote: "Git version control, feature branching, pull request reviews, and cloud deployment pipelines (Railway, Render).",
             linkedBuild: "GitHub Projects"
         },
         {
-            name: "Digital Product Rollout",
-            icon: "fa-solid fa-rocket",
+            name: "Product & Campaign Rollout",
+            icon: "fa-solid fa-chart-line",
             category: "tools",
-            tier: "Strategy Core",
+            tier: "Operations & Strategy",
             tierClass: "tier-tool",
-            appNote: "Planning organic product launches, promotional schedules, campus awareness campaigns, and Web3 growth operations.",
+            appNote: "Structuring product launches, organic rollout schedules, and campus adoption initiatives.",
             linkedBuild: "Cowrywise & oSHAMO"
         }
     ],
-    experience: [
-        {
-            company: "Cowrywise",
-            role: "Campus Ambassador Lead",
-            time: "11/2025 - Present",
-            points: [
-                "Coordinating campus brand awareness campaigns and digital savings adoption across MAPOLY.",
-                "Managing event logistics, promotional material distribution, and student onboarding with structured execution."
-            ]
+    architectureSpecs: {
+        attendance: {
+            title: "Smart Attendance — 3NF MySQL Schema & QR Token Lifecycle",
+            badge: "SQL Architecture",
+            tables: [
+                { name: "students", cols: "id (PK), matric_no (UNIQUE), full_name, department_id (FK), created_at" },
+                { name: "course_rosters", cols: "id (PK), course_code, lecturer_id (FK), semester, academic_year" },
+                { name: "lecture_sessions", cols: "id (PK), course_id (FK), session_token (HASH), expires_at, status" },
+                { name: "attendance_logs", cols: "id (PK), session_id (FK), student_id (FK), verified_at, device_hash" }
+            ],
+            security: "PHP 8.x token engine creates cryptographically salted, 90-second expiring QR tokens. Prevents screenshot forwarding and proxy check-ins."
         },
-        {
-            company: "Crypto Dungeon",
-            role: "Partnerships Contributor",
-            time: "11/2024 - 11/2025",
-            points: [
-                "Led community engagement and digital moderation for Web3 enthusiasts and digital collector groups.",
-                "Managed partnership growth strategy and integration support for external tools like Create With Me AI."
-            ]
-        },
-        {
-            company: "Olak Tech",
-            role: "Backend Developer Intern (SIWES)",
-            time: "2025 - 2025",
-            points: [
-                "Collaborated on backend engineering and relational database normalization using PHP 8 and MySQL.",
-                "Handled technical documentation, system error logging, and workflow tracking to ensure project delivery."
-            ]
-        },
-        {
-            company: "oSHAMO",
-            role: "Early Rollout Strategist",
-            time: "11/2024 - 08/2025",
-            points: [
-                "Planned organic digital rollout schedules across social media channels to maximize brand launch reach.",
-                "Monitored content delivery timelines and campaign execution metrics with an operations-first mindset."
-            ]
+        auracv: {
+            title: "AuraCV Studio — Client-Side ATS PDF & Reactive State Pipeline",
+            badge: "Frontend Architecture",
+            flow: [
+                "Form Input Event -> Debounced State Dispatcher",
+                "State Object -> CSS Custom Properties Reactive Binder",
+                "Dual-Pane DOM Virtualization -> Instant A4 Print Preview",
+                "LocalStorage Sync -> Zero-Latency Auto-Save",
+                "Native Canvas / PDF Pipeline -> Clean 1-Page ATS Document"
+            ],
+            security: "100% Client-side. Zero telemetry, zero external network queries during resume authoring."
         }
-    ],
+    },
+    experience: {
+        tech: [
+            {
+                company: "Olak Tech",
+                role: "Backend Developer Intern (SIWES)",
+                time: "2025",
+                points: [
+                    "Engineered modular backend logic and normalized relational MySQL database schemas using PHP 8.x.",
+                    "Maintained technical documentation, structured error logging, and schema migration tracking."
+                ]
+            }
+        ],
+        strategy: [
+            {
+                company: "Cowrywise",
+                role: "Campus Ambassador Lead",
+                time: "11/2025 - Present",
+                points: [
+                    "Leading campus brand awareness campaigns and digital savings adoption across MAPOLY.",
+                    "Organizing student workshops, managing promotional distribution, and facilitating user onboarding."
+                ]
+            },
+            {
+                company: "Crypto Dungeon",
+                role: "Partnerships Contributor",
+                time: "11/2024 - 11/2025",
+                points: [
+                    "Managed community engagement and moderation workflows for digital creator groups.",
+                    "Coordinated partnership outreach and integration support for developer tools like Create With Me AI."
+                ]
+            },
+            {
+                company: "oSHAMO",
+                role: "Early Rollout Strategist",
+                time: "11/2024 - 08/2025",
+                points: [
+                    "Planned organic digital rollout schedules across social media channels to maximize brand launch reach.",
+                    "Monitored content delivery timelines and campaign execution metrics with an operations-first mindset."
+                ]
+            }
+        ]
+    },
     education: [
         {
             school: "Moshood Abiola Polytechnic (MAPOLY)",
             degree: "ND in Computer Science",
-            meta: "2023 - 2025",
-            desc: "Core coursework: Database Management Systems, Web Development Logic, Systems Analysis & Design, Data Structures, and Software Engineering."
+            meta: "2023 - 2025 &middot; Abeokuta, Nigeria",
+            desc: "Coursework: Database Management Systems, Web Application Development, Systems Analysis & Design, Data Structures & Algorithms, and Software Engineering."
         }
     ],
     credentials: {
         certifications: [
             {
                 title: "C1 Advanced English Certification (EF SET)",
-                meta: "Issued 2026",
+                meta: "Issued 2026 &middot; EF Standard English Test",
                 desc: "Demonstrated advanced professional fluency in spoken and written English communication."
             }
         ],
@@ -290,7 +358,7 @@ let DATA = {
             {
                 title: "Best Content Strategy Award",
                 meta: "Moshood Abiola Polytechnic | 2025",
-                desc: "Recognized for innovative digital rollout strategies that significantly increased community engagement and organic reach."
+                desc: "Recognized for digital campaign execution that significantly increased student community engagement and organic reach."
             }
         ]
     },
@@ -303,14 +371,14 @@ let DATA = {
             external: true
         },
         {
-            title: "GitHub Repository",
+            title: "GitHub",
             value: "github.com/Blaconchain",
             href: "https://github.com/Blaconchain",
             icon: "fa-brands fa-github",
             external: true
         },
         {
-            title: "X (Formerly Twitter)",
+            title: "X (Twitter)",
             value: "@Lifewithblac",
             href: "https://x.com/Lifewithblac",
             icon: "fa-brands fa-x-twitter",
@@ -324,14 +392,14 @@ let DATA = {
             external: true
         },
         {
-            title: "Direct Phone Call",
+            title: "Direct Phone / WhatsApp",
             value: "+234 912 580 8797",
             href: "tel:09125808797",
             icon: "fa-solid fa-phone"
         },
         {
             title: "Curriculum Vitae (CV)",
-            value: "Download PDF Resume",
+            value: "Download Official PDF",
             href: "assets/Oluwatomiwa_CV.pdf",
             icon: "fa-solid fa-file-pdf",
             external: true,
@@ -341,23 +409,23 @@ let DATA = {
 };
 
 /* =============== TOAST NOTIFICATIONS =============== */
-function showToast(message, icon = "fa-check-circle") {
+function showToast(message, icon = "fa-check-circle", type = "success") {
     const container = document.getElementById("toast-container");
     if (!container) return;
 
     const toast = document.createElement("div");
-    toast.className = "toast";
+    toast.className = `toast toast-${type}`;
     toast.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${message}</span>`;
     container.appendChild(toast);
 
     setTimeout(() => {
         toast.style.opacity = "0";
-        toast.style.transform = "translateY(10px)";
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
+        toast.style.transform = "translateY(6px)";
+        setTimeout(() => toast.remove(), 200);
+    }, 3200);
 }
 
-/* =============== LIGHT CANVAS BACKGROUND PARTICLES =============== */
+/* =============== CANVAS PARTICLES =============== */
 function initCanvas() {
     const canvas = document.getElementById("bg-canvas");
     if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -366,7 +434,7 @@ function initCanvas() {
     }
     const ctx = canvas.getContext("2d");
     let width, height, particles;
-    const colors = ["#059669", "#10B981", "#D97706", "#1E293B"];
+    const colors = ["#1e40af", "#3b82f6", "#6b7280", "#cbd5e1"];
 
     function resize() {
         width = canvas.width = window.innerWidth;
@@ -377,16 +445,17 @@ function initCanvas() {
         return {
             x: Math.random() * width,
             y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.25,
-            vy: (Math.random() - 0.5) * 0.25,
-            r: Math.random() * 1.8 + 0.6,
+            vx: (Math.random() - 0.5) * 0.16,
+            vy: (Math.random() - 0.5) * 0.16,
+            r: Math.random() * 1.2 + 0.4,
             c: colors[Math.floor(Math.random() * colors.length)],
-            a: Math.random() * 0.25 + 0.08
+            a: Math.random() * 0.14 + 0.03
         };
     }
 
     function initParticles() {
-        particles = Array.from({ length: window.innerWidth < 768 ? 32 : 64 }, makeParticle);
+        const count = window.innerWidth < 768 ? 14 : 32;
+        particles = Array.from({ length: count }, makeParticle);
     }
 
     function draw() {
@@ -396,9 +465,9 @@ function initCanvas() {
                 const dx = particles[i].x - particles[j].x;
                 const dy = particles[i].y - particles[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 110) {
+                if (dist < 75) {
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(5, 150, 105, ${0.04 * (1 - dist / 110)})`;
+                    ctx.strokeStyle = `rgba(30, 64, 175, ${0.03 * (1 - dist / 75)})`;
                     ctx.lineWidth = 0.5;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
@@ -418,8 +487,13 @@ function initCanvas() {
         requestAnimationFrame(draw);
     }
 
-    resize(); initParticles(); draw();
-    window.addEventListener("resize", () => { resize(); initParticles(); });
+    resize();
+    initParticles();
+    draw();
+    window.addEventListener("resize", () => {
+        resize();
+        initParticles();
+    }, { passive: true });
 }
 
 /* =============== NAVBAR & MOBILE MENU =============== */
@@ -429,7 +503,9 @@ function initNavbar() {
     const links = document.getElementById("nav-links");
 
     window.addEventListener("scroll", () => {
-        nav.classList.toggle("scrolled", window.scrollY > 40);
+        if (nav) {
+            nav.classList.toggle("scrolled", window.scrollY > 25);
+        }
     }, { passive: true });
 
     if (toggle && links) {
@@ -438,8 +514,17 @@ function initNavbar() {
             toggle.setAttribute("aria-expanded", String(isOpen));
             toggle.innerHTML = `<i class="fa-solid fa-${isOpen ? "xmark" : "bars"}"></i>`;
         });
+
         links.addEventListener("click", (e) => {
             if (e.target.tagName === "A") {
+                links.classList.remove("is-open");
+                toggle.setAttribute("aria-expanded", "false");
+                toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+        });
+
+        document.addEventListener("click", (e) => {
+            if (links.classList.contains("is-open") && !links.contains(e.target) && !toggle.contains(e.target)) {
                 links.classList.remove("is-open");
                 toggle.setAttribute("aria-expanded", "false");
                 toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
@@ -451,14 +536,6 @@ function initNavbar() {
 /* =============== STATIC CONTENT POPULATION =============== */
 function populateStaticContent() {
     const { hero } = DATA;
-    document.title = `${hero.brand} | Backend Developer & Systems Architect`;
-
-    document.getElementById("hero-profile-label").textContent = hero.brand;
-    document.getElementById("hero-profile-sub").textContent = hero.name;
-    document.getElementById("availability-text").textContent = hero.availability;
-    document.getElementById("hero-name").textContent = hero.brand;
-    document.getElementById("hero-bio").textContent = hero.bio;
-    document.getElementById("contact-body").textContent = hero.contactBody;
 
     const emailLink = document.getElementById("contact-email-big");
     if (emailLink) {
@@ -473,7 +550,7 @@ function populateStaticContent() {
     const socials = document.getElementById("hero-socials");
     if (socials) {
         socials.innerHTML = DATA.socials.map((item) => `
-            <a href="${item.href}" ${item.href.startsWith("http") ? 'target="_blank" rel="noreferrer"' : ""} title="${item.label}">
+            <a href="${item.href}" ${item.href.startsWith("http") ? 'target="_blank" rel="noreferrer"' : ""} title="${item.label}" aria-label="${item.label}">
                 <i class="${item.icon}"></i>
             </a>
         `).join("");
@@ -493,20 +570,21 @@ function populateStaticContent() {
 /* =============== ANIMATED METRICS COUNTER =============== */
 function animateMetrics() {
     DATA.metrics.forEach((m, idx) => {
-        if (m.target === null) return;
+        if (m.target === null || typeof m.target === "undefined") return;
         const el = document.getElementById(`metric-val-${idx}`);
         if (!el) return;
 
         let start = 0;
-        const duration = 1200;
+        const target = m.target;
+        const duration = 900;
         const stepTime = 30;
         const steps = duration / stepTime;
-        const increment = m.target / steps;
+        const increment = target / steps;
 
         const timer = setInterval(() => {
             start += increment;
-            if (start >= m.target) {
-                el.textContent = `${m.target}${m.suffix}`;
+            if (start >= target) {
+                el.textContent = `${target}${m.suffix}`;
                 clearInterval(timer);
             } else {
                 el.textContent = `${Math.floor(start)}${m.suffix}`;
@@ -529,7 +607,7 @@ function initTypewriter() {
             charIdx++;
             if (charIdx === role.length) {
                 deleting = true;
-                setTimeout(tick, 2000);
+                setTimeout(tick, 2200);
                 return;
             }
         } else {
@@ -540,7 +618,7 @@ function initTypewriter() {
                 roleIdx = (roleIdx + 1) % roles.length;
             }
         }
-        setTimeout(tick, deleting ? 35 : 70);
+        setTimeout(tick, deleting ? 30 : 60);
     }
     tick();
 }
@@ -559,60 +637,64 @@ function initTerminal() {
         body.scrollTop = body.scrollHeight;
     }
 
-    function printWelcome() {
-        appendLine('<span class="t-prompt">&gt;</span> <span class="t-cmd">blac --version</span>');
-        appendLine('<span class="t-str">BLAC Systems Console v2.6.0 [PHP 8.x / MySQL / PWA]</span>');
-        appendLine('<span class="t-info">Type "help" or click quick command buttons above.</span>');
-    }
-
     function runCommand(cmd) {
         const c = cmd.trim().toLowerCase();
-        appendLine(`<span class="t-prompt">&gt;</span> <span class="t-cmd">${c}</span>`);
+        appendLine(`<span class="t-prompt">&gt;</span> <span class="t-cmd">${escapeHtml(cmd.trim())}</span>`);
 
         if (c === "clear") {
             body.innerHTML = "";
             return;
         }
 
-        if (c === "profile" || c === "cat profile.json") {
+        if (c === "profile" || c === "cat profile.json" || c === "whoami") {
             appendLine('<span class="t-key">{</span>');
-            appendLine('  <span class="t-key">"name"</span>: <span class="t-str">"Odubela Oluwatomiwa"</span>,');
-            appendLine('  <span class="t-key">"title"</span>: <span class="t-str">"Backend Developer &amp; Systems Architect"</span>,');
-            appendLine('  <span class="t-key">"languages"</span>: [<span class="t-str">"PHP 8.x"</span>, <span class="t-str">"SQL"</span>, <span class="t-str">"JavaScript"</span>],');
-            appendLine('  <span class="t-key">"databases"</span>: [<span class="t-str">"MySQL"</span>, <span class="t-str">"Relational Schemas"</span>],');
-            appendLine('  <span class="t-key">"status"</span>: <span class="t-bool">"Available for Hire"</span>');
+            appendLine('  <span class="t-key">"name"</span>: <span class="t-str">"Odubela Oluwatomiwa (BLAC)"</span>,');
+            appendLine('  <span class="t-key">"role"</span>: <span class="t-str">"Backend Systems Engineer &amp; PWA Builder"</span>,');
+            appendLine('  <span class="t-key">"location"</span>: <span class="t-str">"Lagos, Nigeria"</span>,');
+            appendLine('  <span class="t-key">"coreStack"</span>: [<span class="t-str">"PHP 8.x"</span>, <span class="t-str">"MySQL 3NF"</span>, <span class="t-str">"Laravel"</span>, <span class="t-str">"JavaScript"</span>, <span class="t-str">"PWA"</span>],');
+            appendLine('  <span class="t-key">"status"</span>: <span class="t-bool">"Available for High-Impact Projects"</span>');
             appendLine('<span class="t-key">}</span>');
         } else if (c === "stack" || c === "stack.sh") {
-            appendLine('<span class="t-str">Primary Backend:</span> PHP 8.x, Laravel, REST Middleware');
-            appendLine('<span class="t-str">Database Layer:</span> MySQL, Relational Normalization, Indexing');
-            appendLine('<span class="t-str">Frontend/PWA:</span> JavaScript, Service Workers, Offline Storage');
-            appendLine('<span class="t-str">Operations:</span> Git, GitHub, Railway, Rollout Strategy');
-        } else if (c === "projects" || c === "projects.list") {
+            appendLine('<span class="t-str">Backend:</span> PHP 8.x, Laravel, REST API design, session auth');
+            appendLine('<span class="t-str">Databases:</span> MySQL 3NF schemas, foreign key indexing, ACID transactions');
+            appendLine('<span class="t-str">Frontend/PWA:</span> Vanilla JS, Service Workers, offline storage, dynamic PDF engines');
+            appendLine('<span class="t-str">DevOps:</span> Git, GitHub, Linux, Railway, Render CI/CD');
+        } else if (c === "projects" || c === "projects.list" || c === "ls") {
             DATA.projects.forEach((p) => {
                 appendLine(`<span class="t-key">• ${p.title}</span> — <span class="t-str">${p.badge}</span>`);
             });
-        } else if (c === "contact") {
-            appendLine(`<span class="t-str">Email: ${DATA.hero.email}</span>`);
-            appendLine(`<span class="t-str">Phone: ${DATA.hero.phone}</span>`);
-            appendLine('<span class="t-str">GitHub: https://github.com/Blaconchain</span>');
+            appendLine('<span class="t-info">Click any project below for live architecture specs.</span>');
+        } else if (c === "schema" || c === "db") {
+            appendLine('<span class="t-key">Database Schema Standard:</span> 3NF normalized tables with foreign keys and ACID guards.');
+            appendLine('<span class="t-str">Flagship Model:</span> Smart Attendance System (students, rosters, lecture_sessions, attendance_logs).');
+        } else if (c === "contact" || c === "email" || c === "hire") {
+            appendLine(`<span class="t-str">Email:</span> ${DATA.hero.email}`);
+            appendLine(`<span class="t-str">Phone:</span> ${DATA.hero.phone}`);
+            appendLine('<span class="t-str">GitHub:</span> https://github.com/Blaconchain');
+            appendLine('<span class="t-str">LinkedIn:</span> https://www.linkedin.com/in/lifewithblac/');
         } else if (c === "help") {
             appendLine('<span class="t-info">Available commands:</span>');
-            appendLine('  <span class="t-cmd">profile</span>   - View profile JSON');
-            appendLine('  <span class="t-cmd">stack</span>     - View core technology stack');
-            appendLine('  <span class="t-cmd">projects</span>  - List featured production builds');
-            appendLine('  <span class="t-cmd">contact</span>   - Get direct contact channels');
-            appendLine('  <span class="t-cmd">clear</span>     - Clear terminal screen');
+            appendLine('  <span class="t-cmd">profile</span>   - View developer profile JSON');
+            appendLine('  <span class="t-cmd">stack</span>     - View core technology matrix');
+            appendLine('  <span class="t-cmd">projects</span>  - List production applications');
+            appendLine('  <span class="t-cmd">schema</span>    - View relational database blueprint');
+            appendLine('  <span class="t-cmd">contact</span>   - Show direct contact channels');
+            appendLine('  <span class="t-cmd">clear</span>     - Clear terminal history');
         } else {
-            appendLine(`<span class="t-info">Command not recognized: "${c}". Type "help" for command list.</span>`);
+            appendLine(`<span class="t-info">Command not recognized: "${escapeHtml(c)}". Type "help" for valid commands.</span>`);
         }
     }
 
-    printWelcome();
+    function escapeHtml(text) {
+        const div = document.createElement("div");
+        div.textContent = text;
+        return div.innerHTML;
+    }
 
     document.querySelectorAll(".term-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
             const cmd = btn.dataset.cmd;
-            runCommand(cmd);
+            if (cmd) runCommand(cmd);
         });
     });
 
@@ -637,7 +719,7 @@ function renderProjects(filter = "all") {
     list.forEach((project, idx) => {
         const card = document.createElement("article");
         card.className = `project-card${project.featured ? " featured-project" : ""}`;
-        card.style.animationDelay = `${idx * 0.08}s`;
+        card.style.animationDelay = `${idx * 0.05}s`;
 
         const primaryImg = project.screenshots && project.screenshots.length > 0 ? project.screenshots[0] : null;
         const hasMultiple = project.screenshots && project.screenshots.length > 1;
@@ -645,14 +727,11 @@ function renderProjects(filter = "all") {
         card.innerHTML = `
             ${primaryImg ? `
                 <div class="project-media-showcase">
-                    <span class="media-overlay-badge">${project.badge}</span>
-                    <div class="media-preview-container">
-                        <img src="${primaryImg.src}" alt="${primaryImg.alt}" class="media-preview-img" id="preview-img-${project.id}" loading="lazy">
-                    </div>
+                    <img src="${primaryImg.src}" alt="${primaryImg.alt}" class="media-preview-img" id="preview-img-${project.id}" loading="lazy">
                     ${hasMultiple ? `
                         <div class="media-gallery-thumbs">
                             ${project.screenshots.map((s, sIdx) => `
-                                <button class="thumb-btn ${sIdx === 0 ? "active" : ""}" data-project="${project.id}" data-src="${s.src}" data-alt="${s.alt}" title="View ${s.alt}">
+                                <button class="thumb-btn ${sIdx === 0 ? "active" : ""}" data-project="${project.id}" data-src="${s.src}" data-alt="${s.alt}" title="View ${s.alt}" aria-label="View ${s.alt}">
                                     <img src="${s.src}" alt="Thumb ${sIdx + 1}">
                                 </button>
                             `).join("")}
@@ -661,31 +740,29 @@ function renderProjects(filter = "all") {
                 </div>
             ` : ""}
 
-            <div class="project-card-top">
-                <div class="project-icon-badge-wrap">
-                    <div class="project-icon">${project.icon}</div>
-                    <span class="project-badge ${project.badgeClass}">${project.badge}</span>
-                </div>
-            </div>
-
-            <h3 class="project-title">${project.title}</h3>
-            <p class="project-desc">${project.desc}</p>
-            <p class="project-impact"><span>Outcome:</span> ${project.impact}</p>
+            <h3 class="project-title">
+                <i class="${project.stackIcon || "fa-solid fa-code"} project-title-icon" aria-hidden="true"></i>
+                <span>${project.title}</span>
+            </h3>
 
             <div class="project-tags">
                 ${project.tags.map((t) => `<span class="p-tag">${t}</span>`).join("")}
             </div>
 
+            <p class="project-desc">${project.desc}</p>
+
             <div class="project-actions">
                 ${project.demo ? `<a class="project-action project-demo" href="${project.demo}" target="_blank" rel="noreferrer">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>` : ""}
                 ${project.source ? `<a class="project-action project-source" href="${project.source}" target="_blank" rel="noreferrer">GitHub <i class="fa-brands fa-github"></i></a>` : ""}
+                <button class="project-action project-details-btn" data-project-id="${project.id}" type="button">
+                    <span>Architecture Deep Dive</span> <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
         `;
 
         grid.appendChild(card);
     });
 
-    // Attach Thumbnail Switching Listeners
     document.querySelectorAll(".thumb-btn").forEach((thumb) => {
         thumb.addEventListener("click", (e) => {
             e.stopPropagation();
@@ -693,15 +770,22 @@ function renderProjects(filter = "all") {
             const src = thumb.dataset.src;
             const alt = thumb.dataset.alt;
             const mainImg = document.getElementById(`preview-img-${pId}`);
-            if (mainImg) {
+            if (mainImg && src) {
                 mainImg.src = src;
-                mainImg.alt = alt;
+                if (alt) mainImg.alt = alt;
             }
             const parent = thumb.closest(".media-gallery-thumbs");
             if (parent) {
                 parent.querySelectorAll(".thumb-btn").forEach((b) => b.classList.remove("active"));
                 thumb.classList.add("active");
             }
+        });
+    });
+
+    document.querySelectorAll(".project-details-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const pId = btn.dataset.projectId;
+            if (pId) openProjectModal(pId);
         });
     });
 }
@@ -740,7 +824,7 @@ function renderStack(filter = "all") {
                 <span class="stack-tier-badge ${item.tierClass}">${item.tier}</span>
             </div>
             <p class="stack-card-app">${item.appNote}</p>
-            <span class="stack-card-link"><i class="fa-solid fa-link"></i> ${item.linkedBuild}</span>
+            <span class="stack-card-link"><i class="fa-solid fa-code-commit"></i> ${item.linkedBuild}</span>
         `;
         grid.appendChild(card);
     });
@@ -763,36 +847,36 @@ function initStackFilters() {
 function openProjectModal(projectId) {
     const project = DATA.projects.find((p) => p.id === projectId);
     const modal = document.getElementById("project-modal");
-    const content = document.getElementById("modal-content");
+    const content = document.getElementById("modal-content-body");
     if (!project || !modal || !content) return;
 
     content.innerHTML = `
         <div class="modal-proj-head">
             <div>
-                <h3 class="modal-proj-title">${project.title}</h3>
+                <h3 class="modal-proj-title"><i class="${project.stackIcon || "fa-solid fa-code"}" style="color:var(--accent); margin-right:8px;"></i>${project.title}</h3>
                 <span class="project-badge ${project.badgeClass}">${project.badge}</span>
             </div>
         </div>
         <p class="modal-proj-desc">${project.desc}</p>
         
-        ${project.screenshots ? `
+        ${project.screenshots && project.screenshots.length > 0 ? `
             <div class="modal-proj-imgs">
                 ${project.screenshots.map((s) => `<img src="${s.src}" alt="${s.alt}">`).join("")}
             </div>
         ` : ""}
 
         <div class="modal-proj-sec">
-            <h4>Problem &amp; Motivation</h4>
+            <h4>Problem &amp; Engineering Challenge</h4>
             <p>${project.deepDive.problem}</p>
         </div>
 
         <div class="modal-proj-sec">
-            <h4>System Architecture</h4>
+            <h4>System Architecture &amp; Database Design</h4>
             <p>${project.deepDive.architecture}</p>
         </div>
 
         <div class="modal-proj-sec">
-            <h4>Key Accomplishments &amp; Features</h4>
+            <h4>Key Highlights &amp; Accomplishments</h4>
             <ul>
                 ${project.deepDive.highlights.map((h) => `<li>${h}</li>`).join("")}
             </ul>
@@ -806,77 +890,74 @@ function openProjectModal(projectId) {
 
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
 }
 
 function initModals() {
     const projectModal = document.getElementById("project-modal");
-    const closeBtn = document.getElementById("modal-close");
+    const closeBtn = document.getElementById("modal-close-btn");
 
-    if (closeBtn && projectModal) {
-        closeBtn.addEventListener("click", () => {
+    function closeModal() {
+        if (projectModal) {
             projectModal.classList.remove("active");
             projectModal.setAttribute("aria-hidden", "true");
-        });
+        }
+        document.body.style.overflow = "";
+    }
+
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (projectModal) {
         projectModal.addEventListener("click", (e) => {
-            if (e.target === projectModal) {
-                projectModal.classList.remove("active");
-                projectModal.setAttribute("aria-hidden", "true");
-            }
-        });
-    }
-
-    const resumeModal = document.getElementById("resume-modal");
-    const resumeBtn = document.getElementById("quick-resume-btn");
-    const resumeClose = document.getElementById("resume-modal-close");
-
-    if (resumeBtn && resumeModal) {
-        resumeBtn.addEventListener("click", () => {
-            resumeModal.classList.add("active");
-            resumeModal.setAttribute("aria-hidden", "false");
-        });
-    }
-    if (resumeClose && resumeModal) {
-        resumeClose.addEventListener("click", () => {
-            resumeModal.classList.remove("active");
-            resumeModal.setAttribute("aria-hidden", "true");
-        });
-        resumeModal.addEventListener("click", (e) => {
-            if (e.target === resumeModal) {
-                resumeModal.classList.remove("active");
-                resumeModal.setAttribute("aria-hidden", "true");
-            }
+            if (e.target === projectModal) closeModal();
         });
     }
 
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            if (projectModal) projectModal.classList.remove("active");
-            if (resumeModal) resumeModal.classList.remove("active");
-        }
+        if (e.key === "Escape") closeModal();
     });
 }
 
 /* =============== TIMELINE & CREDENTIALS =============== */
 function buildExperience() {
     const timeline = document.getElementById("timeline");
-    if (!timeline) return;
+    if (timeline && DATA.experience.tech) {
+        timeline.innerHTML = "";
+        DATA.experience.tech.forEach((entry) => {
+            const card = document.createElement("div");
+            card.className = "timeline-card reveal";
+            card.innerHTML = `
+                <div class="tl-time">${entry.time}</div>
+                <div class="tl-company">${entry.company}</div>
+                <div class="tl-role">${entry.role}</div>
+                <ul class="tl-list">
+                    ${entry.points.map((p) => `<li>${p}</li>`).join("")}
+                </ul>
+            `;
+            timeline.appendChild(card);
+        });
+    }
 
-    DATA.experience.forEach((entry) => {
-        const card = document.createElement("div");
-        card.className = "timeline-card reveal";
-        card.innerHTML = `
-            <div class="tl-time">${entry.time}</div>
-            <div class="tl-company">${entry.company}</div>
-            <div class="tl-role">${entry.role}</div>
-            <ul class="tl-list">
-                ${entry.points.map((p) => `<li>${p}</li>`).join("")}
-            </ul>
-        `;
-        timeline.appendChild(card);
-    });
+    const stratTimeline = document.getElementById("strategy-timeline");
+    if (stratTimeline && DATA.experience.strategy) {
+        stratTimeline.innerHTML = "";
+        DATA.experience.strategy.forEach((entry) => {
+            const card = document.createElement("div");
+            card.className = "timeline-card reveal";
+            card.innerHTML = `
+                <div class="tl-time">${entry.time}</div>
+                <div class="tl-company">${entry.company}</div>
+                <div class="tl-role">${entry.role}</div>
+                <ul class="tl-list">
+                    ${entry.points.map((p) => `<li>${p}</li>`).join("")}
+                </ul>
+            `;
+            stratTimeline.appendChild(card);
+        });
+    }
 
     const eduCards = document.getElementById("edu-cards");
     if (eduCards) {
+        eduCards.innerHTML = "";
         DATA.education.forEach((entry) => {
             const card = document.createElement("div");
             card.className = "edu-card hover-lift";
@@ -895,7 +976,7 @@ function buildCredentials() {
     const certsList = document.getElementById("certifications-list");
     const awardsList = document.getElementById("awards-list");
 
-    if (certsList) {
+    if (certsList && DATA.credentials.certifications) {
         certsList.innerHTML = DATA.credentials.certifications.map((item) => `
             <div class="credential-item">
                 <strong>${item.title}</strong>
@@ -905,7 +986,7 @@ function buildCredentials() {
         `).join("");
     }
 
-    if (awardsList) {
+    if (awardsList && DATA.credentials.awards) {
         awardsList.innerHTML = DATA.credentials.awards.map((item) => `
             <div class="credential-item">
                 <strong>${item.title}</strong>
@@ -918,15 +999,17 @@ function buildCredentials() {
 
 /* =============== CONTACT LINKS & FORM =============== */
 function buildContactLinks() {
-    const container = document.getElementById("contact-links");
+    const container = document.getElementById("contact-links-col");
     if (!container) return;
+    container.innerHTML = "";
 
     DATA.contactLinks.forEach((item) => {
         const card = document.createElement("a");
         card.className = `contact-link-card hover-lift${item.highlight ? " highlight-card" : ""}`;
         card.href = item.href;
         if (item.external && item.href.startsWith("http")) {
-            card.target = "_blank"; card.rel = "noreferrer";
+            card.target = "_blank";
+            card.rel = "noreferrer";
         }
 
         card.innerHTML = `
@@ -946,16 +1029,34 @@ function initContactActions() {
     if (copyBtn) {
         copyBtn.addEventListener("click", () => {
             navigator.clipboard.writeText(DATA.hero.email).then(() => {
-                showToast("Email address copied to clipboard!");
+                showToast("Email address copied to clipboard!", "fa-copy");
+            }).catch(() => {
+                showToast("Email: " + DATA.hero.email, "fa-envelope");
             });
         });
     }
 
-    const form = document.getElementById("contact-form");
+    const form = document.getElementById("direct-message-form");
     if (form) {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
-            showToast("Message sent! Thanks for reaching out.", "fa-paper-plane");
+            const name = document.getElementById("sender-name").value.trim();
+            const email = document.getElementById("sender-email").value.trim();
+            const msg = document.getElementById("sender-msg").value.trim();
+
+            if (!name || !email || !msg) {
+                showToast("Please fill in all fields before sending.", "fa-triangle-exclamation", "warning");
+                return;
+            }
+
+            showToast(`Thank you, ${name}! Your message is prepared.`, "fa-paper-plane");
+            
+            const mailtoUrl = `mailto:${DATA.hero.email}?subject=${encodeURIComponent("Portfolio Inquiry from " + name)}&body=${encodeURIComponent(msg + "\n\nFrom: " + name + " (" + email + ")")}`;
+            
+            setTimeout(() => {
+                window.location.href = mailtoUrl;
+            }, 500);
+
             form.reset();
         });
     }
@@ -968,53 +1069,15 @@ function initClock() {
         if (!element) return;
         const now = new Date();
         const time = now.toLocaleTimeString("en-GB", {
-            hour: "2-digit", minute: "2-digit", second: "2-digit", timeZone: "Africa/Lagos"
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            timeZone: "Africa/Lagos"
         });
-        element.textContent = `WAT ${time}`;
+        element.textContent = `Lagos (WAT) ${time}`;
     }
-    update(); setInterval(update, 1000);
-}
-
-/* =============== 3D MAGNETIC CARD TILT =============== */
-function initCardTilt() {
-    if (!window.matchMedia("(hover: hover)").matches) return;
-
-    document.addEventListener("mousemove", (e) => {
-        const card = e.target.closest(".project-card, .stack-card, .hover-lift");
-        if (!card) return;
-
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * -4;
-        const rotateY = ((x - centerX) / centerX) * 4;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
-    });
-
-    document.addEventListener("mouseout", (e) => {
-        const card = e.target.closest(".project-card, .stack-card, .hover-lift");
-        if (card && !card.contains(e.relatedTarget)) {
-            card.style.transform = "";
-        }
-    });
-}
-
-/* =============== CURSOR GLOW EFFECT =============== */
-function initCursorGlow() {
-    const glow = document.getElementById("cursor-glow");
-    if (!glow || !window.matchMedia("(hover: hover)").matches) return;
-
-    window.addEventListener("mousemove", (e) => {
-        glow.style.left = `${e.clientX}px`;
-        glow.style.top = `${e.clientY}px`;
-        glow.classList.add("is-active");
-    }, { passive: true });
-
-    document.addEventListener("mouseleave", () => glow.classList.remove("is-active"));
+    update();
+    setInterval(update, 1000);
 }
 
 /* =============== NON-BLOCKING REVEAL ON SCROLL =============== */
@@ -1044,7 +1107,7 @@ function loadDataAndInit() {
     const totalProjects = DATA.projects ? DATA.projects.length : 0;
     if (DATA.metrics) {
         DATA.metrics.forEach(m => {
-            if (m.label === "Featured Builds") {
+            if (m.label === "Production Builds" || m.label === "Featured Projects" || m.label === "Featured Builds") {
                 m.value = String(totalProjects);
                 m.target = totalProjects;
             }
@@ -1066,8 +1129,6 @@ function loadDataAndInit() {
     initContactActions();
     initModals();
     initClock();
-    initCursorGlow();
-    initCardTilt();
 
     requestAnimationFrame(() => {
         initReveal();
