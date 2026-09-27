@@ -723,7 +723,9 @@ button {
 
 .project-actions {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
   flex-shrink: 0;
 }
 
