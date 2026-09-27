@@ -3,465 +3,623 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLAC — Odubela Oluwatomiwa | Backend Developer &amp; Systems Builder</title>
-    <meta name="description" content="Portfolio of Odubela Oluwatomiwa (BLAC) — Backend Developer &amp; Systems Builder. PHP 8.x, MySQL 3NF database architecture, PWA engineering, and digital campaign operations based in Lagos, Nigeria.">
-    <meta name="author" content="Odubela Oluwatomiwa">
-    <meta name="theme-color" content="#FAFAFA">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e40af'/><text x='50%' y='63%' text-anchor='middle' font-family='sans-serif' font-size='56' font-weight='800' fill='white'>B</text></svg>">
+    <title>Odubela Oluwatomiwa | Backend &amp; Systems Developer</title>
+    <meta name="description" content="Portfolio of Odubela Oluwatomiwa (Blac) — Backend developer specializing in PHP, Laravel, MySQL database architecture, and production web systems.">
     
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Odubela Oluwatomiwa | Backend &amp; Systems Developer">
+    <meta property="og:description" content="Backend developer specializing in PHP, Laravel, MySQL database architecture, and production web systems.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="BLAC — Backend Developer &amp; Systems Builder">
-    <meta property="og:description" content="Portfolio of Odubela Oluwatomiwa (BLAC). PHP 8.x, MySQL 3NF, PWA utilities, and production systems.">
-    <meta property="og:url" content="https://blaconchain.github.io/Portfolio/">
-    <meta property="og:image" content="images/profile.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="BLAC — Backend Developer &amp; Systems Builder">
-    <meta name="twitter:description" content="Portfolio of Odubela Oluwatomiwa (BLAC). PHP 8.x, MySQL 3NF, PWA utilities, and production systems.">
-    <meta name="twitter:image" content="images/profile.jpg">
-    
-    <link rel="stylesheet" href="./style.css">
+
+    <!-- Google Fonts: Space Mono & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body class="light-theme">
-    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <!-- NAVIGATION -->
-    <nav id="navbar" class="px-4 sm:px-6 lg:px-8">
-        <div class="nav-inner">
-            <a href="#home" class="nav-logo" title="Back to top">
-                <span class="logo-bracket">[</span>BLAC<span class="logo-bracket">]</span>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Safe handler to prevent browser extension injection conflicts -->
+    <script>
+        window.addEventListener('error', function(e) {
+            if (e && e.message && (
+                e.message.includes('ethereum') || 
+                e.message.includes('MetaMask') || 
+                e.message.includes('Cannot redefine property')
+            )) {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(e) {
+            var reason = e && e.reason;
+            if (reason) {
+                var msg = (typeof reason === 'string') ? reason : (reason.message || '');
+                if (msg.includes('ethereum') || msg.includes('MetaMask') || msg.includes('Cannot redefine property')) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <!-- STICKY HEADER -->
+    <header class="site-header" id="site-header">
+        <div class="header-inner container">
+            <a href="#hero" class="brand-logo" id="brand-logo" aria-label="Odubela Oluwatomiwa Home">
+                <span class="logo-bracket">[</span><span class="logo-text" id="logo-text">BLAC</span><span class="logo-bracket">]</span>
             </a>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#architecture">Architecture</a></li>
-                <li><a href="#stack">Stack</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#credentials">Credentials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-actions">
-                <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" class="nav-cta" rel="noreferrer" data-cv-link title="Download Official PDF CV">
-                    <i class="fa-solid fa-file-arrow-down"></i> <span>CV / Resume</span>
+
+            <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#work" class="nav-link">Work</a></li>
+                    <li><a href="#stack" class="nav-link">Stack</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline nav-cv-btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>CV</span>
                 </a>
-                <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
-                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
                 </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <main id="main">
+    <main id="main-content">
+
         <!-- HERO SECTION -->
-        <section class="hero px-4 sm:px-6 lg:px-8" id="home">
-            <div class="hero-inner">
-                <div class="hero-left-col">
-                    <div class="hero-top-row">
-                        <figure class="hero-profile-card">
-                            <div class="hero-profile-frame">
-                                <img src="images/profile.jpg" alt="Odubela Oluwatomiwa (BLAC)" class="hero-profile-img">
-                            </div>
-                            <figcaption class="hero-profile-meta">
-                                <span class="hero-profile-label">BLAC</span>
-                                <span class="hero-profile-sub">Odubela Oluwatomiwa</span>
-                            </figcaption>
-                        </figure>
-
-                        <div class="hero-status">
-                            <span class="status-dot"></span>
-                            <span id="availability-text">Open for backend &amp; full-stack roles</span>
-                        </div>
+        <section class="section hero-section" id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-meta font-mono">
+                        <span class="status-indicator" aria-hidden="true"></span>
+                        <span>Lagos, Nigeria &middot; Available for Junior &amp; Intern Roles</span>
                     </div>
 
-                    <h1 class="hero-name" id="hero-name">BLAC</h1>
-
-                    <div class="hero-role-line">
-                        <span class="role-prefix">~/</span>
-                        <span id="typewriter" class="role-text">Backend Developer</span>
-                        <span class="cursor-blink">_</span>
+                    <h1 class="hero-name">Odubela Oluwatomiwa</h1>
+                    
+                    <div class="hero-role-wrapper font-mono" aria-live="polite">
+                        <span class="role-prefix">&gt; </span>
+                        <span class="role-typing" id="role-typing">Backend Developer</span>
+                        <span class="typing-cursor" aria-hidden="true">_</span>
                     </div>
 
-                    <p class="hero-bio" id="hero-bio">
-                        Hey, I'm Oluwatomiwa. I build dependable backend systems, normalized relational databases in MySQL, and lightweight PWA tools that solve practical problems. Based in Lagos, focused on clean architecture and solid execution.
+                    <p class="hero-intro">
+                        Backend developer specializing in PHP, Laravel, and MySQL relational architecture. I design normalized database schemas, build secure REST APIs, and ship production software that eliminates broken manual workflows. Expanding deeper into TypeScript, React, Docker, and Firebase.
                     </p>
 
                     <div class="hero-actions">
-                        <a href="#projects" class="btn-primary">
-                            <span>View Production Builds</span>
-                            <i class="fa-solid fa-arrow-right anim-arrow"></i>
+                        <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span>Download CV</span>
                         </a>
-                        <a href="#contact" class="btn-ghost">
-                            <i class="fa-regular fa-envelope"></i>
-                            <span>Get in Touch</span>
+                        <a href="mailto:odubelaotomiwa508@gmail.com" class="btn btn-outline">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <span>Email Me</span>
                         </a>
-                        <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" class="btn-ghost" rel="noreferrer" data-cv-link>
-                            <i class="fa-solid fa-file-pdf"></i>
-                            <span>Resume PDF</span>
+                        <a href="https://github.com/blac-py" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                            <span>GitHub</span>
                         </a>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="hero-socials" id="hero-socials"></div>
+        <hr class="section-divider" aria-hidden="true">
+
+        <!-- ABOUT SECTION -->
+        <section class="section reveal" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag font-mono">// 01. ABOUT</span>
+                    <h2 class="section-heading">Engineering Mindset &amp; Background</h2>
                 </div>
 
-                <div class="hero-right-col">
-                    <!-- TERMINAL CONSOLE -->
-                    <div class="terminal-card" id="terminal-hero">
-                        <div class="term-bar">
-                            <div class="term-dots">
-                                <span class="term-dot td-r"></span>
-                                <span class="term-dot td-y"></span>
-                                <span class="term-dot td-g"></span>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            I approach software from the database out. My core focus is on building solid relational architectures (MySQL 3NF), ACID-compliant transactional flows, and performant backend services in PHP and Laravel. I care deeply about data integrity, query optimization, and structuring business logic cleanly so software remains dependable and maintainable as requirements evolve.
+                        </p>
+                        <p>
+                            Alongside engineering, I have a background in campus leadership and product growth, having served as a Campus Ambassador Lead for Cowrywise. This experience shaped my ability to communicate technical trade-offs clearly, understand user bottlenecks, and collaborate effectively with cross-functional teams to deliver practical solutions.
+                        </p>
+                    </div>
+
+                    <div class="about-quick-specs font-mono">
+                        <div class="spec-item">
+                            <span class="spec-label">Location:</span>
+                            <span class="spec-value">Lagos, Nigeria (WAT / UTC+1)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Primary Stack:</span>
+                            <span class="spec-value">PHP, Laravel, MySQL, REST APIs</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Expanding:</span>
+                            <span class="spec-value">TypeScript, React, Docker, Firebase</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Target Roles:</span>
+                            <span class="spec-value">Junior / Intern Backend &amp; Full-Stack</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider" aria-hidden="true">
+
+        <!-- WORK / PROJECTS SECTION -->
+        <section class="section reveal" id="work">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag font-mono">// 02. SELECTED WORK</span>
+                    <h2 class="section-heading">Production Systems &amp; Projects</h2>
+                    <p class="section-sub">Structured breakdowns of software systems, ordered from active production deployments to specialized tools.</p>
+                </div>
+
+                <div class="projects-list">
+
+                    <!-- PROJECT 1: SMART ATTENDANCE SYSTEM -->
+                    <article class="project-row" id="project-smart-attendance">
+                        <div class="project-summary-header">
+                            <div class="project-title-group">
+                                <span class="project-rank font-mono">01. PRODUCTION SYSTEM</span>
+                                <h3 class="project-name">Smart Attendance Management System</h3>
+                                <p class="project-tagline">Full-stack attendance management platform deployed in active university departmental use.</p>
                             </div>
-                            <span class="term-title">blac@developer-box:~$</span>
-                            <span class="term-badge">Live Shell</span>
+                            <div class="project-actions">
+                                <a href="https://github.com/blac-py/attendance-system" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="term-quick-cmds">
-                            <button class="term-btn" data-cmd="profile">profile.json</button>
-                            <button class="term-btn" data-cmd="projects">projects.list</button>
-                            <button class="term-btn" data-cmd="schema">schema.sql</button>
-                            <button class="term-btn" data-cmd="stack">stack.sh</button>
-                            <button class="term-btn" data-cmd="clear">clear</button>
-                        </div>
-                        <div class="term-body" id="term-body">
-                            <span class="t-line"><span class="t-prompt">&gt;</span> <span class="t-cmd">whoami</span></span>
-                            <span class="t-line"><span class="t-str">Odubela Oluwatomiwa (BLAC) — Backend Developer &amp; Systems Builder</span></span>
-                            <span class="t-line"><span class="t-info">Click quick commands above or type below (e.g. "help", "projects", "schema", "contact").</span></span>
-                            <span class="t-line"><span class="t-prompt">&gt;</span> <span class="t-cmd">cat profile.json</span></span>
-                            <span class="t-line"><span class="t-key">  "name":</span> <span class="t-str">"Odubela Oluwatomiwa"</span>,</span>
-                            <span class="t-line"><span class="t-key">  "location":</span> <span class="t-str">"Lagos, Nigeria"</span>,</span>
-                            <span class="t-line"><span class="t-key">  "coreStack":</span> <span class="t-str">"PHP 8.x, MySQL 3NF, Laravel, JavaScript, PWA"</span>,</span>
-                            <span class="t-line"><span class="t-key">  "status":</span> <span class="t-bool">"Ready for engineering roles"</span></span>
-                        </div>
-                        <div class="term-input-line">
-                            <span class="t-prompt">&gt;</span>
-                            <input type="text" id="term-input" placeholder="Type a command (e.g. 'help', 'contact', 'stack', 'schema')..." autocomplete="off" spellcheck="false" aria-label="Terminal command input">
-                        </div>
-                    </div>
 
-                    <div class="metrics-row" id="metrics-row">
-                        <div class="metric-pill">
-                            <span class="metric-val">6</span>
-                            <span class="metric-label">Production Builds</span>
+                        <div class="project-body-grid">
+                            <div class="project-info-col">
+                                <div class="project-field">
+                                    <h4 class="field-label font-mono"><span class="label-bullet">&gt;</span> The Problem</h4>
+                                    <p class="field-text">
+                                        Academic departments struggled with paper register proxy signing, lost attendance sheets, and tedious end-of-semester manual calculations to determine exam eligibility for hundreds of students.
+                                    </p>
+                                </div>
+
+                                <div class="project-field">
+                                    <h4 class="field-label font-mono"><span class="label-bullet">&gt;</span> What I Built</h4>
+                                    <ul class="field-bullets">
+                                        <li>Architected a normalized MySQL (3NF) schema managing departments, courses, student enrollments, and timestamped attendance sessions.</li>
+                                        <li>Implemented role-based authentication separating Lecturer, Department Admin, and Student portals with strict session validation.</li>
+                                        <li>Engineered an automated attendance percentage computation engine with dynamic eligibility thresholds for exam clearance.</li>
+                                        <li>Built instant report generation exporting course-level attendance statistics to PDF and CSV formats for departmental audits.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="project-field">
+                                    <h4 class="field-label font-mono"><span class="label-bullet">&gt;</span> Stack</h4>
+                                    <div class="stack-tags font-mono">
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                                            <span>PHP 8.x</span>
+                                        </span>
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                                            <span>MySQL (3NF)</span>
+                                        </span>
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                            <span>JavaScript</span>
+                                        </span>
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                                            <span>FPDF Generator</span>
+                                        </span>
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                                            <span>Responsive CSS</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-media-col">
+                                <div class="media-frame" data-lightbox-src="images/projects/smart-attendance-landing.png" data-lightbox-title="Smart Attendance System - Portal Interface" tabindex="0" role="button" aria-label="Open full-size screenshot of Smart Attendance System">
+                                    <img src="images/projects/smart-attendance-landing.png" alt="Smart Attendance System dashboard and attendance verification interface" class="media-image" loading="lazy">
+                                    <span class="media-click-hint font-mono">
+                                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                        <span>Click to expand</span>
+                                    </span>
+                                </div>
+                                <span class="media-caption font-mono">Figure 1.1: Department attendance verification interface &amp; student record view</span>
+                            </div>
                         </div>
-                        <div class="metric-pill">
-                            <span class="metric-val">4+</span>
-                            <span class="metric-label">Industry Roles</span>
+                    </article>
+
+                    <!-- PROJECT 2: ADUKE RESTAURANT ORDERING PLATFORM -->
+                    <article class="project-row" id="project-aduke">
+                        <div class="project-summary-header">
+                            <div class="project-title-group">
+                                <span class="project-rank font-mono">02. FULL-STACK APPLICATION</span>
+                                <h3 class="project-name">Àdùkẹ́ Restaurant Ordering Platform</h3>
+                                <p class="project-tagline">QR-based dining operations platform with multi-role staff dashboards and live order state tracking.</p>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/blac-py/aduke-restaurant" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="metric-pill">
-                            <span class="metric-val">C1</span>
-                            <span class="metric-label">EF English</span>
+
+                        <div class="project-body-grid">
+                            <div class="project-info-col">
+                                <div class="project-field">
+                                    <h4 class="field-label font-mono"><span class="label-bullet">&gt;</span> The Problem</h4>
+                                    <p class="field-text">
+                                        Dine-in restaurants face high menu printing costs, order miscommunications during peak hours, and delayed table turnarounds when relying on manual waiter note-taking.
+                                    </p>
+                                </div>
+
+                                <div class="project-field">
+                                    <h4 class="field-label font-mono"><span class="label-bullet">&gt;</span> What I Built</h4>
+                                    <ul class="field-bullets">
+                                        <li>Engineered table-specific QR session management routing guest orders directly into kitchen queues without app installation.</li>
+                                        <li>Created state-driven role dashboards (Waitstaff, Kitchen, Cashier, Manager) tracking orders through Pending, Preparing, Ready, and Settled lifecycles.</li>
+                                        <li>Built a table reservation system handling booking constraints, guest counts, and status notifications.</li>
+                                        <li>Designed secure cart validation preventing client-side price tampering and handling modifiers/allergies.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="project-field">
+                                    <h4 class="field-label font-mono"><span class="label-bullet">&gt;</span> Stack</h4>
+                                    <div class="stack-tags font-mono">
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                                            <span>PHP (MVC)</span>
+                                        </span>
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                                            <span>MySQL</span>
+                                        </span>
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                            <span>JavaScript (ES6+)</span>
+                                        </span>
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                                            <span>QR Session Engine</span>
+                                        </span>
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                                            <span>Tailwind CSS</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-media-col">
+                                <div class="media-frame" data-lightbox-src="images/projects/aduke-landing.jpg" data-lightbox-title="Àdùkẹ́ - Restaurant Digital Menu & Ordering System" tabindex="0" role="button" aria-label="Open full-size screenshot of Àdùkẹ́ restaurant system">
+                                    <img src="images/projects/aduke-landing.jpg" alt="Àdùkẹ́ digital menu and food ordering interface" class="media-image" loading="lazy">
+                                    <span class="media-click-hint font-mono">
+                                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                        <span>Click to expand</span>
+                                    </span>
+                                </div>
+                                <span class="media-caption font-mono">Figure 2.1: Digital menu browsing &amp; instant table-side checkout</span>
+                            </div>
                         </div>
-                    </div>
+                    </article>
+
+                    <!-- PROJECT 3: AURACV -->
+                    <article class="project-row" id="project-auracv">
+                        <div class="project-summary-header">
+                            <div class="project-title-group">
+                                <span class="project-rank font-mono">03. CLIENT-SIDE UTILITY</span>
+                                <h3 class="project-name">AuraCV Resume Builder</h3>
+                                <p class="project-tagline">Client-side resume generation engine engineered for ATS-friendly layout parsing and privacy.</p>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/blac-py/auracv" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                    <span>View Code</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="project-body-grid">
+                            <div class="project-info-col">
+                                <div class="project-field">
+                                    <h4 class="field-label font-mono"><span class="label-bullet">&gt;</span> The Problem</h4>
+                                    <p class="field-text">
+                                        Job seekers lose interview opportunities due to multi-column resume formatting errors that break automated Applicant Tracking Systems (ATS), coupled with privacy concerns over cloud storage of personal data.
+                                    </p>
+                                </div>
+
+                                <div class="project-field">
+                                    <h4 class="field-label font-mono"><span class="label-bullet">&gt;</span> What I Built</h4>
+                                    <ul class="field-bullets">
+                                        <li>Developed a client-side state manager storing sections, chronology, and skill matrices purely in LocalStorage with zero server data retention.</li>
+                                        <li>Engineered a reactive two-way binding preview synchronizing edits in real-time with zero input latency.</li>
+                                        <li>Built ATS-compliant print styles enforcing single-column parse hierarchy, standard headers, and high-contrast typography.</li>
+                                        <li>Packaged as an offline-first Progressive Web App (PWA) with Service Worker asset caching for field editing.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="project-field">
+                                    <h4 class="field-label font-mono"><span class="label-bullet">&gt;</span> Stack</h4>
+                                    <div class="stack-tags font-mono">
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                            <span>JavaScript (ES6+)</span>
+                                        </span>
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                                            <span>PWA / Service Worker</span>
+                                        </span>
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                                            <span>LocalStorage State</span>
+                                        </span>
+                                        <span class="stack-tag">
+                                            <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+                                            <span>ATS Print Pipeline</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="project-media-col">
+                                <div class="media-frame" data-lightbox-src="images/projects/auracv-landing.jpg" data-lightbox-title="AuraCV - Resume Builder Interface" tabindex="0" role="button" aria-label="Open full-size screenshot of AuraCV resume builder">
+                                    <img src="images/projects/auracv-landing.jpg" alt="AuraCV structured resume editor and live preview" class="media-image" loading="lazy">
+                                    <span class="media-click-hint font-mono">
+                                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                        <span>Click to expand</span>
+                                    </span>
+                                </div>
+                                <span class="media-caption font-mono">Figure 3.1: Live structured resume editor &amp; real-time preview</span>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
-            </div>
-
-            <div class="scroll-hint">
-                <span>SCROLL DOWN</span>
-                <div class="scroll-line"></div>
             </div>
         </section>
 
-        <!-- PROJECTS SECTION (Smart Attendance First) -->
-        <section class="section px-4 sm:px-6 lg:px-8" id="projects">
-            <div class="section-inner">
-                <div class="section-header reveal">
-                    <span class="section-eyebrow"><i class="fa-solid fa-code-branch"></i> SELECTED WORK</span>
-                    <h2 class="section-title">Production Systems &amp; <span class="accent-text">Applications</span></h2>
-                    <p class="section-sub">Real software, normalized database structures, and high-performance utilities I have built and deployed.</p>
-                </div>
+        <hr class="section-divider" aria-hidden="true">
 
-                <!-- PROJECT FILTER TABS -->
-                <div class="filter-bar reveal" id="project-filter-bar">
-                    <button class="filter-btn active" data-filter="all">All Builds (5)</button>
-                    <button class="filter-btn" data-filter="backend">Backend &amp; Relational SQL</button>
-                    <button class="filter-btn" data-filter="pwa">PWA &amp; Client Systems</button>
-                </div>
-
-                <!-- PROJECTS GRID -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" id="projects-grid"></div>
-            </div>
-        </section>
-
-        <!-- STREAMLINED ARCHITECTURE & DATABASE BLUEPRINT (SIMPLIFIED & UNBOXED) -->
-        <section class="section section-alt px-4 sm:px-6 lg:px-8" id="architecture">
-            <div class="section-inner">
-                <div class="section-header reveal">
-                    <span class="section-eyebrow"><i class="fa-solid fa-server"></i> CORE ENGINEERING</span>
-                    <h2 class="section-title">Database Normalization &amp; <span class="accent-text">System Standards</span></h2>
-                    <p class="section-sub">Production patterns designed to eliminate concurrency bugs, protect ACID transactions, and deliver offline reliability.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
-                    <div class="arch-card">
-                        <div class="arch-card-header">
-                            <span class="arch-tag"><i class="fa-solid fa-database"></i> MySQL 3NF Schema</span>
-                            <h3>Smart Attendance Relational Blueprint</h3>
-                        </div>
-                        <p class="arch-desc">Normalized database structure preventing proxy attendance and ensuring real-time lecture validation.</p>
-                        <pre class="schema-code-block"><code>-- Normalized 3NF Relational Tables with Foreign Keys
-CREATE TABLE students ( id INT PRIMARY KEY, matric_no VARCHAR(20) UNIQUE, full_name VARCHAR(100) );
-CREATE TABLE lecture_sessions ( id INT PRIMARY KEY, course_id INT, token_hash VARCHAR(64), expires_at DATETIME );
-CREATE TABLE attendance_logs ( id INT PRIMARY KEY, session_id INT, student_id INT, verified_at TIMESTAMP, FOREIGN KEY(student_id) REFERENCES students(id) );</code></pre>
-                        <div class="arch-highlights">
-                            <span><i class="fa-solid fa-shield-halved"></i> 90s salted cryptographic QR tokens</span>
-                            <span><i class="fa-solid fa-bolt"></i> Indexed B-Tree foreign keys for instant lookup</span>
-                        </div>
-                    </div>
-
-                    <div class="arch-card">
-                        <div class="arch-card-header">
-                            <span class="arch-tag"><i class="fa-solid fa-bolt"></i> Client-Side PWA</span>
-                            <h3>AuraCV Reactive State &amp; PDF Engine</h3>
-                        </div>
-                        <p class="arch-desc">Zero-latency client-side resume builder syncing form inputs to dynamic CSS typography tokens.</p>
-                        <pre class="schema-code-block"><code>// Client-Side Reactive State Pipeline &amp; ATS PDF Generation
-DOMInputEvent -> debounce(updateState, 80ms) -> syncCSSVariables();
-StateStore -> localStorage.setItem('auracv_draft', JSON.stringify(state));
-ExportTrigger -> renderPrintDom() -> 'ATS_Optimized_A4.pdf';</code></pre>
-                        <div class="arch-highlights">
-                            <span><i class="fa-solid fa-lock"></i> 100% Client-side privacy (localStorage only)</span>
-                            <span><i class="fa-solid fa-file-pdf"></i> ATS-parsed single-column print pipeline</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TECH STACK MATRIX -->
-        <section class="section section-stack px-4 sm:px-6 lg:px-8" id="stack">
-            <div class="section-inner">
-                <div class="section-header section-header-left reveal">
-                    <span class="section-eyebrow"><i class="fa-solid fa-microchip"></i> TOOLKIT</span>
-                    <h2 class="section-title">Technologies &amp; <span class="accent-text">Stack Matrix</span></h2>
+        <!-- STACK / TECHNICAL SKILLS SECTION -->
+        <section class="section reveal" id="stack">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag font-mono">// 03. TECHNICAL TOOLKIT</span>
+                    <h2 class="section-heading">Skills &amp; Technologies</h2>
                     <p class="section-sub">Tools, databases, and engineering principles I rely on daily to ship reliable software.</p>
                 </div>
 
-                <div class="filter-bar filter-bar-soft filter-bar-left reveal" id="stack-filter-bar">
-                    <button class="filter-btn active" data-stack-filter="all">All Stack (8)</button>
-                    <button class="filter-btn" data-stack-filter="backend">Backend Core</button>
-                    <button class="filter-btn" data-stack-filter="database">Databases &amp; SQL</button>
-                    <button class="filter-btn" data-stack-filter="pwa">PWA &amp; Frontend</button>
-                    <button class="filter-btn" data-stack-filter="tools">DevOps &amp; Ops</button>
-                </div>
+                <div class="skills-grid">
+                    <!-- BACKEND -->
+                    <div class="skill-category">
+                        <div class="skill-cat-header">
+                            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                            <h3 class="skill-cat-title">Backend Core</h3>
+                        </div>
+                        <ul class="skill-list font-mono">
+                            <li><span class="skill-bullet">&gt;</span> PHP 8.x</li>
+                            <li><span class="skill-bullet">&gt;</span> Laravel Framework</li>
+                            <li><span class="skill-bullet">&gt;</span> RESTful API Design</li>
+                            <li><span class="skill-bullet">&gt;</span> OOP Architecture</li>
+                            <li><span class="skill-bullet">&gt;</span> MVC Patterns</li>
+                        </ul>
+                    </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5" id="stack-grid"></div>
+                    <!-- DATABASE -->
+                    <div class="skill-category">
+                        <div class="skill-cat-header">
+                            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                            <h3 class="skill-cat-title">Database &amp; SQL</h3>
+                        </div>
+                        <ul class="skill-list font-mono">
+                            <li><span class="skill-bullet">&gt;</span> MySQL</li>
+                            <li><span class="skill-bullet">&gt;</span> Relational Schema (3NF)</li>
+                            <li><span class="skill-bullet">&gt;</span> ACID Transactions</li>
+                            <li><span class="skill-bullet">&gt;</span> Foreign Keys &amp; Indexes</li>
+                            <li><span class="skill-bullet">&gt;</span> Query Optimization</li>
+                        </ul>
+                    </div>
+
+                    <!-- FRONTEND & CLIENT -->
+                    <div class="skill-category">
+                        <div class="skill-cat-header">
+                            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            <h3 class="skill-cat-title">Frontend &amp; Client</h3>
+                        </div>
+                        <ul class="skill-list font-mono">
+                            <li><span class="skill-bullet">&gt;</span> JavaScript (ES6+)</li>
+                            <li><span class="skill-bullet">&gt;</span> TypeScript</li>
+                            <li><span class="skill-bullet">&gt;</span> React</li>
+                            <li><span class="skill-bullet">&gt;</span> HTML5 / Semantic Web</li>
+                            <li><span class="skill-bullet">&gt;</span> CSS3 / Tailwind</li>
+                        </ul>
+                    </div>
+
+                    <!-- DEVOPS & TOOLING -->
+                    <div class="skill-category">
+                        <div class="skill-cat-header">
+                            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                            <h3 class="skill-cat-title">DevOps &amp; Ops</h3>
+                        </div>
+                        <ul class="skill-list font-mono">
+                            <li><span class="skill-bullet">&gt;</span> Git &amp; GitHub</li>
+                            <li><span class="skill-bullet">&gt;</span> Docker (Containers)</li>
+                            <li><span class="skill-bullet">&gt;</span> Composer &amp; NPM</li>
+                            <li><span class="skill-bullet">&gt;</span> Apache / Nginx Basics</li>
+                            <li><span class="skill-bullet">&gt;</span> Linux Environment</li>
+                        </ul>
+                    </div>
+
+                    <!-- CLOUD & MODERN -->
+                    <div class="skill-category">
+                        <div class="skill-cat-header">
+                            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                            <h3 class="skill-cat-title">Cloud &amp; Offline</h3>
+                        </div>
+                        <ul class="skill-list font-mono">
+                            <li><span class="skill-bullet">&gt;</span> Firebase (Auth &amp; Firestore)</li>
+                            <li><span class="skill-bullet">&gt;</span> Progressive Web Apps (PWA)</li>
+                            <li><span class="skill-bullet">&gt;</span> Service Worker Caching</li>
+                            <li><span class="skill-bullet">&gt;</span> LocalStorage State</li>
+                            <li><span class="skill-bullet">&gt;</span> API Security &amp; Auth</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- EXPERIENCE SECTION -->
-        <section class="section px-4 sm:px-6 lg:px-8" id="experience">
-            <div class="section-inner">
-                <div class="section-header section-header-left reveal">
-                    <span class="section-eyebrow"><i class="fa-solid fa-briefcase"></i> BACKGROUND</span>
-                    <h2 class="section-title">Work Experience &amp; <span class="accent-text">Leadership</span></h2>
-                    <p class="section-sub">Hands-on backend developer internships, campus ambassador leadership, and rollout execution.</p>
+        <hr class="section-divider" aria-hidden="true">
+
+        <!-- EXPERIENCE & ACADEMICS SECTION -->
+        <section class="section reveal" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag font-mono">// 04. EXPERIENCE &amp; EDUCATION</span>
+                    <h2 class="section-heading">Work History &amp; Academic Foundation</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="reveal">
-                        <h3 class="track-label" style="font-size:1.08rem; font-weight:700; margin-bottom:18px; display:flex; align-items:center; gap:8px;">
-                            <i class="fa-solid fa-code" style="color:var(--accent);"></i> Backend &amp; Software Engineering
-                        </h3>
-                        <div class="timeline" id="timeline"></div>
+                <div class="experience-list">
+                    <!-- ROLE 1 -->
+                    <div class="experience-item">
+                        <div class="exp-meta font-mono">
+                            <span class="exp-date">2024 &mdash; PRESENT</span>
+                            <span class="exp-location">Lagos, Nigeria</span>
+                        </div>
+                        <div class="exp-content">
+                            <h3 class="exp-role">Backend Developer Intern</h3>
+                            <h4 class="exp-company font-mono">Olak Tech</h4>
+                            <p class="exp-desc">
+                                Collaborated on core backend features and database structures in PHP and MySQL. Built and debugged REST API endpoints, handled schema migrations, and optimized database queries to ensure reliable data handling across client systems.
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="reveal">
-                        <h3 class="track-label" style="font-size:1.08rem; font-weight:700; margin-bottom:18px; display:flex; align-items:center; gap:8px;">
-                            <i class="fa-solid fa-bullhorn" style="color:var(--accent);"></i> Product Growth &amp; Strategy Leadership
-                        </h3>
-                        <div class="timeline" id="strategy-timeline"></div>
+                    <!-- ROLE 2 -->
+                    <div class="experience-item">
+                        <div class="exp-meta font-mono">
+                            <span class="exp-date">2023 &mdash; 2024</span>
+                            <span class="exp-location">Ogun / Lagos, Nigeria</span>
+                        </div>
+                        <div class="exp-content">
+                            <h3 class="exp-role">Campus Ambassador Lead</h3>
+                            <h4 class="exp-company font-mono">Cowrywise</h4>
+                            <p class="exp-desc">
+                                Directed student outreach, user onboarding, and product engagement initiatives on campus. Led community workshops on savings discipline and digital wealth management, serving as a liaison between student users and growth teams.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="education-strip reveal">
-                    <div class="edu-header">
-                        <span class="section-eyebrow"><i class="fa-solid fa-graduation-cap"></i> ACADEMICS</span>
-                        <h3 class="track-label" style="font-size:1.08rem; font-weight:700; margin-bottom:12px;">Education</h3>
+                    <!-- EDUCATION -->
+                    <div class="experience-item">
+                        <div class="exp-meta font-mono">
+                            <span class="exp-date">2022 &mdash; 2024</span>
+                            <span class="exp-location">Abeokuta, Ogun State</span>
+                        </div>
+                        <div class="exp-content">
+                            <h3 class="exp-role">National Diploma (ND) in Computer Science</h3>
+                            <h4 class="exp-company font-mono">Moshood Abiola Polytechnic (MAPOLY)</h4>
+                            <p class="exp-desc">
+                                Rigorous foundation in Database Systems, Data Structures &amp; Algorithms, Object-Oriented Programming, and Systems Analysis. Developed practical software builds as part of academic coursework.
+                            </p>
+                        </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="edu-cards"></div>
                 </div>
             </div>
         </section>
 
-        <!-- CREDENTIALS SECTION -->
-        <section class="section section-alt px-4 sm:px-6 lg:px-8" id="credentials">
-            <div class="section-inner">
-                <div class="section-header section-header-left reveal">
-                    <span class="section-eyebrow"><i class="fa-solid fa-award"></i> RECOGNITION</span>
-                    <h2 class="section-title">Certifications &amp; <span class="accent-text">Awards</span></h2>
-                    <p class="section-sub">Verified certifications and awards in communication and project strategy.</p>
-                </div>
+        <hr class="section-divider" aria-hidden="true">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 reveal" id="credentials-grid">
-                    <div class="credential-card">
-                        <div class="credential-label"><i class="fa-solid fa-certificate"></i> Certifications</div>
-                        <div id="certifications-list"></div>
-                    </div>
-                    <div class="credential-card">
-                        <div class="credential-label"><i class="fa-solid fa-trophy"></i> Awards &amp; Honors</div>
-                        <div id="awards-list"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TWO-SEGMENT CONTACT & DIRECT INQUIRY SECTION -->
-        <section class="section section-contact px-4 sm:px-6 lg:px-8" id="contact">
-            <div class="section-inner">
-                <div class="section-header section-header-left reveal">
-                    <span class="section-eyebrow"><i class="fa-solid fa-address-book"></i> GET IN TOUCH</span>
-                    <h2 class="section-title">Verified Channels &amp; <span class="accent-text">Direct Inquiry</span></h2>
-                    <p class="section-sub" id="contact-body">
-                        Direct communication channels for engineering roles, backend API consultations, and collaborative systems development.
+        <!-- CONTACT SECTION / FOOTER -->
+        <section class="section reveal" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag font-mono">// 05. REACH OUT</span>
+                    <h2 class="section-heading">Let's Connect</h2>
+                    <p class="section-sub">
+                        Currently screening for Junior &amp; Intern Backend / Full-Stack roles, contracts, and engineering collaborations.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal">
-                    <!-- SEGMENT 1: VERIFIED PROFILES & DIRECT CHANNELS (LEFT COLUMN) -->
-                    <div class="lg:col-span-5 contact-segment-left">
-                        <div class="segment-box">
-                            <div class="segment-head">
-                                <span class="segment-badge font-mono"><i class="fa-solid fa-bolt"></i> CHANNELS</span>
-                                <h3 class="segment-title">Direct Reach &amp; Profiles</h3>
-                            </div>
-
-                            <div class="contact-direct-box">
-                                <div class="contact-direct-info">
-                                    <span class="contact-direct-label font-mono"><i class="fa-regular fa-envelope"></i> Primary Email</span>
-                                    <a href="mailto:odubelaotomiwa508@gmail.com" class="contact-email-big font-mono" id="contact-email-big">odubelaotomiwa508@gmail.com</a>
-                                </div>
-                                <button class="btn-copy font-mono" id="copy-email-btn" type="button" title="Copy email address" aria-label="Copy email address">
-                                    <i class="fa-regular fa-copy"></i>
-                                    <span>Copy</span>
-                                </button>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5" id="contact-links-col"></div>
-
-                            <div class="availability-banner">
-                                <span class="status-dot status-dot-pulse"></span>
-                                <div class="avail-text">
-                                    <strong>Available for Backend &amp; Systems Roles</strong>
-                                    <span class="font-mono" style="font-size:0.72rem;">PHP/Laravel &middot; MySQL 3NF &middot; Lagos (WAT) / Remote</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="contact-channels-grid">
+                    <div class="contact-channel-card">
+                        <span class="channel-label font-mono"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Email Address</span>
+                        <a href="mailto:odubelaotomiwa508@gmail.com" class="channel-value font-mono">odubelaotomiwa508@gmail.com</a>
+                        <button class="btn btn-sm btn-outline copy-btn font-mono" data-copy="odubelaotomiwa508@gmail.com" type="button" aria-label="Copy email address">
+                            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span>Copy</span>
+                        </button>
                     </div>
 
-                    <!-- SEGMENT 2: DIRECT MESSAGE FORM (RIGHT COLUMN) -->
-                    <div class="lg:col-span-7 contact-segment-right">
-                        <div class="contact-form">
-                            <div class="segment-head">
-                                <span class="segment-badge font-mono"><i class="fa-regular fa-paper-plane"></i> INQUIRY</span>
-                                <h3 class="segment-title">Send a Direct Message</h3>
-                            </div>
+                    <div class="contact-channel-card">
+                        <span class="channel-label font-mono"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Phone / WhatsApp</span>
+                        <a href="tel:+2348143654106" class="channel-value font-mono">+234 814 365 4106</a>
+                        <button class="btn btn-sm btn-outline copy-btn font-mono" data-copy="+2348143654106" type="button" aria-label="Copy phone number">
+                            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span>Copy</span>
+                        </button>
+                    </div>
 
-                            <div class="form-topics">
-                                <span class="topics-label font-mono"><i class="fa-solid fa-sliders"></i> Quick Topic:</span>
-                                <div class="topic-chips" id="topic-chips">
-                                    <button type="button" class="topic-chip active font-mono" data-topic="Backend Engineering">Backend &amp; API</button>
-                                    <button type="button" class="topic-chip font-mono" data-topic="Database Architecture">Database &amp; SQL</button>
-                                    <button type="button" class="topic-chip font-mono" data-topic="PWA & Client System">PWA Web App</button>
-                                    <button type="button" class="topic-chip font-mono" data-topic="Job Opportunity / Role">Full-Time / Contract</button>
-                                    <button type="button" class="topic-chip font-mono" data-topic="General Inquiry">General Chat</button>
-                                </div>
-                            </div>
-
-                            <form id="direct-message-form">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="sender-name">Your Name</label>
-                                        <input type="text" id="sender-name" name="sender-name" required placeholder="e.g. Sarah Adebayo">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="sender-email">Your Email</label>
-                                        <input type="email" id="sender-email" name="sender-email" required placeholder="e.g. sarah@company.com">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="sender-subject">Subject</label>
-                                    <input type="text" id="sender-subject" name="sender-subject" value="Backend Engineering Inquiry" placeholder="Subject...">
-                                </div>
-                                <div class="form-group">
-                                    <label for="sender-msg">Your Message</label>
-                                    <textarea id="sender-msg" name="sender-msg" rows="4" required placeholder="Tell me about what you're building, backend requirements, timeline, or role..."></textarea>
-                                </div>
-                                <button type="submit" class="btn-primary form-submit-btn font-mono">
-                                    <span>Send Direct Message</span>
-                                    <i class="fa-regular fa-paper-plane"></i>
-                                </button>
-                            </form>
-                        </div>
+                    <div class="contact-channel-card">
+                        <span class="channel-label font-mono"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg> GitHub</span>
+                        <a href="https://github.com/blac-py" target="_blank" rel="noopener noreferrer" class="channel-value font-mono">github.com/blac-py</a>
+                        <a href="https://github.com/blac-py" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline font-mono">
+                            <span>Open</span>
+                            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
                     </div>
                 </div>
+
+                <footer class="site-footer">
+                    <div class="footer-row font-mono">
+                        <span>&copy; 2026 Odubela Oluwatomiwa (Blac) &middot; Backend Systems &amp; Relational Architecture</span>
+                        <a href="#hero" class="back-to-top" aria-label="Back to top">
+                            <span>Top</span> &uarr;
+                        </a>
+                    </div>
+                </footer>
             </div>
         </section>
+
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="footer-row">
-                <div class="footer-brand">
-                    <span class="logo-bracket">[</span>BLAC<span class="logo-bracket">]</span>
-                    <span>Odubela Oluwatomiwa</span>
-                </div>
-                <div class="footer-time font-mono" id="live-clock">Lagos (WAT) 00:00:00</div>
+    <!-- LIGHTBOX MODAL FOR SCREENSHOTS -->
+    <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+        <div class="lightbox-container">
+            <div class="lightbox-top-bar">
+                <span class="lightbox-title font-mono" id="lightbox-title">Screenshot</span>
+                <button class="lightbox-close-btn btn btn-sm btn-outline font-mono" id="lightbox-close-btn" type="button" aria-label="Close image viewer">
+                    <span>&times; Close [ESC]</span>
+                </button>
             </div>
-            <div class="footer-nav font-mono">
-                <a href="#home">Home</a> &middot;
-                <a href="#projects">Projects</a> &middot;
-                <a href="#architecture">Architecture</a> &middot;
-                <a href="#stack">Stack</a> &middot;
-                <a href="#experience">Experience</a> &middot;
-                <a href="#credentials">Credentials</a> &middot;
-                <a href="#contact">Contact</a>
+            <div class="lightbox-image-wrapper">
+                <img src="" alt="" class="lightbox-full-image" id="lightbox-full-image">
             </div>
-            <div class="footer-row footer-subrow font-mono">
-                <span>&copy; 2026 BLAC &middot; Backend Systems &middot; Relational Database Architect &middot; Lagos, Nigeria</span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- PROJECT DETAIL MODAL / BOTTOM SHEET -->
-    <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
-        <div class="modal-card modal-card-wide" id="modal-card-element">
-            <div class="modal-sheet-handle" aria-hidden="true"></div>
-            <button class="modal-close" id="modal-close-btn" type="button" aria-label="Close project modal">&times;</button>
-            <div id="modal-content-body"></div>
         </div>
     </div>
 
-    <!-- MOBILE BOTTOM NAVIGATION (Ergonomic Thumb-Zone Anchor) -->
-    <nav class="mobile-tab-bar" id="mobile-tab-bar" aria-label="Mobile Bottom Navigation">
-        <a href="#home" class="mobile-tab-item active" data-tab="home" aria-label="Home">
-            <i class="fa-solid fa-house"></i>
-            <span>Home</span>
-        </a>
-        <a href="#projects" class="mobile-tab-item" data-tab="projects" aria-label="Projects">
-            <i class="fa-solid fa-layer-group"></i>
-            <span>Work</span>
-        </a>
-        <a href="#architecture" class="mobile-tab-item" data-tab="architecture" aria-label="Architecture">
-            <i class="fa-solid fa-server"></i>
-            <span>Arch</span>
-        </a>
-        <a href="#stack" class="mobile-tab-item" data-tab="stack" aria-label="Stack">
-            <i class="fa-solid fa-microchip"></i>
-            <span>Stack</span>
-        </a>
-        <a href="#contact" class="mobile-tab-item" data-tab="contact" aria-label="Contact">
-            <i class="fa-solid fa-paper-plane"></i>
-            <span>Contact</span>
-        </a>
-    </nav>
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast-notice font-mono" id="toast-notice" aria-live="polite"></div>
 
-    <!-- TOAST NOTIFICATIONS CONTAINER -->
-    <div class="toast-container" id="toast-container" aria-live="polite"></div>
-
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
