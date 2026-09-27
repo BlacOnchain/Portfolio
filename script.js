@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initLightboxModal();
     initCopyActions();
     initMobileNav();
+    initScrollSpy();
     initBackToTop();
     initLagosClock();
     initTelemetryTabs();
@@ -256,6 +257,115 @@ function initMobileNav() {
             toggle.setAttribute("aria-expanded", "false");
         });
     });
+}
+
+/* =============== SCROLL-SPY HEADER NAVIGATION =============== */
+function initScrollSpy() {
+    const navLinks = document.querySelectorAll(".site-nav .nav-link");
+    if (!navLinks.length) return;
+
+    // Collect section elements linked in navigation
+    const navItems = [];
+    navLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (href && href.startsWith("#") && href.length > 1) {
+            const section = document.querySelector(href);
+            if (section) {
+                navItems.push({
+                    id: href.substring(1),
+                    element: section,
+                    link: link
+                });
+            }
+        }
+    });
+
+    if (!navItems.length) return;
+
+    function setActiveSection(activeId) {
+        navItems.forEach((item) => {
+            const isMatch = item.id === activeId;
+            item.link.classList.toggle("active", isMatch);
+            item.link.classList.toggle("is-active", isMatch);
+            if (isMatch) {
+                item.link.setAttribute("aria-current", "page");
+            } else {
+                item.link.removeAttribute("aria-current");
+            }
+        });
+    }
+
+    // Immediate highlight on link click for responsive feel
+    navItems.forEach((item) => {
+        item.link.addEventListener("click", () => {
+            setActiveSection(item.id);
+        });
+    });
+
+    let isScrolling = false;
+
+    function onScroll() {
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                updateActiveSpy();
+                isScrolling = false;
+            });
+            isScrolling = true;
+        }
+    }
+
+    function updateActiveSpy() {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const headerOffset = 100; // 64px header + padding
+
+        // 1. If at bottom of page, highlight the last section (Contact)
+        if (scrollY + windowHeight >= documentHeight - 60) {
+            setActiveSection(navItems[navItems.length - 1].id);
+            return;
+        }
+
+        // 2. If at very top / hero section, clear menu active states
+        if (scrollY < 180) {
+            setActiveSection(null);
+            return;
+        }
+
+        // 3. Find the section currently in view
+        let currentId = null;
+
+        for (let i = 0; i < navItems.length; i++) {
+            const item = navItems[i];
+            const top = item.element.offsetTop - headerOffset;
+            const bottom = top + item.element.offsetHeight;
+
+            if (scrollY >= top && scrollY < bottom) {
+                currentId = item.id;
+                break;
+            }
+        }
+
+        // Fallback: If in transition gaps, select the section above current scroll position
+        if (!currentId) {
+            for (let i = navItems.length - 1; i >= 0; i--) {
+                const item = navItems[i];
+                const top = item.element.offsetTop - headerOffset;
+                if (scrollY >= top) {
+                    currentId = item.id;
+                    break;
+                }
+            }
+        }
+
+        setActiveSection(currentId);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+
+    // Initial check on page load
+    updateActiveSpy();
 }
 
 /* =============== SMOOTH SCROLL BACK TO TOP =============== */

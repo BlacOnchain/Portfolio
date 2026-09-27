@@ -1,0 +1,5 @@
+# Ignore Node server files on Vercel so it deploys as a pure, ultra-fast static website
+server.js
+bun.lock
+*.log
+test.php
