@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     initLightboxModal();
     initCopyActions();
     initMobileNav();
+    initBackToTop();
+    initLagosClock();
+    initTelemetryTabs();
+    resolveSocialMetadata();
 });
 
 /* =============== TYPING / ERASING HERO ANIMATION =============== */
@@ -253,3 +257,151 @@ function initMobileNav() {
         });
     });
 }
+
+/* =============== SMOOTH SCROLL BACK TO TOP =============== */
+function initBackToTop() {
+    const topButtons = document.querySelectorAll(".back-to-top, a.brand-logo[href='#hero']");
+    if (!topButtons.length) return;
+
+    topButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            if (btn.getAttribute("href") === "#hero") {
+                e.preventDefault();
+
+                const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: prefersReducedMotion ? "auto" : "smooth"
+                });
+
+                if (window.history && window.history.pushState) {
+                    window.history.pushState(null, "", "#hero");
+                }
+
+                const targetHeader = document.querySelector(".hero-name") || document.getElementById("hero");
+                if (targetHeader) {
+                    targetHeader.setAttribute("tabindex", "-1");
+                    targetHeader.focus({ preventScroll: true });
+                }
+            }
+        });
+    });
+}
+
+/* =============== LAGOS LOCAL TIME CLOCK =============== */
+function initLagosClock() {
+    const timeValueEl = document.getElementById("lagos-live-time");
+    const statusEl = document.getElementById("lagos-working-status");
+    if (!timeValueEl) return;
+
+    function updateTime() {
+        try {
+            const now = new Date();
+            // Format time specifically in Africa/Lagos timezone (WAT / UTC+1)
+            const timeFormatter = new Intl.DateTimeFormat("en-GB", {
+                timeZone: "Africa/Lagos",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: false
+            });
+
+            const hourFormatter = new Intl.DateTimeFormat("en-GB", {
+                timeZone: "Africa/Lagos",
+                hour: "numeric",
+                hour12: false
+            });
+
+            const timeStr = timeFormatter.format(now);
+            const hour = parseInt(hourFormatter.format(now), 10);
+
+            timeValueEl.textContent = `${timeStr} WAT`;
+
+            if (statusEl) {
+                // Typical working hours: 08:00 - 18:00 WAT
+                if (hour >= 8 && hour < 18) {
+                    statusEl.textContent = "Online / Business hours";
+                    statusEl.style.color = "#22C55E";
+                } else if (hour >= 18 && hour < 23) {
+                    statusEl.textContent = "Evening / Flexible availability";
+                    statusEl.style.color = "var(--accent)";
+                } else {
+                    statusEl.textContent = "Offline / Asynchronous response";
+                    statusEl.style.color = "var(--text-dim)";
+                }
+            }
+        } catch (e) {
+            // Fallback for environments lacking full Intl timezone database
+            const utcTime = new Date().getTime() + (new Date().getTimezoneOffset() * 60000);
+            const lagosDate = new Date(utcTime + (3600000 * 1)); // UTC+1
+            const pad = (n) => String(n).padStart(2, "0");
+            timeValueEl.textContent = `${pad(lagosDate.getHours())}:${pad(lagosDate.getMinutes())}:${pad(lagosDate.getSeconds())} WAT`;
+        }
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+}
+
+/* =============== HERO TELEMETRY TABS SWITCHER =============== */
+function initTelemetryTabs() {
+    const tabs = document.querySelectorAll(".terminal-tabs .t-tab");
+    if (!tabs.length) return;
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            const targetId = `pane-${tab.getAttribute("data-tab")}`;
+            const targetPane = document.getElementById(targetId);
+            if (!targetPane) return;
+
+            // Update tab states
+            tabs.forEach((t) => {
+                t.classList.remove("is-active");
+                t.setAttribute("aria-selected", "false");
+            });
+            tab.classList.add("is-active");
+            tab.setAttribute("aria-selected", "true");
+
+            // Update pane visibility
+            const allPanes = document.querySelectorAll(".terminal-body .terminal-pane");
+            allPanes.forEach((pane) => pane.classList.add("is-hidden"));
+            targetPane.classList.remove("is-hidden");
+        });
+    });
+}
+
+/* =============== RESOLVE SOCIAL SHARE META URLS =============== */
+function resolveSocialMetadata() {
+    try {
+        const origin = window.location.origin;
+        if (!origin || origin.startsWith("file:")) return;
+
+        // Resolve og:image and twitter:image to absolute URLs for social crawlers
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        const ogSecureImage = document.querySelector('meta[property="og:image:secure_url"]');
+        const twitterImage = document.querySelector('meta[name="twitter:image"]');
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+
+        const absoluteImageUrl = `${origin}/images/og-card.jpg`;
+
+        if (ogImage && !ogImage.getAttribute("content").startsWith("http")) {
+            ogImage.setAttribute("content", absoluteImageUrl);
+        }
+        if (ogSecureImage && !ogSecureImage.getAttribute("content").startsWith("http")) {
+            ogSecureImage.setAttribute("content", absoluteImageUrl);
+        }
+        if (twitterImage && !twitterImage.getAttribute("content").startsWith("http")) {
+            twitterImage.setAttribute("content", absoluteImageUrl);
+        }
+        if (ogUrl) {
+            ogUrl.setAttribute("content", window.location.href);
+        }
+    } catch (err) {
+        // Silent catch for sandboxed environments
+    }
+}
+
+
+

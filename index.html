@@ -5,11 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odubela Oluwatomiwa | Backend &amp; Systems Developer</title>
     <meta name="description" content="Portfolio of Odubela Oluwatomiwa (Blac) — Backend developer specializing in PHP, Laravel, MySQL database architecture, and production web systems.">
-    
-    <!-- Open Graph Meta -->
-    <meta property="og:title" content="Odubela Oluwatomiwa | Backend &amp; Systems Developer">
-    <meta property="og:description" content="Backend developer specializing in PHP, Laravel, MySQL database architecture, and production web systems.">
-    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#0B0D11">
+    <meta name="author" content="Odubela Oluwatomiwa">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp / Slack / Discord -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Odubela Oluwatomiwa (Blac) — Backend Developer &amp; Systems Architect">
+    <meta property="og:description" content="Backend developer specializing in PHP, Laravel, MySQL database architecture, and production web systems. Open for Junior &amp; Intern roles.">
+    <meta property="og:site_name" content="Odubela Oluwatomiwa (Blac) Portfolio">
+    <meta property="og:image" content="images/og-card.jpg">
+    <meta property="og:image:secure_url" content="images/og-card.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Odubela Oluwatomiwa (Blac) — Backend Developer Portfolio preview with PHP, Laravel, MySQL system telemetry">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Odubela Oluwatomiwa (Blac) — Backend &amp; Systems Developer">
+    <meta name="twitter:description" content="Backend developer specializing in PHP, Laravel, MySQL relational architecture, and production web systems.">
+    <meta name="twitter:image" content="images/og-card.jpg">
+    <meta name="twitter:image:alt" content="Odubela Oluwatomiwa (Blac) Portfolio Preview">
+
+    <!-- Schema.org Structured Data (JSON-LD) for Search Engines & Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Odubela Oluwatomiwa",
+        "alternateName": "Blac",
+        "jobTitle": "Backend Developer & Systems Architect",
+        "description": "Backend developer specializing in PHP, Laravel, and MySQL relational database architecture.",
+        "email": "mailto:odubelaotomiwa508@gmail.com",
+        "telephone": "+2348143654106",
+        "sameAs": [
+          "https://github.com/blac-py"
+        ],
+        "knowsAbout": [
+          "PHP",
+          "Laravel",
+          "MySQL",
+          "Relational Database Architecture",
+          "RESTful APIs",
+          "ACID Transactions",
+          "Object-Oriented Programming"
+        ]
+      }
+    }
+    </script>
 
     <!-- Google Fonts: Space Mono & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,6 +104,7 @@
                     <li><a href="#work" class="nav-link">Work</a></li>
                     <li><a href="#stack" class="nav-link">Stack</a></li>
                     <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#github-stats" class="nav-link">Stats</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -81,37 +127,98 @@
         <!-- HERO SECTION -->
         <section class="section hero-section" id="hero">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-meta font-mono">
-                        <span class="status-indicator" aria-hidden="true"></span>
-                        <span>Lagos, Nigeria &middot; Available for Junior &amp; Intern Roles</span>
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="hero-meta font-mono">
+                            <span class="status-indicator" aria-hidden="true"></span>
+                            <span>Lagos, Nigeria &middot; Available for Junior &amp; Intern Roles</span>
+                        </div>
+
+                        <h1 class="hero-name">Odubela Oluwatomiwa</h1>
+                        
+                        <div class="hero-role-wrapper font-mono" aria-live="polite">
+                            <span class="role-prefix">&gt; </span>
+                            <span class="role-typing" id="role-typing">Backend Developer</span>
+                            <span class="typing-cursor" aria-hidden="true">_</span>
+                        </div>
+
+                        <p class="hero-intro">
+                            Backend developer specializing in PHP, Laravel, and MySQL relational architecture. I design normalized database schemas, build secure REST APIs, and ship production software that eliminates broken manual workflows. Expanding deeper into TypeScript, React, Docker, and Firebase.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                <span>Download CV</span>
+                            </a>
+                            <a href="mailto:odubelaotomiwa508@gmail.com" class="btn btn-outline">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                <span>Email Me</span>
+                            </a>
+                            <a href="https://github.com/blac-py" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
                     </div>
 
-                    <h1 class="hero-name">Odubela Oluwatomiwa</h1>
-                    
-                    <div class="hero-role-wrapper font-mono" aria-live="polite">
-                        <span class="role-prefix">&gt; </span>
-                        <span class="role-typing" id="role-typing">Backend Developer</span>
-                        <span class="typing-cursor" aria-hidden="true">_</span>
-                    </div>
+                    <div class="hero-terminal-col">
+                        <div class="terminal-card font-mono" id="hero-telemetry" aria-label="System Telemetry Console">
+                            <div class="terminal-card-bar">
+                                <div class="terminal-window-buttons" aria-hidden="true">
+                                    <span class="t-win-dot dot-close"></span>
+                                    <span class="t-win-dot dot-min"></span>
+                                    <span class="t-win-dot dot-max"></span>
+                                </div>
+                                <span class="terminal-card-title">blac@srv-lagos:~$</span>
+                                <span class="terminal-live-tag">
+                                    <span class="terminal-pulse-dot" aria-hidden="true"></span>
+                                    <span>LIVE</span>
+                                </span>
+                            </div>
 
-                    <p class="hero-intro">
-                        Backend developer specializing in PHP, Laravel, and MySQL relational architecture. I design normalized database schemas, build secure REST APIs, and ship production software that eliminates broken manual workflows. Expanding deeper into TypeScript, React, Docker, and Firebase.
-                    </p>
+                            <div class="terminal-tabs" role="tablist" aria-label="Telemetry diagnostics tabs">
+                                <button class="t-tab is-active" role="tab" aria-selected="true" data-tab="sys" type="button">sys:info</button>
+                                <button class="t-tab" role="tab" aria-selected="false" data-tab="db" type="button">db:status</button>
+                                <button class="t-tab" role="tab" aria-selected="false" data-tab="routes" type="button">api:routes</button>
+                            </div>
 
-                    <div class="hero-actions">
-                        <a href="assets/Oluwatomiwa_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            <span>Download CV</span>
-                        </a>
-                        <a href="mailto:odubelaotomiwa508@gmail.com" class="btn btn-outline">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                            <span>Email Me</span>
-                        </a>
-                        <a href="https://github.com/blac-py" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                            <span>GitHub</span>
-                        </a>
+                            <div class="terminal-body" id="telemetry-screen" tabindex="0">
+                                <div class="terminal-pane" id="pane-sys">
+                                    <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">php artisan status --verbose</span></div>
+                                    <div class="t-grid">
+                                        <div class="t-row"><span class="t-label">RUNTIME:</span> <span class="t-highlight">PHP 8.3 &middot; Laravel 11</span></div>
+                                        <div class="t-row"><span class="t-label">DATABASE:</span> <span>MySQL (InnoDB / 3NF)</span></div>
+                                        <div class="t-row"><span class="t-label">SECURITY:</span> <span>CSRF &middot; Bearer &middot; RBAC</span></div>
+                                        <div class="t-row"><span class="t-label">REGION:</span> <span>Lagos, NG (UTC+1 WAT)</span></div>
+                                        <div class="t-row"><span class="t-label">STATUS:</span> <span class="t-online">AVAILABLE_FOR_HIRE</span></div>
+                                    </div>
+                                    <div class="t-cursor-line"><span class="t-prompt">&gt;</span> <span class="t-ping">Server healthy. 0 errors logged.</span><span class="t-cursor" aria-hidden="true">_</span></div>
+                                </div>
+
+                                <div class="terminal-pane is-hidden" id="pane-db">
+                                    <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">mysql -u blac -e "SHOW STATUS;"</span></div>
+                                    <div class="t-grid">
+                                        <div class="t-row"><span class="t-label">ENGINE:</span> <span>InnoDB ACID Compliant</span></div>
+                                        <div class="t-row"><span class="t-label">INTEGRITY:</span> <span class="t-highlight">FK Constraints &middot; Cascade</span></div>
+                                        <div class="t-row"><span class="t-label">INDEXES:</span> <span>B-Tree on (user_id, created_at)</span></div>
+                                        <div class="t-row"><span class="t-label">SCHEMA:</span> <span>Strict 3rd Normal Form</span></div>
+                                    </div>
+                                    <div class="t-cursor-line"><span class="t-prompt">&gt;</span> <span class="t-ping">Transactions: 100% committed</span><span class="t-cursor" aria-hidden="true">_</span></div>
+                                </div>
+
+                                <div class="terminal-pane is-hidden" id="pane-routes">
+                                    <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">php artisan route:list --compact</span></div>
+                                    <div class="t-grid">
+                                        <div class="t-row"><span class="t-label">POST</span> <span>/api/v1/auth/token &rarr; 200</span></div>
+                                        <div class="t-row"><span class="t-label">GET</span> <span>/api/v1/attendance &rarr; JSON</span></div>
+                                        <div class="t-row"><span class="t-label">POST</span> <span>/api/v1/resumes/export &rarr; PDF</span></div>
+                                        <div class="t-row"><span class="t-label">GET</span> <span class="t-highlight">/api/v1/engineer/blac &rarr; HIRE</span></div>
+                                    </div>
+                                    <div class="t-cursor-line"><span class="t-prompt">&gt;</span> <span class="t-ping">Response latency: ~12ms avg</span><span class="t-cursor" aria-hidden="true">_</span></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -548,15 +655,81 @@
 
         <hr class="section-divider" aria-hidden="true">
 
+        <!-- GITHUB STATS SECTION -->
+        <section class="section reveal" id="github-stats">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag font-mono">// 05. OPEN SOURCE &amp; REPOSITORIES</span>
+                    <h2 class="section-heading">GitHub Stats</h2>
+                    <p class="section-sub">Public repositories, open-source commits, and active development activity across systems and services.</p>
+                </div>
+
+                <div class="github-stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header font-mono">
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+                            <span class="stat-category">REPOSITORIES</span>
+                        </div>
+                        <div class="stat-value font-mono">18<span class="stat-accent">+</span></div>
+                        <div class="stat-title">Public Repositories</div>
+                        <p class="stat-desc">Production web systems, normalized database blueprints, and backend architectures in PHP, Laravel, and MySQL.</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header font-mono">
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="1.05" y1="12" x2="7" y2="12"/><line x1="17.01" y1="12" x2="22.96" y2="12"/></svg>
+                            <span class="stat-category">CONTRIBUTIONS</span>
+                        </div>
+                        <div class="stat-value font-mono">260<span class="stat-accent">+</span></div>
+                        <div class="stat-title">Commits &amp; Activity</div>
+                        <p class="stat-desc">Consistent annual activity spanning schema migrations, REST API endpoints, bug resolutions, and code reviews.</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header font-mono">
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <span class="stat-category">COMMUNITY</span>
+                        </div>
+                        <div class="stat-value font-mono">14<span class="stat-accent">+</span></div>
+                        <div class="stat-title">Stars &amp; Community Forks</div>
+                        <p class="stat-desc">Curated open-source builds including attendance management tools, resume builders, and academic templates.</p>
+                    </div>
+                </div>
+
+                <div class="github-footer-bar font-mono">
+                    <div class="github-lang-breakdown">
+                        <span class="breakdown-label">Stack Distribution:</span>
+                        <span class="lang-item"><span class="lang-dot dot-php"></span> PHP 54%</span>
+                        <span class="lang-item"><span class="lang-dot dot-sql"></span> MySQL / SQL 24%</span>
+                        <span class="lang-item"><span class="lang-dot dot-js"></span> JavaScript / TS 16%</span>
+                        <span class="lang-item"><span class="lang-dot dot-other"></span> Other 6%</span>
+                    </div>
+                    <a href="https://github.com/blac-py" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline github-profile-btn font-mono">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                        <span>github.com/blac-py</span>
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider" aria-hidden="true">
+
         <!-- CONTACT SECTION / FOOTER -->
         <section class="section reveal" id="contact">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag font-mono">// 05. REACH OUT</span>
+                    <span class="section-tag font-mono">// 06. REACH OUT</span>
                     <h2 class="section-heading">Let's Connect</h2>
                     <p class="section-sub">
                         Currently screening for Junior &amp; Intern Backend / Full-Stack roles, contracts, and engineering collaborations.
                     </p>
+                    <div class="local-time-badge font-mono" id="local-time-badge" aria-live="polite">
+                        <span class="time-pulse-dot" aria-hidden="true"></span>
+                        <span class="time-label">Lagos, NG (WAT / UTC+1):</span>
+                        <span class="time-value" id="lagos-live-time">--:--:--</span>
+                        <span class="time-status" id="lagos-working-status"></span>
+                    </div>
                 </div>
 
                 <div class="contact-channels-grid">
