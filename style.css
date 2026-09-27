@@ -1189,7 +1189,13 @@ button {
   margin-bottom: 60px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
+  .contact-channels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
   .contact-channels-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1203,6 +1209,63 @@ button {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+/* Staggered entry animation on scroll reveal */
+.js-loaded #contact.reveal .contact-channel-card {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  will-change: opacity, transform;
+}
+
+.js-loaded #contact.reveal.is-revealed .contact-channel-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-loaded #contact.reveal.is-revealed .contact-channel-card:nth-child(1) {
+  transition-delay: 0.08s;
+}
+
+.js-loaded #contact.reveal.is-revealed .contact-channel-card:nth-child(2) {
+  transition-delay: 0.16s;
+}
+
+.js-loaded #contact.reveal.is-revealed .contact-channel-card:nth-child(3) {
+  transition-delay: 0.24s;
+}
+
+.js-loaded #contact.reveal.is-revealed .contact-channel-card:nth-child(4) {
+  transition-delay: 0.32s;
+}
+
+.js-loaded #contact.reveal.is-revealed .contact-channel-card:nth-child(5) {
+  transition-delay: 0.40s;
+}
+
+.contact-channel-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-loaded #contact.reveal .contact-channel-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+}
+
+.channel-actions {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .channel-label {

@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "build": "echo 'No build required'"
+    "build": "echo 'Static build ready'"
   },
-  "dependencies": {
+  "devDependencies": {
     "express": "^4.21.2"
   }
 }

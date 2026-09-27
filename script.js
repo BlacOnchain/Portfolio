@@ -198,7 +198,7 @@ function initLightboxModal() {
 
 /* =============== COPY ACTIONS & TOAST NOTIFICATION =============== */
 function initCopyActions() {
-    const copyButtons = document.querySelectorAll(".copy-btn");
+    const copyButtons = document.querySelectorAll(".copy-btn, .copy-badge-btn");
     const toast = document.getElementById("toast-notice");
     let toastTimeout = null;
 
@@ -211,28 +211,48 @@ function initCopyActions() {
 
         toastTimeout = setTimeout(() => {
             toast.classList.remove("is-visible");
-        }, 2400);
+        }, 2600);
     }
 
     copyButtons.forEach((btn) => {
         btn.addEventListener("click", async () => {
-            const textToCopy = btn.getAttribute("data-copy");
+            const isBadge = btn.classList.contains("copy-badge-btn");
+            const textToCopy = btn.getAttribute("data-badge") || btn.getAttribute("data-copy");
+            const badgeName = btn.getAttribute("data-badge-name") || "Badge";
             if (!textToCopy) return;
 
             try {
                 if (navigator.clipboard && navigator.clipboard.writeText) {
                     await navigator.clipboard.writeText(textToCopy);
                 } else {
-                    const tempInput = document.createElement("input");
+                    const tempInput = document.createElement("textarea");
                     tempInput.value = textToCopy;
+                    tempInput.style.position = "fixed";
+                    tempInput.style.opacity = "0";
                     document.body.appendChild(tempInput);
+                    tempInput.focus();
                     tempInput.select();
                     document.execCommand("copy");
                     document.body.removeChild(tempInput);
                 }
-                showToast(`Copied to clipboard: ${textToCopy}`);
+
+                if (isBadge) {
+                    const originalContent = btn.innerHTML;
+                    btn.classList.add("is-copied");
+                    btn.innerHTML = `
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Copied!</span>
+                    `;
+                    setTimeout(() => {
+                        btn.classList.remove("is-copied");
+                        btn.innerHTML = originalContent;
+                    }, 2200);
+                    showToast(`Copied Markdown badge for ${badgeName}!`);
+                } else {
+                    showToast(`Copied to clipboard: ${textToCopy}`);
+                }
             } catch (err) {
-                showToast(`Value: ${textToCopy}`);
+                showToast(`Copied value to clipboard.`);
             }
         });
     });
