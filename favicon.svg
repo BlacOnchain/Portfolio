@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Subtle dark gradient for high-end contrast -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141822" />
+      <stop offset="100%" stop-color="#0B0D11" />
+    </linearGradient>
+    <!-- Warm amber gold gradient matching --accent -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2BE72" />
+      <stop offset="100%" stop-color="#E3A857" />
+    </linearGradient>
+  </defs>
+
+  <!-- Container Box with sleek border -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGrad)" stroke="#262B37" stroke-width="2.5"/>
+
+  <!-- Subtle inner corner brackets evoking terminal / code architecture -->
+  <!-- Left Bracket '[' -->
+  <path d="M 18 17 L 13 17 L 13 47 L 18 47" fill="none" stroke="#E3A857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+
+  <!-- Right Bracket ']' -->
+  <path d="M 46 17 L 51 17 L 51 47 L 46 47" fill="none" stroke="#E3A857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+
+  <!-- Center 'B' Monogram in Space Mono / Geometric Style -->
+  <g fill="url(#accentGrad)">
+    <!-- Main stem -->
+    <rect x="22" y="19" width="4.5" height="26" rx="2" />
+    <!-- Upper loop -->
+    <path d="M 24 19 L 34.5 19 C 39.5 19 41.5 21.5 41.5 25.5 C 41.5 29 39 31.5 34.5 31.5 L 24 31.5 Z M 28.5 23 L 28.5 27.5 L 34 27.5 C 36.5 27.5 37.5 26.5 37.5 25.2 C 37.5 24 36.5 23 34 23 Z" />
+    <!-- Lower loop -->
+    <path d="M 24 31 L 36 31 C 41 31 43.5 33.5 43.5 38 C 43.5 42.5 41 45 36 45 L 24 45 Z M 28.5 35 L 28.5 41 L 35 41 C 37.5 41 39 40 39 38 C 39 36 37.5 35 35 35 Z" />
+  </g>
+
+  <!-- Server / Terminal Status Prompt Dot in lower right corner of badge -->
+  <circle cx="50" cy="50" r="3" fill="#E3A857" />
+</svg>

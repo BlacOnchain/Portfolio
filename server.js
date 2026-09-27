@@ -12,6 +12,11 @@ app.use(express.static(__dirname, {
   extensions: ['html', 'htm']
 }));
 
+// Route /favicon.ico requests directly to the SVG favicon
+app.get('/favicon.ico', (req, res) => {
+  res.sendFile(path.join(__dirname, 'favicon.svg'));
+});
+
 // Route non-file requests to index.html for SPA support, but 404 missing assets
 app.get('*', (req, res) => {
   if (path.extname(req.path)) {

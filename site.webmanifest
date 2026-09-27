@@ -1,0 +1,17 @@
+{
+  "name": "BLAC Portfolio — Odubela Oluwatomiwa",
+  "short_name": "BLAC",
+  "description": "Backend Developer specializing in PHP, Laravel, and MySQL relational architecture.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0D11",
+  "theme_color": "#0B0D11",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

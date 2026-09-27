@@ -10,6 +10,12 @@
     <meta name="author" content="Odubela Oluwatomiwa">
     <link rel="canonical" href="https://blac-portfolio.vercel.app/">
 
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" type="image/png" href="images/profile.jpg">
+    <link rel="apple-touch-icon" href="images/profile.jpg">
+    <link rel="manifest" href="site.webmanifest">
+
     <!-- Open Graph / WhatsApp / LinkedIn / Slack / Discord / Facebook -->
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://blac-portfolio.vercel.app/">
@@ -88,6 +94,7 @@
         }
         .icon, svg.icon { width: 18px; height: 18px; max-width: 18px; max-height: 18px; }
         .icon-sm, svg.icon-sm { width: 14px; height: 14px; max-width: 14px; max-height: 14px; }
+        .brand-logo-icon, svg.brand-logo-icon { width: 22px; height: 22px; max-width: 22px; max-height: 22px; }
         .stat-icon, svg.stat-icon { width: 14px; height: 14px; max-width: 14px; max-height: 14px; }
         .skill-icon, svg.skill-icon { width: 18px; height: 18px; max-width: 18px; max-height: 18px; }
         .tag-icon, svg.tag-icon { width: 12px; height: 12px; max-width: 12px; max-height: 12px; }
@@ -127,6 +134,17 @@
     <header class="site-header" id="site-header">
         <div class="header-inner container">
             <a href="#hero" class="brand-logo" id="brand-logo" aria-label="Odubela Oluwatomiwa Home">
+                <svg class="brand-logo-icon" viewBox="0 0 64 64" width="22" height="22" aria-hidden="true">
+                    <rect x="2" y="2" width="60" height="60" rx="14" fill="#141822" stroke="#262B37" stroke-width="3"/>
+                    <path d="M 18 17 L 13 17 L 13 47 L 18 47" fill="none" stroke="#E3A857" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M 46 17 L 51 17 L 51 47 L 46 47" fill="none" stroke="#E3A857" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <g fill="#E3A857">
+                        <rect x="22" y="19" width="4.5" height="26" rx="2"/>
+                        <path d="M 24 19 L 34.5 19 C 39.5 19 41.5 21.5 41.5 25.5 C 41.5 29 39 31.5 34.5 31.5 L 24 31.5 Z M 28.5 23 L 28.5 27.5 L 34 27.5 C 36.5 27.5 37.5 26.5 37.5 25.2 C 37.5 24 36.5 23 34 23 Z"/>
+                        <path d="M 24 31 L 36 31 C 41 31 43.5 33.5 43.5 38 C 43.5 42.5 41 45 36 45 L 24 45 Z M 28.5 35 L 28.5 41 L 35 41 C 37.5 41 39 40 39 38 C 39 36 37.5 35 35 35 Z"/>
+                    </g>
+                    <circle cx="50" cy="50" r="3" fill="#E3A857"/>
+                </svg>
                 <span class="logo-bracket">[</span><span class="logo-text" id="logo-text">BLAC</span><span class="logo-bracket">]</span>
             </a>
 

@@ -249,7 +249,17 @@ function initCopyActions() {
                     }, 2200);
                     showToast(`Copied Markdown badge for ${badgeName}!`);
                 } else {
-                    showToast(`Copied to clipboard: ${textToCopy}`);
+                    const originalContent = btn.innerHTML;
+                    btn.classList.add("is-copied");
+                    btn.innerHTML = `
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>Copied!</span>
+                    `;
+                    setTimeout(() => {
+                        btn.classList.remove("is-copied");
+                        btn.innerHTML = originalContent;
+                    }, 2000);
+                    showToast(`Copied: ${textToCopy}`);
                 }
             } catch (err) {
                 showToast(`Copied value to clipboard.`);
